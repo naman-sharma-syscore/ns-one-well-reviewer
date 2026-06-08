@@ -12,13 +12,15 @@
 
 The OneWELL Design System is the canonical visual and component reference for the IWBI OneWELL platform. It is a self-contained bundle: design tokens as CSS variables, component classes with the `.ow-*` prefix, a complete brand asset library, and self-hosted fonts.
 
-Everything needed to build a compliant prototype is in this folder:
-- `colors_and_type.css` — all tokens (colors, typography, spacing, radii, shadows)
-- `components.css` — all `.ow-*` component primitives
-- `assets/` — brand seals, badges, and icons
-- `fonts/` — FT Made + Mazzard Soft M (all weights)
-- `ui-kit.html` — hierarchical component reference (canonical)
-- `preview/` — 18 individual component preview cards
+Everything needed to build a compliant prototype lives in `v2/ds/` and `v2/assets/`:
+- `v2/ds/onewell.css` — single import (pulls in tokens + typography + components)
+- `v2/ds/tokens.css` — all CSS custom properties (13 color scales × 10 shades, concept colors, semantic tokens)
+- `v2/ds/typography.css` — `@font-face` + semantic type classes
+- `v2/ds/components.css` — all `.ow-*` component primitives
+- `v2/assets/` — brand seals, badges, icons (SVG only)
+- `v2/assets/fonts/` — FT Made + Mazzard Soft M (all weights, self-hosted)
+- `v2/ds/UI Kit.html` — hierarchical component reference (canonical)
+- `v2/ds/preview/` — 20 individual component preview cards
 
 ---
 
@@ -34,11 +36,11 @@ Everything needed to build a compliant prototype is in this folder:
 
 ## How to use the system in prototypes
 
-1. Link both stylesheets at the top of every HTML file:
+1. Link the single master stylesheet at the top of every HTML file:
    ```html
-   <link rel="stylesheet" href="colors_and_type.css">
-   <link rel="stylesheet" href="components.css">
+   <link rel="stylesheet" href="ds/onewell.css">
    ```
+   (Use `../ds/onewell.css` for pages inside `v2/pages/`.)
 2. Reach for `.ow-*` classes first. If a class doesn't exist for what you need, ask before inventing.
 3. Use seals from `assets/seals/`, icons from `assets/icons/`. Don't draw replacements.
 4. Keep one primary CTA per view. Identify the one action the user is here to complete.
