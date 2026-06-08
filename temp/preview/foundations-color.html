@@ -1,0 +1,236 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foundations · Color System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:48px 40px 64px;background:#fff;width:1080px;font-family:var(--font-body);color:var(--gray-800)}
+
+  .doc-head{margin-bottom:40px;padding-bottom:24px;border-bottom:2px solid var(--gray-200)}
+  .doc-head .eyebrow{font:600 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-800);margin:0 0 10px}
+  .doc-head h1{font:400 36px/1.05 var(--font-display);margin:0 0 8px;letter-spacing:-0.015em;color:var(--gray-900)}
+  .doc-head p{font-size:14px;line-height:1.6;color:var(--gray-600);margin:0;max-width:720px}
+  .doc-head code{font-family:ui-monospace,'SF Mono',monospace;font-size:12.5px;background:var(--gray-100);padding:1px 5px;border-radius:3px;color:var(--gray-800)}
+
+  /* ============ SECTION ============ */
+  section{margin-bottom:56px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;padding-bottom:12px;border-bottom:1px solid var(--gray-200)}
+  .sec-head .num{font:700 12px/1 var(--font-body);letter-spacing:.08em;color:var(--gray-400);font-variant-numeric:tabular-nums;width:24px}
+  .sec-head h2{font:600 18px/1.2 var(--font-body);margin:0;color:var(--gray-900);letter-spacing:-0.005em}
+  .sec-head .count{margin-left:auto;font:500 11.5px/1 var(--font-body);color:var(--gray-500);font-variant-numeric:tabular-nums}
+  .sec-intro{font-size:13px;line-height:1.6;color:var(--gray-600);margin:14px 0 24px;max-width:760px;padding-left:38px}
+
+  /* ============ SCALE ROW ============ */
+  .group{margin-bottom:18px;padding-left:38px}
+  .meta{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px;gap:16px}
+  .meta-l{display:flex;align-items:baseline;gap:10px}
+  .title{font:600 13px/1.2 var(--font-body);color:var(--gray-900);letter-spacing:-0.005em}
+  .role{font-size:11.5px;color:var(--gray-500);margin-left:4px}
+  .var{font-family:ui-monospace,'SF Mono',monospace;font-size:10.5px;color:var(--cyan-800);background:var(--cyan-50);padding:2px 7px;border-radius:3px;border:1px solid var(--cyan-100);white-space:nowrap}
+  .scale{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+  .sw{aspect-ratio:1/1.05;border-radius:5px;display:flex;flex-direction:column;justify-content:flex-end;padding:7px 7px 6px;border:1px solid rgba(0,0,0,.04);position:relative}
+  .sw .step{font:600 10px/1 var(--font-body);font-variant-numeric:tabular-nums}
+  .sw .hex{font-family:ui-monospace,'SF Mono',monospace;font-size:8.5px;font-weight:500;margin-top:2px;letter-spacing:-0.02em}
+  .on-dark{color:#fff}
+  .on-dark .hex{opacity:.78}
+  .on-light{color:var(--gray-800)}
+  .on-light .hex{opacity:.62}
+
+  /* ============ NAMED COLORS GRID (concepts, ratings, certs) ============ */
+  .named-grid{padding-left:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .named{border-radius:8px;border:1px solid var(--gray-200);overflow:hidden;background:#fff}
+  .named .chip{height:60px;display:flex;align-items:flex-end;padding:8px 10px}
+  .named .chip .label{font:600 11px/1.1 var(--font-body);color:#fff;letter-spacing:-0.005em}
+  .named .body{padding:8px 10px 10px;background:#fff}
+  .named .name{font:600 11.5px/1.2 var(--font-body);color:var(--gray-900)}
+  .named .var-s{font-family:ui-monospace,monospace;font-size:9.5px;color:var(--gray-500);margin-top:2px;letter-spacing:-0.02em}
+  .named .hex-s{font-family:ui-monospace,monospace;font-size:9.5px;color:var(--gray-700);margin-top:1px;letter-spacing:-0.02em}
+
+  /* ============ GRADIENT TILES ============ */
+  .grad-grid{padding-left:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .grad{border-radius:10px;overflow:hidden;border:1px solid var(--gray-200)}
+  .grad .swatch{height:120px;display:flex;align-items:flex-end;padding:14px}
+  .grad .swatch .gname{font:600 13px/1.2 var(--font-body);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15)}
+  .grad .desc{padding:12px 14px;background:#fff}
+  .grad .desc .var-s{font-family:ui-monospace,monospace;font-size:10.5px;color:var(--cyan-800);background:var(--cyan-50);padding:1px 6px;border-radius:3px;display:inline-block;margin-bottom:6px}
+  .grad .desc .use{font-size:12px;color:var(--gray-600);line-height:1.5}
+
+  /* ============ BLUR TILES ============ */
+  .blur-grid{padding-left:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .blur-card{border-radius:10px;overflow:hidden;border:1px solid var(--gray-200);background:#fff}
+  .blur-bg{position:relative;height:130px;background:linear-gradient(135deg,#0F748A 0%,#1DD7B2 50%,#BF78AE 100%);overflow:hidden}
+  .blur-glass{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:140px;height:60px;border-radius:10px;background:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font:600 11px/1 var(--font-body);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+  .blur-card .desc{padding:10px 12px}
+  .blur-card .desc .lbl{font:600 12px/1.2 var(--font-body);color:var(--gray-900)}
+  .blur-card .desc .val{font-family:ui-monospace,monospace;font-size:10.5px;color:var(--gray-600);margin-top:3px}
+
+  /* ============ USAGE MATRIX ============ */
+  .usage{padding-left:38px}
+  .usage table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .usage th,.usage td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--gray-200);vertical-align:top}
+  .usage th{font:600 11px/1 var(--font-body);letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);background:var(--gray-50)}
+  .usage td:first-child{font-weight:600;color:var(--gray-900);width:18%}
+  .usage td.token{font-family:ui-monospace,monospace;font-size:11px;color:var(--cyan-800);width:20%}
+  .usage td .swatch-inline{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.06);vertical-align:-2px;margin-right:6px}
+
+</style></head>
+<body>
+
+<div class="doc-head">
+  <div class="eyebrow">Foundations · 01</div>
+  <h1>Color System</h1>
+  <p>The complete color story for One WELL. <strong>13 brand scales</strong> (130 swatches), <strong>11 concept colors</strong>, <strong>4 rating colors</strong>, <strong>4 certification tiers</strong>, <strong>4 gradients</strong>, blur effects, and surface usage rules. All values verified against <code>client/global.css</code>.</p>
+</div>
+
+<!-- ========== 01 BRAND SCALES ========== -->
+<section>
+  <div class="sec-head"><span class="num">01</span><h2>Brand Scales — 13 × 10 shades</h2><span class="count">130 tokens</span></div>
+  <div class="sec-intro">Every interface color descends from these 13 ladders. Each scale runs from <code>50</code> (lightest) to <code>900</code> (darkest). Use the role hint to know when to reach for which scale.</div>
+
+  <div id="scales-mount"></div>
+</section>
+
+<!-- ========== 02 CONCEPT COLORS ========== -->
+<section>
+  <div class="sec-head"><span class="num">02</span><h2>Concept Colors</h2><span class="count">11 tokens</span></div>
+  <div class="sec-intro">Reserved <strong>exclusively for tagging WELL content concepts</strong> — never carry UI state. They appear on theme/strategy/requirement codes, breadcrumbs, and concept icons.</div>
+  <div class="named-grid" id="concepts-mount"></div>
+</section>
+
+<!-- ========== 03 RATING COLORS ========== -->
+<section>
+  <div class="sec-head"><span class="num">03</span><h2>Rating Colors</h2><span class="count">4 tokens</span></div>
+  <div class="sec-intro">Identify the four WELL rating tracks. Used on rating seals, scoring bars, and rating-specific badges.</div>
+  <div class="named-grid" id="ratings-mount"></div>
+</section>
+
+<!-- ========== 04 CERTIFICATION COLORS ========== -->
+<section>
+  <div class="sec-head"><span class="num">04</span><h2>Certification Tiers</h2><span class="count">4 tokens</span></div>
+  <div class="sec-intro">The four WELL certification levels. Each tier is a metallic-feeling solid backed by its own 10-step scale (see Bronze/Silver/Gold/Platinum above) for full UI usage.</div>
+  <div class="named-grid" id="certs-mount"></div>
+</section>
+
+<!-- ========== 05 GRADIENTS ========== -->
+<section>
+  <div class="sec-head"><span class="num">05</span><h2>Gradients</h2><span class="count">4 tokens</span></div>
+  <div class="sec-intro">Reserved for hero CTAs, performance dashboards, and section transitions. Use sparingly — at most one gradient per screen.</div>
+  <div class="grad-grid">
+    <div class="grad">
+      <div class="swatch" style="background:var(--gradient-cta-bright)"><span class="gname">CTA Bright</span></div>
+      <div class="desc"><span class="var-s">--gradient-cta-bright</span><div class="use">Hero CTAs on light surfaces. Cyan‑400 → Emerald‑400 → Light‑emerald‑200.</div></div>
+    </div>
+    <div class="grad">
+      <div class="swatch" style="background:var(--gradient-cta-cyan)"><span class="gname">CTA Cyan</span></div>
+      <div class="desc"><span class="var-s">--gradient-cta-cyan</span><div class="use">Default primary CTA. Bright gradient with cyan‑800 multiply for legibility.</div></div>
+    </div>
+    <div class="grad">
+      <div class="swatch" style="background:var(--gradient-soft)"><span class="gname">Soft</span></div>
+      <div class="desc"><span class="var-s">--gradient-soft</span><div class="use">Empty states, onboarding hero, marketing surfaces. Emerald → Plum → Blue.</div></div>
+    </div>
+    <div class="grad">
+      <div class="swatch" style="background:var(--gradient-performance)"><span class="gname">Performance</span></div>
+      <div class="desc"><span class="var-s">--gradient-performance</span><div class="use">Performance score bars. Green → cyan → plum → coral as score drops.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 06 BLUR ========== -->
+<section>
+  <div class="sec-head"><span class="num">06</span><h2>Blur Effects</h2><span class="count">3 tokens</span></div>
+  <div class="sec-intro">Backdrop blur is reserved for floating system surfaces — top nav, modals, popovers — over full-bleed imagery or gradients. Always pair with a translucent fill.</div>
+  <div class="blur-grid">
+    <div class="blur-card"><div class="blur-bg"><div class="blur-glass" style="backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)">Subtle · 20px</div></div><div class="desc"><div class="lbl">Subtle</div><div class="val">backdrop-filter: blur(20px)</div></div></div>
+    <div class="blur-card"><div class="blur-bg"><div class="blur-glass" style="backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px)">Default · 40px</div></div><div class="desc"><div class="lbl">Default (top nav)</div><div class="val">backdrop-filter: blur(40px)</div></div></div>
+    <div class="blur-card"><div class="blur-bg"><div class="blur-glass" style="backdrop-filter:blur(72px);-webkit-backdrop-filter:blur(72px)">Heavy · 72px</div></div><div class="desc"><div class="lbl">Heavy (modal scrim)</div><div class="val">backdrop-filter: blur(72px)</div></div></div>
+  </div>
+</section>
+
+<!-- ========== 07 USAGE MATRIX ========== -->
+<section>
+  <div class="sec-head"><span class="num">07</span><h2>Surface &amp; Background Usage</h2></div>
+  <div class="sec-intro">When to reach for which surface. Don't invent new fills — every UI surface in One WELL maps to one of these tokens.</div>
+  <div class="usage">
+    <table>
+      <thead><tr><th>Role</th><th>Token</th><th>Hex</th><th>When to use</th></tr></thead>
+      <tbody>
+        <tr><td><span class="swatch-inline" style="background:#F9F9FA"></span>Page background</td><td class="token">--background</td><td>#F9F9FA</td><td>The default page canvas. Holds elevated cards and panels.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#FFFFFF;border:1px solid #E5E5E5"></span>Surface (card)</td><td class="token">--surface</td><td>#FFFFFF</td><td>Cards, modals, dropdowns, primary content containers.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#FAFEFF"></span>Side rails</td><td class="token">--surface-side</td><td>#FAFEFF</td><td>Left/right navigation rails and supporting panels.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#3E4049"></span>Overlay surface</td><td class="token">--surface-overlay</td><td>#3E4049</td><td>Tooltips and dark overlays. Always paired with white type.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#DEDFE3"></span>Border (default)</td><td class="token">--border</td><td>#DEDFE3</td><td>Default 1px border on cards, inputs, tables, dividers.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#EFF1F2"></span>Border (soft)</td><td class="token">--border-soft</td><td>#EFF1F2</td><td>Internal dividers within a card; secondary separators.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#CBE0F1"></span>Panel stroke</td><td class="token">--border-panel</td><td>#CBE0F1</td><td>Outlines around panels and side rails. Cool, friendly.</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#39C9EA"></span>Focus ring</td><td class="token">--border-focus</td><td>#39C9EA</td><td>2px outline on focused inputs/buttons. WCAG-compliant.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+const scales = [
+  { name:'Gray',     role:'Neutral UI · surfaces, text, dividers',
+    hexes:['F9F9FA','EFF1F2','DEDFE3','CBCDD2','9FA2AB','71747D','52545D','3E4049','282A31','171820'] },
+  { name:'Blue',     role:'Utility CTA · primary buttons, links',
+    hexes:['FBFDFE','EFF5FB','CBE0F1','A3C8E6','72ABD9','3481C1','2E74AD','286495','22547D','183B58'] },
+  { name:'Cyan',     role:'Brand primary · focus, system signal',
+    hexes:['FAFEFF','D6F4FB','95E2F4','39C9EA','18BDE2','16ADCF','149EBD','128BA6','0F748A','0A5161'] },
+  { name:'Emerald',  role:'Success · positive states, ok',
+    hexes:['FBFEFE','E0FBF5','BCF6EA','8AEFDB','50E7CA','1DD7B2','1BC5A3','17AA8D','138B73','0E6352'] },
+  { name:'Plum',     role:'Accent · meta hints, complementary',
+    hexes:['FDFCFD','F7F2F6','F0E1ED','E8CAE1','DCADD2','BF78AE','AA6A9B','905C84','7F5075','633E5A'] },
+  { name:'Coral',    role:'Warning · destructive, errors',
+    hexes:['FEFCFB','FCF4F2','F8DFD8','F4C9BE','F0AA99','ED896F','E67357','DC5432','BC4324','81311D'] },
+  { name:'Pink',     role:'Notification · alerts, callouts',
+    hexes:['FEFBFB','FCEEEF','F7D4D8','F2B4BB','EFA4AD','EB8E99','E77481','E25566','C92E3F','9D1B2A'] },
+  { name:'Bronze',   role:'Certification · WELL Bronze tier',
+    hexes:['FEFDFB','FBF8F3','F8F1E8','F3E7D8','EEDEC9','E8D2B5','DCBA8E','D0A367','BB833A','845D29'] },
+  { name:'Silver',   role:'Certification · WELL Silver tier',
+    hexes:['FCFCFD','F6F7F8','EDF0F2','E2E5E9','D6DBE0','C8CED6','BCC4CD','A2ADB9','8190A1','5C6A7B'] },
+  { name:'Gold',     role:'Certification · WELL Gold tier',
+    hexes:['FEFDFB','FDFCF6','F9F5E1','F6EFD0','F2E8BB','EEE2AA','EADA94','E5D27B','CDAE28','917C1D'] },
+  { name:'Platinum', role:'Certification · WELL Platinum tier',
+    hexes:['FCFCFD','F7F7F8','ECECEE','E2E1E5','D2D1D6','C6C5CC','B4B3BC','9F9DA9','848291','5D5B67'] },
+  { name:'Beige',    role:'Warm neutral · backgrounds, paper',
+    hexes:['FDFCFC','FBFAF9','EFEAE6','E3DBD6','D3CAC4','C1B6AF','B4A9A1','A79A92','8E837B','716962'] },
+];
+const scalesMount = document.getElementById('scales-mount');
+function lum(h){const r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;const f=c=>c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4);return .2126*f(r)+.7152*f(g)+.0722*f(b);}
+scales.forEach((sc,i)=>{
+  const slug=sc.name.toLowerCase();
+  const html=`<div class="group">
+    <div class="meta"><div class="meta-l"><span class="title">${i+1}. ${sc.name}</span><span class="role">${sc.role}</span></div><code class="var">--${slug}-50 → --${slug}-900</code></div>
+    <div class="scale">${sc.hexes.map((h,j)=>{const step=j===0?50:j*100;const dark=lum(h)<.55;return `<div class="sw ${dark?'on-dark':'on-light'}" style="background:#${h}"><span class="step">${step}</span><span class="hex">#${h}</span></div>`}).join('')}</div>
+  </div>`;
+  scalesMount.insertAdjacentHTML('beforeend',html);
+});
+// pure b/w
+scalesMount.insertAdjacentHTML('beforeend',`<div class="group"><div class="meta"><div class="meta-l"><span class="title">13. Pure</span><span class="role">Generic anchors</span></div><code class="var">#000000, #FFFFFF</code></div><div class="scale" style="grid-template-columns:repeat(10,1fr)"><div class="sw on-dark" style="background:#000"><span class="step">Black</span><span class="hex">#000000</span></div><div class="sw on-light" style="background:#fff;border:1px solid #DEDFE3"><span class="step">White</span><span class="hex">#FFFFFF</span></div></div></div>`);
+
+const concepts = [
+  ['Mind','#0A5161','--concept-mind'],['Community','#0F748A','--concept-community'],
+  ['Movement','#149EBD','--concept-movement'],['Water','#39C9EA','--concept-water'],
+  ['Air','#87DFF2','--concept-air'],['Light','#8AEFDB','--concept-light'],
+  ['Thermal','#3EDDBF','--concept-thermal'],['Nourishment','#17AA8D','--concept-nourishment'],
+  ['Sound','#0C705C','--concept-sound'],['Materials','#0A4F41','--concept-materials'],
+  ['Innovation','#52545D','--concept-innovation'],
+];
+document.getElementById('concepts-mount').innerHTML = concepts.map(([n,h,v])=>`<div class="named"><div class="chip" style="background:${h}"><span class="label">${n}</span></div><div class="body"><div class="name">${n}</div><div class="var-s">${v}</div><div class="hex-s">${h}</div></div></div>`).join('');
+
+const ratings = [
+  ['Health & Safety','#72ABD9','--rating-health-safety'],
+  ['Performance','#0F748A','--rating-performance'],
+  ['Equity','#17AA8D','--rating-equity'],
+  ['Coworking','#9A608C','--rating-coworking'],
+];
+document.getElementById('ratings-mount').innerHTML = ratings.map(([n,h,v])=>`<div class="named"><div class="chip" style="background:${h}"><span class="label">${n}</span></div><div class="body"><div class="name">${n}</div><div class="var-s">${v}</div><div class="hex-s">${h}</div></div></div>`).join('');
+
+const certs = [
+  ['Bronze','#BB833A','--cert-bronze'],
+  ['Silver','#A2ADB9','--cert-silver'],
+  ['Gold','#CDAE28','--cert-gold'],
+  ['Platinum','#848291','--cert-platinum'],
+];
+document.getElementById('certs-mount').innerHTML = certs.map(([n,h,v])=>`<div class="named"><div class="chip" style="background:${h}"><span class="label">${n}</span></div><div class="body"><div class="name">${n}</div><div class="var-s">${v}</div><div class="hex-s">${h}</div></div></div>`).join('');
+</script>
+
+</body></html>

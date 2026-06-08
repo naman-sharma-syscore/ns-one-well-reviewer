@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tooltip / Popover</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>body{margin:0;padding:30px;background:var(--gray-50);width:700px;box-sizing:border-box;font-family:var(--font-body)}
+.row{display:flex;gap:20px;align-items:flex-start}
+.tt{position:relative;background:var(--gray-700);color:#fff;padding:6px 10px;font-size:12px;border-radius:6px;max-width:200px;line-height:1.4}
+.tt::after{content:"";position:absolute;bottom:-6px;left:18px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--gray-700)}
+.rich{background:var(--gray-700);color:#fff;padding:14px;border-radius:8px;width:280px}
+.rich h4{font:600 14px var(--font-body);margin:0 0 6px}
+.rich p{font-size:12px;color:var(--gray-300);margin:0 0 12px;line-height:1.5}
+.rich .a{display:flex;gap:8px}
+.rich button{height:28px;padding:0 12px;border:0;border-radius:9999px;font:600 12px var(--font-body);cursor:pointer}
+.rich .p1{background:var(--cyan-300);color:var(--gray-800)}
+.rich .p2{background:var(--gray-500);color:#fff}
+.dd{background:var(--gray-700);color:#fff;border-radius:8px;padding:6px;width:200px;box-shadow:var(--shadow-lg)}
+.dd .item{height:36px;padding:0 12px;display:flex;align-items:center;font-size:14px;border-radius:4px;justify-content:space-between}
+.dd .item:hover{background:var(--gray-800)}
+.dd .item.sel::after{content:"✓";color:#fff}
+</style></head><body>
+<div class="row">
+<div class="tt">Achievement requires three of the four criteria.</div>
+<div class="rich">
+<h4>Innovation strategy</h4>
+<p>Innovate beyond the standard set of WELL strategies for additional points.</p>
+<div class="a"><button class="p1">Learn more</button><button class="p2">Dismiss</button></div>
+</div>
+<div class="dd">
+<div class="item">All concepts</div>
+<div class="item sel">Air</div>
+<div class="item">Water</div>
+<div class="item">Light</div>
+</div>
+</div>
+</body></html>

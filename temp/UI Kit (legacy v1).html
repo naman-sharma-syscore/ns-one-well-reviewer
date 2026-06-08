@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One WELL — UI Kit</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--background)}
+  .page{max-width:1280px;margin:0 auto;padding:48px 40px 80px}
+  header.kit{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:48px}
+  header.kit .meta{font-size:13px;color:var(--gray-500)}
+  .eyebrow{font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--cyan-800);margin-bottom:8px}
+  section{margin-bottom:64px}
+  section > h2{margin:0 0 6px;font-family:var(--font-display);font-size:30px;font-weight:400;color:var(--gray-800);letter-spacing:-.005em}
+  section > .desc{font-size:14px;color:var(--gray-500);margin:0 0 24px;max-width:640px;line-height:1.55}
+  .anchor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+  .anchor-grid a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--gray-800);font-size:13px;font-weight:600}
+  .anchor-grid a span{font-size:11px;color:var(--gray-500);font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+  .anchor-grid a:hover{border-color:var(--cyan-300);text-decoration:none}
+
+  /* ---- product contextual demos ---- */
+  .demo{border:1px solid var(--border);border-radius:12px;background:#fff;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .demo .demo-h{padding:10px 16px;border-bottom:1px solid var(--border-soft);font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500);background:var(--gray-50);display:flex;justify-content:space-between;align-items:center}
+  .demo .demo-h .tag{color:var(--cyan-800);font-weight:600}
+
+  /* ---- topbar ---- */
+  .topbar{display:flex;align-items:center;height:64px;padding:0 24px;background:#fff;border-bottom:1px solid var(--border)}
+  .topbar .logo{font-family:var(--font-display);font-size:22px;color:var(--gray-800);letter-spacing:.02em;margin-right:32px}
+  .topbar nav{display:flex;gap:4px;flex:1}
+  .topbar nav a{padding:10px 14px;border-radius:6px;font:500 14px var(--font-body);color:var(--gray-600)}
+  .topbar nav a.active{background:var(--cyan-50);color:var(--cyan-800);font-weight:600}
+  .topbar .right{display:flex;gap:12px;align-items:center}
+  .avatar{width:36px;height:36px;border-radius:9999px;background:linear-gradient(135deg,#39C9EA,#2E74AD);display:flex;align-items:center;justify-content:center;color:#fff;font:600 13px var(--font-body)}
+
+  /* ---- 3-col app shell ---- */
+  .shell{display:grid;grid-template-columns:240px 1fr 280px;min-height:520px}
+  .shell .side{background:var(--cyan-50);border-right:1px solid var(--border-panel);padding:20px 16px}
+  .shell .main{padding:24px;background:#fff}
+  .shell .right{background:var(--cyan-50);border-left:1px solid var(--border-panel);padding:20px 16px}
+  .nav-section{font:600 11px/1 var(--font-body);letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);margin:0 0 12px}
+  .nav-list{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+  .nav-list a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;font:500 14px var(--font-body);color:var(--gray-700)}
+  .nav-list a.active{color:var(--cyan-700);font-weight:600;background:#fff;border-left:2px solid var(--cyan-700);padding-left:8px}
+  .nav-list a .dot{width:8px;height:8px;border-radius:9999px;background:var(--gray-300)}
+  .nav-list a.active .dot{background:var(--cyan-700)}
+  .nav-list a .count{margin-left:auto;font-size:12px;color:var(--gray-500);font-weight:500}
+
+  /* ---- data viz: progress rings ---- */
+  .ring-row{display:flex;gap:16px;margin:16px 0 24px;flex-wrap:wrap}
+  .ring{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px;border:1px solid var(--border);border-radius:10px;flex:1;min-width:120px;background:#fff}
+  .ring svg{width:72px;height:72px}
+  .ring .v{font-family:var(--font-display);font-size:20px;color:var(--gray-800)}
+  .ring .l{font-size:11px;color:var(--gray-500);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+  /* ---- score bar ---- */
+  .score-bar{height:10px;background:var(--gray-100);border-radius:9999px;overflow:hidden;display:flex}
+  .score-bar .seg{height:100%}
+
+  /* ---- buttons reused ---- */
+  .btn{font-family:var(--font-body);font-weight:600;border:0;cursor:pointer;border-radius:9999px;padding:0 20px;height:40px;font-size:14px;transition:.15s;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:var(--gradient-cta-cyan);color:#fff}
+  .btn-dark{background:var(--cyan-800);color:#fff}
+  .btn-light{background:#fff;border:1px solid var(--gray-200);color:var(--cyan-800)}
+  .btn-utility{background:var(--blue-600);color:#fff;height:32px;padding:0 14px;font-size:13px}
+  .btn-tertiary{background:#fff;border:1px solid var(--gray-200);color:var(--gray-600);height:32px;padding:0 14px;font-size:13px}
+  .btn-destructive{background:var(--coral-700);color:#fff;height:32px;padding:0 14px;font-size:13px}
+
+  /* ---- chips/tags ---- */
+  .chip{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:9999px;font:600 11px var(--font-body);text-transform:uppercase;letter-spacing:.04em;gap:6px}
+  .chip-todo{background:var(--gray-100);color:var(--gray-600)}
+  .chip-low{background:var(--cyan-100);color:var(--cyan-600)}
+  .chip-med{background:var(--plum-100);color:var(--plum-600)}
+  .chip-high{background:var(--coral-100);color:var(--coral-600)}
+  .chip-done{background:var(--emerald-100);color:var(--emerald-600)}
+  .chip-dot{width:6px;height:6px;border-radius:9999px;background:currentColor}
+
+  /* ---- input ---- */
+  .input{height:40px;padding:0 12px;border:1px solid var(--border);border-radius:8px;font:14px var(--font-body);color:var(--gray-800);background:#fff;outline:none;width:100%}
+  .input:focus{border:2px solid var(--cyan-300);padding:0 11px;box-shadow:0 0 0 2px rgba(57,201,234,.2)}
+
+  /* ---- card grid ---- */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
+  .card .icon{width:36px;height:36px;border-radius:9999px;background:var(--cyan-100);display:flex;align-items:center;justify-content:center;color:var(--cyan-700)}
+  .card .h{font-family:var(--font-display);font-size:18px;color:var(--gray-800)}
+  .card .b{font-size:13px;color:var(--gray-700);line-height:1.5}
+  .card .f{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px;border-top:1px solid var(--border-soft)}
+
+  /* ---- modal ---- */
+  .modal-shell{background:rgba(40,42,49,.4);padding:48px;display:flex;align-items:center;justify-content:center}
+  .modal{background:#fff;border-radius:24px;padding:32px;width:480px;box-shadow:var(--shadow-xl)}
+  .modal h3{margin:0 0 6px;font:400 22px var(--font-display);color:var(--gray-800)}
+  .modal p{margin:0 0 20px;color:var(--gray-700);font-size:14px;line-height:1.55}
+  .modal .actions{display:flex;justify-content:flex-end;gap:8px}
+
+  /* ---- table ---- */
+  .tbl{width:100%;border-collapse:separate;border-spacing:0}
+  .tbl th{background:var(--cyan-50);font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+  .tbl td{font-size:13px;color:var(--gray-800);padding:12px 16px;border-bottom:1px solid var(--border-soft)}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl tr:hover td{background:var(--gray-50)}
+
+  /* ---- alert ---- */
+  .alert{display:flex;gap:12px;padding:14px 16px;border-radius:8px;font-size:13px;align-items:flex-start}
+  .alert .ico{width:20px;height:20px;flex-shrink:0;border-radius:9999px;display:flex;align-items:center;justify-content:center;color:#fff;font:700 13px var(--font-body)}
+  .alert-info{background:var(--cyan-50);border:1px solid var(--cyan-200);color:var(--cyan-900)}
+  .alert-info .ico{background:var(--cyan-700)}
+  .alert-success{background:var(--emerald-100);border:1px solid var(--emerald-300);color:var(--emerald-900)}
+  .alert-success .ico{background:var(--emerald-700)}
+  .alert-warning{background:#FDF7E1;border:1px solid var(--gold-500);color:#7A5C12}
+  .alert-warning .ico{background:#B89322}
+  .alert-error{background:var(--coral-100);border:1px solid var(--coral-300);color:var(--coral-900)}
+  .alert-error .ico{background:var(--coral-700)}
+
+  /* ---- breadcrumbs/tabs ---- */
+  .crumbs{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray-500);margin-bottom:12px}
+  .crumbs .sep{color:var(--gray-300)}
+  .crumbs a{color:var(--gray-500)}
+  .crumbs .now{color:var(--gray-800);font-weight:600}
+
+  .tab-row{display:flex;gap:8px;border-bottom:1px solid var(--border);margin-bottom:20px}
+  .tab-row .tab{padding:12px 4px;font:600 14px var(--font-body);color:var(--gray-500);border-bottom:2px solid transparent;margin-right:18px;cursor:pointer}
+  .tab-row .tab.active{color:var(--cyan-700);border-bottom-color:var(--cyan-700)}
+
+  /* ---- side rail concept icons ---- */
+  .concept-rail{display:flex;flex-direction:column;gap:8px;align-items:center;padding:14px 8px;background:#fff;border:1px solid var(--border);border-radius:9999px}
+  .c-ico{width:36px;height:36px;border-radius:9999px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .c-ico.active{outline:3px solid var(--cyan-300);outline-offset:1px}
+
+  /* ---- chip filter row ---- */
+  .filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  .filter-row .filter{height:32px;padding:0 12px;border-radius:6px;font:500 13px var(--font-body);background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .filter-row .filter.active{background:#fff;border:1px solid var(--cyan-300);color:var(--gray-800)}
+
+  /* hero certificate */
+  .cert-hero{background:var(--gradient-soft);padding:28px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800)}
+  .cert-hero .eyebrow{color:var(--cyan-900)}
+  .cert-hero h1{margin:0;font:400 30px var(--font-display)}
+  .cert-hero .lvl{font:400 42px var(--font-display);letter-spacing:-.01em}
+
+  /* footer */
+  footer.kit{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--gray-500);display:flex;justify-content:space-between}
+
+  /* utilities */
+  .row-gap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .stack{display:flex;flex-direction:column;gap:12px}
+  .panel{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px}
+  .label-strong{font:600 12px var(--font-body);color:var(--gray-600);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<header class="kit">
+  <div>
+    <div class="eyebrow">IWBI · Design System v1</div>
+    <h1 class="display" style="margin:0">One WELL — UI Kit</h1>
+    <p style="margin:6px 0 0;color:var(--gray-600);max-width:640px;font-size:15px">A reference for the One WELL platform: tokens, typography, components, and a few real product contexts so the system can be picked up and applied immediately.</p>
+  </div>
+  <div class="meta" style="text-align:right">
+    <div>v1.0 · Apr 2026</div>
+    <div>FT Made + Mazzard Soft M</div>
+  </div>
+</header>
+
+<!-- TOC -->
+<section>
+  <div class="eyebrow">Contents</div>
+  <h2>Where to find what</h2>
+  <p class="desc">Token cards live in the Design System tab. This page focuses on components in real product contexts.</p>
+  <div class="anchor-grid">
+    <a href="#foundations"><span>01</span>Foundations</a>
+    <a href="#buttons"><span>02</span>Buttons & Actions</a>
+    <a href="#forms"><span>03</span>Forms & Inputs</a>
+    <a href="#tags"><span>04</span>Tags, Status, Concepts</a>
+    <a href="#nav"><span>05</span>Navigation Shell</a>
+    <a href="#data"><span>06</span>Data Display</a>
+    <a href="#feedback"><span>07</span>Feedback & Alerts</a>
+    <a href="#patterns"><span>08</span>Real Product Patterns</a>
+    <a href="#brand"><span>09</span>Brand & Media</a>
+    <a href="#icons"><span>10</span>Utility Icons</a>
+  </div>
+</section>
+
+<!-- 01 FOUNDATIONS -->
+<section id="foundations">
+  <div class="eyebrow">01 — Foundations</div>
+  <h2>Type, color, surface</h2>
+  <p class="desc">FT Made (display) is reserved for serene, editorial moments — page titles, hero numbers, certifications. Mazzard Soft M (body) carries everything else. Cyan is the system's signal: focus, primary CTA gradient, active state. Blue is utilitarian — buttons, links, panel strokes. Concept colors are <em>only</em> for content tagging.</p>
+
+  <div class="card-grid" style="grid-template-columns:1fr 1fr">
+    <div class="panel">
+      <div class="eyebrow">Display sample</div>
+      <div class="display" style="margin:12px 0 4px">Health is a design decision.</div>
+      <div class="body" style="color:var(--gray-700);max-width:440px">FT Made 42px / 400 paired with Mazzard Soft M 16px / 400 in body. Display sets a calm, editorial tone; body keeps interfaces approachable.</div>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Surface stack</div>
+      <div style="background:var(--background);padding:16px;border-radius:10px;border:1px solid var(--border)">
+        <div style="background:#fff;padding:14px;border:1px solid var(--border);border-radius:8px">
+          <div class="meta-utility" style="margin-bottom:6px">surface — primary content</div>
+          <div style="background:var(--cyan-50);padding:10px;border:1px solid var(--border-panel);border-radius:6px;font-size:13px;color:var(--gray-700)">surface-side — nav & rails</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 BUTTONS -->
+<section id="buttons">
+  <div class="eyebrow">02 — Buttons & Actions</div>
+  <h2>CTAs and utility actions</h2>
+  <p class="desc">Pill-shaped CTAs at 64px (XL) or 48px (LG) for hero moments. Utility buttons are 32px and rectangular. The cyan gradient is the brand "yes" — use it sparingly, once per view.</p>
+  <div class="panel">
+    <div class="label-strong">Primary CTAs</div>
+    <div class="row-gap" style="margin-bottom:24px">
+      <button class="btn btn-primary" style="height:48px;padding:0 28px;font-size:16px">Start your project</button>
+      <button class="btn btn-dark" style="height:48px;padding:0 28px;font-size:16px">Get certified</button>
+      <button class="btn btn-light" style="height:48px;padding:0 28px;font-size:16px">Learn more</button>
+    </div>
+    <div class="label-strong">Utility actions</div>
+    <div class="row-gap">
+      <button class="btn btn-utility">Save changes</button>
+      <button class="btn btn-tertiary">Cancel</button>
+      <button class="btn btn-destructive">Delete project</button>
+      <button class="btn btn-tertiary" style="border-color:var(--coral-300);color:var(--coral-700)">Discard</button>
+    </div>
+  </div>
+</section>
+
+<!-- 03 FORMS -->
+<section id="forms">
+  <div class="eyebrow">03 — Forms & Inputs</div>
+  <h2>Capturing project info</h2>
+  <p class="desc">Inputs sit on white with a subtle gray-200 border; focus brightens to a 2px cyan-300 ring. Labels are gray-600, 12px, sentence case.</p>
+  <div class="card-grid" style="grid-template-columns:1fr 1fr">
+    <div class="panel">
+      <form>
+        <div style="margin-bottom:14px"><div class="label-strong" style="text-transform:none;font-size:12px">Project name</div><input class="input" value="Madison Avenue Tower" /></div>
+        <div style="margin-bottom:14px"><div class="label-strong" style="text-transform:none;font-size:12px">Asset type</div>
+          <div style="position:relative"><input class="input" value="Office (Multi-tenant)" readonly><svg style="position:absolute;right:12px;top:50%;transform:translateY(-50%)" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="m4 6 4 4 4-4" stroke="#9FA2AB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div style="margin-bottom:14px"><div class="label-strong" style="text-transform:none;font-size:12px">Square footage</div><input class="input" placeholder="e.g. 250,000"></div>
+        <div style="display:flex;gap:6px;margin-top:18px"><button type="button" class="btn btn-utility">Continue</button><button type="button" class="btn btn-tertiary">Save draft</button></div>
+      </form>
+    </div>
+    <div class="panel">
+      <div class="label-strong">Selection patterns</div>
+      <div class="stack">
+        <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray-800)">
+          <span style="width:20px;height:20px;border-radius:4px;background:var(--cyan-700);display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="m2 6 3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Pursue WELL Certification
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray-800)">
+          <span style="width:20px;height:20px;border-radius:4px;border:1px solid var(--border);background:#fff"></span>
+          Pursue Health-Safety Rating
+        </label>
+        <div style="height:8px"></div>
+        <div class="label-strong">Rating level</div>
+        <div style="display:inline-flex;border:1px solid var(--border-soft);border-radius:9999px;padding:3px;background:#fff">
+          <button class="btn" style="background:transparent;color:var(--gray-600);height:30px;padding:0 14px;font-size:13px">Bronze</button>
+          <button class="btn" style="background:var(--cyan-700);color:#fff;height:30px;padding:0 14px;font-size:13px">Silver</button>
+          <button class="btn" style="background:transparent;color:var(--gray-600);height:30px;padding:0 14px;font-size:13px">Gold</button>
+          <button class="btn" style="background:transparent;color:var(--gray-600);height:30px;padding:0 14px;font-size:13px">Platinum</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 TAGS -->
+<section id="tags">
+  <div class="eyebrow">04 — Tags, Status, Concepts</div>
+  <h2>The signal layer</h2>
+  <p class="desc">Status pills carry priority and progress. Concept tags stay intentionally distinct from status to prevent visual overload — they identify <em>what</em> a strategy belongs to, never <em>how</em> it's progressing.</p>
+
+  <div class="panel">
+    <div class="label-strong">Status pipeline</div>
+    <div class="row-gap" style="margin-bottom:24px">
+      <span class="chip chip-todo"><span class="chip-dot"></span>To-do</span>
+      <svg width="16" height="8"><path d="M0 4 H14 M10 1 L14 4 L10 7" stroke="#CBCDD2" stroke-width="1.5" fill="none"/></svg>
+      <span class="chip chip-low"><span class="chip-dot"></span>Low priority</span>
+      <svg width="16" height="8"><path d="M0 4 H14 M10 1 L14 4 L10 7" stroke="#CBCDD2" stroke-width="1.5" fill="none"/></svg>
+      <span class="chip chip-med"><span class="chip-dot"></span>Medium</span>
+      <svg width="16" height="8"><path d="M0 4 H14 M10 1 L14 4 L10 7" stroke="#CBCDD2" stroke-width="1.5" fill="none"/></svg>
+      <span class="chip chip-high"><span class="chip-dot"></span>High</span>
+      <svg width="16" height="8"><path d="M0 4 H14 M10 1 L14 4 L10 7" stroke="#CBCDD2" stroke-width="1.5" fill="none"/></svg>
+      <span class="chip chip-done"><span class="chip-dot"></span>Done</span>
+    </div>
+
+    <div class="label-strong">11 WELL Concepts</div>
+    <div class="row-gap" style="margin-bottom:20px">
+      <span class="chip" style="background:#87DFF2;color:var(--gray-800)">Air</span>
+      <span class="chip" style="background:#39C9EA;color:var(--gray-800)">Water</span>
+      <span class="chip" style="background:#17AA8D;color:#fff">Nourishment</span>
+      <span class="chip" style="background:#8AEFDB;color:var(--gray-800)">Light</span>
+      <span class="chip" style="background:#149EBD;color:#fff">Movement</span>
+      <span class="chip" style="background:#3EDDBF;color:var(--gray-800)">Thermal</span>
+      <span class="chip" style="background:#0C705C;color:#fff">Sound</span>
+      <span class="chip" style="background:#0A4F41;color:#fff">Materials</span>
+      <span class="chip" style="background:#0F748A;color:#fff">Community</span>
+      <span class="chip" style="background:#0A5161;color:#fff">Mind</span>
+      <span class="chip" style="background:#52545D;color:#fff">Innovation</span>
+    </div>
+
+    <div class="label-strong">Filter row (general purpose)</div>
+    <div class="filter-row">
+      <span class="filter active">All concepts</span>
+      <span class="filter">Pursued</span>
+      <span class="filter">Achieved</span>
+      <span class="filter">Outstanding</span>
+      <span class="filter" style="background:transparent;color:var(--gray-500)">+ Add filter</span>
+    </div>
+  </div>
+</section>
+
+<!-- 05 NAV -->
+<section id="nav">
+  <div class="eyebrow">05 — Navigation Shell</div>
+  <h2>The three-column workspace</h2>
+  <p class="desc">The product's main canvas: cyan-50 rails on either side, white in the middle. Active items pull a 2px cyan-700 left border; the rail also wears a 1px blue-200 outer stroke.</p>
+
+  <div class="demo">
+    <div class="demo-h"><span>Project workspace</span><span class="tag">/projects/madison-ave/concepts</span></div>
+    <div class="topbar">
+      <div class="logo">One WELL</div>
+      <nav>
+        <a href="#" class="active">Projects</a>
+        <a href="#">Library</a>
+        <a href="#">Reports</a>
+        <a href="#">Resources</a>
+      </nav>
+      <div class="right">
+        <button class="btn btn-tertiary">Help</button>
+        <div class="avatar">JL</div>
+      </div>
+    </div>
+    <div class="shell">
+      <aside class="side">
+        <div class="nav-section">Concepts</div>
+        <div class="nav-list">
+          <a href="#"><span class="dot" style="background:#87DFF2"></span>Air<span class="count">3 / 12</span></a>
+          <a href="#" class="active"><span class="dot" style="background:#39C9EA"></span>Water<span class="count">5 / 8</span></a>
+          <a href="#"><span class="dot" style="background:#17AA8D"></span>Nourishment<span class="count">2 / 14</span></a>
+          <a href="#"><span class="dot" style="background:#8AEFDB"></span>Light<span class="count">0 / 9</span></a>
+          <a href="#"><span class="dot" style="background:#149EBD"></span>Movement<span class="count">1 / 11</span></a>
+          <a href="#"><span class="dot" style="background:#3EDDBF"></span>Thermal<span class="count">0 / 7</span></a>
+        </div>
+        <div class="nav-section">Project</div>
+        <div class="nav-list">
+          <a href="#">Overview</a>
+          <a href="#">Documents</a>
+          <a href="#">Team</a>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="crumbs"><a href="#">Projects</a><span class="sep">/</span><a href="#">Madison Avenue Tower</a><span class="sep">/</span><span class="now">Water</span></div>
+        <h1 class="page-title" style="margin:0 0 6px">Water</h1>
+        <p class="body" style="color:var(--gray-600);margin:0 0 18px">Strategies that ensure water quality, accessibility, and management throughout the building.</p>
+        <div class="tab-row">
+          <span class="tab active">Strategies</span>
+          <span class="tab">Documentation</span>
+          <span class="tab">Audit log</span>
+        </div>
+        <div class="stack">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--border);border-radius:8px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:600 14px var(--font-body);color:var(--gray-800)">W1.1 — Fundamental Water Quality</span><span class="chip chip-done">Done</span></div>
+              <div class="meta-utility" style="margin-top:4px">Verified Mar 12, 2026 · 2 of 2 points</div>
+            </div>
+            <button class="btn btn-tertiary">View</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--border);border-radius:8px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:600 14px var(--font-body);color:var(--gray-800)">W1.2 — Water Quality Indicators</span><span class="chip chip-high">High</span></div>
+              <div class="meta-utility" style="margin-top:4px">Documentation needed · 3 points available</div>
+            </div>
+            <button class="btn btn-utility">Continue</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:2px solid var(--cyan-300);border-radius:8px;background:#fff">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:600 14px var(--font-body);color:var(--gray-800)">W2.1 — Drinking Water Promotion</span><span class="chip chip-med">Medium</span></div>
+              <div class="meta-utility" style="margin-top:4px">In review · awaiting signoff from Mark T.</div>
+            </div>
+            <button class="btn btn-utility">Resume</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--border);border-radius:8px">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:600 14px var(--font-body);color:var(--gray-800)">W3.1 — Basic Water Management</span><span class="chip chip-todo">To-do</span></div>
+              <div class="meta-utility" style="margin-top:4px">Not started</div>
+            </div>
+            <button class="btn btn-tertiary">Begin</button>
+          </div>
+        </div>
+      </main>
+      <aside class="right">
+        <div class="nav-section">Project score</div>
+        <div style="background:#fff;padding:16px;border-radius:10px;border:1px solid var(--border)">
+          <div style="display:flex;align-items:baseline;justify-content:space-between"><span class="page-title" style="font-size:30px">62</span><span class="meta-utility">/ 110 points</span></div>
+          <div class="score-bar" style="margin:10px 0 6px">
+            <div class="seg" style="width:40%;background:var(--emerald-500)"></div>
+            <div class="seg" style="width:18%;background:var(--cyan-500)"></div>
+            <div class="seg" style="width:6%;background:var(--plum-500)"></div>
+          </div>
+          <div class="meta-utility">Tracking toward Silver</div>
+        </div>
+        <div style="height:14px"></div>
+        <div class="nav-section">Activity</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.55">
+          <div style="padding:8px 0;border-bottom:1px solid var(--border-soft)"><b>Mark T.</b> uploaded W2.1 docs<div class="meta-utility">2h ago</div></div>
+          <div style="padding:8px 0;border-bottom:1px solid var(--border-soft)"><b>You</b> completed W1.1<div class="meta-utility">Yesterday</div></div>
+          <div style="padding:8px 0"><b>Sara K.</b> commented on A1.2<div class="meta-utility">Mon</div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 06 DATA -->
+<section id="data">
+  <div class="eyebrow">06 — Data Display</div>
+  <h2>Showing the work</h2>
+  <p class="desc">Tables for strategy lists. Rings for completion. Bars for distribution. The performance gradient (emerald → cyan → plum → coral) is reserved for portfolio-level rating views.</p>
+
+  <div class="ring-row">
+    <div class="ring">
+      <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--gray-100)" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="var(--emerald-500)" stroke-width="4" stroke-dasharray="94.2" stroke-dashoffset="28" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
+      <div class="v">70%</div><div class="l">Air</div>
+    </div>
+    <div class="ring">
+      <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--gray-100)" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="var(--cyan-500)" stroke-width="4" stroke-dasharray="94.2" stroke-dashoffset="55" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
+      <div class="v">42%</div><div class="l">Water</div>
+    </div>
+    <div class="ring">
+      <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--gray-100)" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="var(--plum-500)" stroke-width="4" stroke-dasharray="94.2" stroke-dashoffset="76" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
+      <div class="v">19%</div><div class="l">Nourishment</div>
+    </div>
+    <div class="ring">
+      <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--gray-100)" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="var(--coral-500)" stroke-width="4" stroke-dasharray="94.2" stroke-dashoffset="9" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg>
+      <div class="v">90%</div><div class="l">Light</div>
+    </div>
+  </div>
+
+  <div class="panel" style="padding:0;overflow:hidden">
+    <table class="tbl">
+      <thead><tr><th>Strategy</th><th>Concept</th><th>Owner</th><th>Status</th><th style="text-align:right">Points</th></tr></thead>
+      <tbody>
+        <tr><td><b>A1.1</b> Particulate Matter Filtration</td><td><span class="chip" style="background:#87DFF2;color:var(--gray-800)">Air</span></td><td>Mark T.</td><td><span class="chip chip-done">Done</span></td><td style="text-align:right">3</td></tr>
+        <tr><td><b>W1.2</b> Water Quality Indicators</td><td><span class="chip" style="background:#39C9EA;color:var(--gray-800)">Water</span></td><td>Sara K.</td><td><span class="chip chip-high">High</span></td><td style="text-align:right">2</td></tr>
+        <tr><td><b>N4.1</b> Mindful Eating</td><td><span class="chip" style="background:#17AA8D;color:#fff">Nourishment</span></td><td>—</td><td><span class="chip chip-med">Medium</span></td><td style="text-align:right">1</td></tr>
+        <tr><td><b>L3.2</b> Circadian Lighting Design</td><td><span class="chip" style="background:#8AEFDB;color:var(--gray-800)">Light</span></td><td>Jules L.</td><td><span class="chip chip-todo">To-do</span></td><td style="text-align:right">—</td></tr>
+        <tr><td><b>M2.1</b> Active Furnishings</td><td><span class="chip" style="background:#149EBD;color:#fff">Movement</span></td><td>Sara K.</td><td><span class="chip chip-low">Low</span></td><td style="text-align:right">2</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 07 FEEDBACK -->
+<section id="feedback">
+  <div class="eyebrow">07 — Feedback & Alerts</div>
+  <h2>System voice</h2>
+  <p class="desc">Calm, factual, and never alarmist. Even errors are written as next-step directives rather than failure language.</p>
+
+  <div class="stack">
+    <div class="alert alert-info"><span class="ico">i</span><div><b>Audit window opens June 1.</b> You can continue editing strategies until 11:59 PM ET on May 31.</div></div>
+    <div class="alert alert-success"><span class="ico">✓</span><div><b>W1.1 verified.</b> 2 of 2 points awarded toward your Silver target.</div></div>
+    <div class="alert alert-warning"><span class="ico">!</span><div><b>3 strategies need documentation.</b> Upload supporting docs by April 30 to keep your Silver projection on track.</div></div>
+    <div class="alert alert-error"><span class="ico">×</span><div><b>Reviewer rejected the W2.1 submission.</b> See the inline notes in the audit log to address before resubmitting.</div></div>
+  </div>
+</section>
+
+<!-- 08 PATTERNS -->
+<section id="patterns">
+  <div class="eyebrow">08 — Real Product Patterns</div>
+  <h2>Putting it together</h2>
+  <p class="desc">Three contextual moments: the certification hero, a detail card grid, and a confirmation modal. These show how the parts compose under the system's editorial restraint.</p>
+
+  <div class="cert-hero" style="margin-bottom:24px">
+    <div>
+      <div class="eyebrow">Madison Avenue Tower</div>
+      <h1>WELL Certification — projected</h1>
+      <div class="meta-utility" style="color:var(--gray-700);margin-top:6px">62 / 110 points · audit window opens Jun 1</div>
+    </div>
+    <div style="text-align:right">
+      <div class="lvl">Silver</div>
+      <div class="meta-utility" style="color:var(--gray-700)">8 points to Gold</div>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-bottom:24px">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between"><span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 14a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3H3v-3Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="chip chip-done">Done</span></div>
+      <div class="h">Project team</div>
+      <div class="b">5 collaborators across 3 disciplines, with WELL AP credentials assigned to Air, Water, and Mind concepts.</div>
+      <div class="f"><span class="meta-utility">Last edit · 2h ago</span><a class="link">Manage →</a></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between"><span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v4H4zM4 12h12v4H4z" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="chip chip-high">High</span></div>
+      <div class="h">Documentation</div>
+      <div class="b">Outstanding files for W1.2, A2.1, and N4.1. Drag-and-drop or connect SharePoint.</div>
+      <div class="f"><span class="meta-utility">3 strategies pending</span><a class="link">Upload →</a></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between"><span class="icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 16V8m4 8V4m4 12v-6m4 6V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="chip chip-med">Medium</span></div>
+      <div class="h">Performance reports</div>
+      <div class="b">Quarterly air, water, and acoustics readings on a rolling 90-day window.</div>
+      <div class="f"><span class="meta-utility">Next sync · Apr 30</span><a class="link">Open →</a></div>
+    </div>
+  </div>
+
+  <div class="modal-shell" style="border-radius:12px">
+    <div class="modal">
+      <h3>Submit Madison Ave for review?</h3>
+      <p>Once submitted, strategies will lock for editing until the assigned WELL reviewer completes their pass — typically 5–7 business days. You can still upload supporting documentation.</p>
+      <div class="actions">
+        <button class="btn btn-tertiary">Cancel</button>
+        <button class="btn btn-utility">Submit for review</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 BRAND & MEDIA -->
+<section id="brand">
+  <div class="eyebrow">09 — Brand & Media</div>
+  <h2>Seals, badges, marks</h2>
+  <p class="desc">The seal family is the visible pay-off of certification: never re-draw or recolor. Use the certification seal at final award; rating seals for single-topic achievements; provider badges in directories and signatures.</p>
+
+  <div class="card-grid" style="grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px">
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationBronze.svg" style="height:96px">
+      <div class="meta-utility">Bronze · 40–49 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationSilver.svg" style="height:96px">
+      <div class="meta-utility">Silver · 50–59 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationGold.svg" style="height:96px">
+      <div class="meta-utility">Gold · 60–79 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationPlatinum.svg" style="height:96px">
+      <div class="meta-utility">Platinum · 80+ pts</div>
+    </div>
+  </div>
+
+  <div class="card-grid" style="grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px">
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px">
+      <img src="assets/seals/SealRatingEquity.svg" style="height:64px">
+      <div class="meta-utility" style="font-size:10px">Equity</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px">
+      <img src="assets/seals/SealRatingPerformance.svg" style="height:64px">
+      <div class="meta-utility" style="font-size:10px">Performance</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px">
+      <img src="assets/seals/SealRatingOperations.svg" style="height:64px">
+      <div class="meta-utility" style="font-size:10px">Operations</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px">
+      <img src="assets/seals/SealRatingHealthSafety.svg" style="height:64px">
+      <div class="meta-utility" style="font-size:10px">Health & Safety</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px">
+      <img src="assets/seals/SealRatingDesign.svg" style="height:64px">
+      <div class="meta-utility" style="font-size:10px">Design</div>
+    </div>
+  </div>
+
+  <div class="panel" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+    <img src="assets/seals/SealWell.svg" style="height:80px">
+    <img src="assets/seals/IWBILogo.svg" style="height:36px">
+    <img src="assets/seals/SealIwbiMember.svg" style="height:80px">
+    <img src="assets/seals/SealWorksWithWell.svg" style="height:80px">
+    <div style="flex:1;min-width:200px;font-size:13px;color:var(--gray-700);line-height:1.5">
+      Brand marks: WELL Seal, IWBI logotype, IWBI Member seal, Works With WELL.
+      <a href="preview/brand-media.html" style="color:var(--blue-600);font-weight:600;text-decoration:none">See the full Brand & Media catalog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10 UTILITY ICONS -->
+<section id="icons">
+  <div class="eyebrow">10 — Utility Icons</div>
+  <h2>The glyph layer</h2>
+  <p class="desc">30+ single-color glyphs at 24px native. They render flat and recolor via <code>currentColor</code>. Use them sparingly: every icon is a small cognitive load.</p>
+
+  <div class="panel" style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityHome.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Home</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityPortfolio.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Portfolio</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityScoring.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Scoring</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityClassification.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Classify</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilitySearch.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Search</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityEdit.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Edit</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilitySave.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Save</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityTrash.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Trash</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityCheck.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Check</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityClose.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Close</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityChevronDown.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Chevron</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityShow.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Show</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityCompare.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Compare</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityFeedback.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Feedback</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityMessage.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Message</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityOptions.svg" style="width:22px;height:22px"><div class="meta-utility" style="font-size:10px">Options</div></div>
+  </div>
+  <p style="margin-top:14px"><a href="preview/utility-icons.html" style="color:var(--blue-600);font-weight:600;text-decoration:none">See all 30+ icons in the Utility Icons preview →</a></p>
+</section>
+
+<footer class="kit">
+  <div>One WELL Design System · IWBI · 2026</div>
+  <div>FT Made + Mazzard Soft M · v1.0</div>
+</footer>
+
+</div>
+</body>
+</html>

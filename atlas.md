@@ -25,14 +25,21 @@ This repo is scoped entirely to the Reviewer app. The sibling apps (Standards, P
 | `nexus.md` | Operating model and rules | Before making structural decisions |
 | `vault/` | Raw source material | Importing specs, references, or research |
 | `codex/` | Distilled knowledge | Looking up decisions or domain understanding |
+| `codex/design-system/` | Full OneWELL design system reference | Before building any prototype or UI |
+| `codex/design-system/overview.md` | Design system principles, anti-patterns, voice | First read before any design work |
+| `codex/design-system/tokens.md` | All CSS variables — colors, type, spacing, shadows | Referencing specific token values |
+| `codex/design-system/components.md` | All `.ow-*` component classes and specs | Building UI components |
+| `codex/design-system/brand-assets.md` | Seals, badges, icons catalog | Using brand marks or icons |
+| `codex/design-system/layout.md` | Grid, spacing, accessibility minimums | Structuring page layouts |
 | `forge/` | Reusable workflows and playbooks | Executing repeatable procedures |
 
 ## Recommended reading order
 
 1. `nexus.md` — understand the rules and operating model
 2. `atlas.md` — confirm the map (this file)
-3. `codex/` — domain knowledge and decisions accumulated over time
-4. `forge/` — playbooks for recurring tasks
+3. `codex/design-system/overview.md` — before any prototype or UI work
+4. `codex/design-system/tokens.md` + `components.md` — during build
+5. `forge/` — playbooks for recurring tasks
 
 ## Working areas
 

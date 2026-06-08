@@ -29,9 +29,24 @@ This repository covers the **Reviewer app** only — the tooling and workflows t
 - Cross-app integration points (if any) should be documented in `codex/` as they are discovered.
 - No shared runtime dependency between apps is assumed at this time.
 
+## Design system
+
+The OneWELL Design System (v1.0, Apr 2026) is the visual and component reference for all OneWELL apps. It is in sync with the Figma design system.
+
+Distilled reference lives in `codex/design-system/` — read this before building any prototype or UI.
+
+Key facts for quick reference:
+- **CSS class prefix:** `.ow-*`
+- **Display font:** FT Made (weight 400 only) — page titles, hero numbers, editorial moments
+- **Body font:** Mazzard Soft M (weights 100–900) — everything else
+- **Primary brand color:** `--primary` = `--cyan-800` (#0F748A)
+- **Primary CTA:** `--gradient-cta-cyan` — one per view, max
+- **Token rule:** Always `var(--token)`, never hardcoded hex
+- **Brand marks:** Use verbatim from assets; never recolor or redraw
+
 ## Project-specific rules
 
-- Keep all folders flat. No nesting inside `vault/`, `codex/`, or `forge/`.
+- Keep all folders flat. No nesting inside `vault/`, `codex/`, or `forge/` — **with one approved exception: `codex/design-system/`** (approved by user, Jun 2026, to house the full OneWELL design system reference as a self-contained folder).
 - Every file created in `codex/` or `forge/` must begin with a short summary line.
 - Do not modify files outside the scope of the current task.
 - If a structural problem is found, document it in `vault/` and wait for human approval before acting.

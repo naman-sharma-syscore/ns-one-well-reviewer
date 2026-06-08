@@ -1,0 +1,159 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Utility Icons — Full Gallery</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+body{margin:0;padding:32px;background:#fff;width:1100px;box-sizing:border-box;font-family:var(--font-body);color:var(--gray-800)}
+h1{font-family:var(--font-heading);font-weight:500;font-size:26px;margin:0 0 4px;color:var(--gray-900);letter-spacing:-0.01em}
+.sub{font-size:13px;color:var(--gray-500);margin-bottom:24px;max-width:780px;line-height:1.5}
+
+.section{margin-bottom:32px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-200)}
+.section-title{font-family:var(--font-heading);font-weight:500;font-size:16px;color:var(--gray-900);margin:0}
+.section-meta{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.icon-cell{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;padding:14px 8px;
+  background:#fff;
+  border:1px solid var(--gray-200);
+  border-radius:8px;
+  min-height:104px;
+  transition:background-color .12s ease, border-color .12s ease;
+}
+.icon-cell:hover{background:var(--cyan-50);border-color:var(--cyan-300)}
+.icon-cell .glyph{
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray-700);
+}
+.icon-cell .glyph img{width:24px;height:24px;display:block}
+.icon-cell .name{
+  font-size:10px;color:var(--gray-600);font-family:ui-monospace,monospace;
+  text-align:center;line-height:1.3;
+  word-break:break-all;
+}
+
+.usage-row{display:flex;gap:24px;align-items:center;padding:18px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;flex-wrap:wrap}
+.usage-row .ex{display:flex;flex-direction:column;align-items:center;gap:6px}
+.usage-row .ex .meta{font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace}
+
+.btn-prev{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px 1px;border-radius:6px;background:var(--gray-100);color:var(--gray-800);font-size:13px;font-weight:500;border:none;cursor:pointer;line-height:1}
+.btn-prev:hover{background:var(--gray-200)}
+.btn-prev img{width:14px;height:14px}
+
+</style></head><body>
+
+<h1>Utility Icons</h1>
+<div class="sub">Single-color glyphs at 24×24px native, lifted directly from <code>assets/icons/Utility*.tsx</code>. All render at <code>currentColor</code>; size with <code>width</code>/<code>height</code> on the <code>&lt;img&gt;</code> or inline-flexed parent.</div>
+
+<!-- ===== Navigation ===== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Navigation & wayfinding</h2>
+    <span class="section-meta">global nav · breadcrumbs · sidebar</span>
+  </div>
+  <div class="grid">
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityHome.svg"></div><div class="name">UtilityHome</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityPortfolio.svg"></div><div class="name">UtilityPortfolio</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityScopeLarge.svg"></div><div class="name">UtilityScopeLarge</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityClassification.svg"></div><div class="name">UtilityClassification</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityScoring.svg"></div><div class="name">UtilityScoring</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityFeedback.svg"></div><div class="name">UtilityFeedback</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityCompare.svg"></div><div class="name">UtilityCompare</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityMessage.svg"></div><div class="name">UtilityMessage</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/NavAccount.svg"></div><div class="name">NavAccount</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/NavBullet.svg"></div><div class="name">NavBullet</div></div>
+  </div>
+</section>
+
+<!-- ===== Controls / chevrons / state ===== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Disclosure & state</h2>
+    <span class="section-meta">accordions · selects · checkmarks</span>
+  </div>
+  <div class="grid">
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityChevronDown.svg"></div><div class="name">UtilityChevronDown</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityAccordion.svg"></div><div class="name">UtilityAccordion</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityCheck.svg"></div><div class="name">UtilityCheck</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityClose.svg"></div><div class="name">UtilityClose</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/X.svg"></div><div class="name">X</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityClearRegular.svg"></div><div class="name">UtilityClearRegular</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityShow.svg"></div><div class="name">UtilityShow</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityRevisionsShow.svg"></div><div class="name">UtilityRevisionsShow</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityRevisionsHide.svg"></div><div class="name">UtilityRevisionsHide</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityTriangleInfo.svg"></div><div class="name">UtilityTriangleInfo</div></div>
+  </div>
+</section>
+
+<!-- ===== Actions ===== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Actions</h2>
+    <span class="section-meta">edit · save · search · trash</span>
+  </div>
+  <div class="grid">
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityEdit.svg"></div><div class="name">UtilityEdit</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilitySave.svg"></div><div class="name">UtilitySave</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilitySearch.svg"></div><div class="name">UtilitySearch</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityTrash.svg"></div><div class="name">UtilityTrash</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityReset.svg"></div><div class="name">UtilityReset</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityDrag.svg"></div><div class="name">UtilityDrag</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityOptions.svg"></div><div class="name">UtilityOptions</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilitySort.svg"></div><div class="name">UtilitySort</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityText.svg"></div><div class="name">UtilityText</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityTarget.svg"></div><div class="name">UtilityTarget</div></div>
+    <div class="icon-cell"><div class="glyph"><img src="../assets/icons/UtilityTargetActive.svg"></div><div class="name">UtilityTargetActive</div></div>
+  </div>
+</section>
+
+<!-- ===== Color recolor demo ===== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Recoloring</h2>
+    <span class="section-meta">all utility icons inherit currentColor when pulled inline</span>
+  </div>
+  <div class="usage-row">
+    <div class="ex">
+      <div style="color:var(--gray-700);width:32px;height:32px;display:flex;align-items:center;justify-content:center"><img src="../assets/icons/UtilityEdit.svg" width="20" height="20"></div>
+      <div class="meta">--gray-700</div>
+    </div>
+    <div class="ex">
+      <div style="color:var(--cyan-700);width:32px;height:32px;display:flex;align-items:center;justify-content:center"><img src="../assets/icons/UtilityEdit.svg" width="20" height="20"></div>
+      <div class="meta">--cyan-700</div>
+    </div>
+    <div class="ex">
+      <div style="color:var(--blue-600);width:32px;height:32px;display:flex;align-items:center;justify-content:center"><img src="../assets/icons/UtilityEdit.svg" width="20" height="20"></div>
+      <div class="meta">--blue-600</div>
+    </div>
+    <div class="ex">
+      <div style="color:var(--coral-600);width:32px;height:32px;display:flex;align-items:center;justify-content:center"><img src="../assets/icons/UtilityEdit.svg" width="20" height="20"></div>
+      <div class="meta">--coral-600</div>
+    </div>
+    <div class="ex">
+      <div style="color:var(--emerald-600);width:32px;height:32px;display:flex;align-items:center;justify-content:center"><img src="../assets/icons/UtilityEdit.svg" width="20" height="20"></div>
+      <div class="meta">--emerald-600</div>
+    </div>
+  </div>
+  <div style="font-size:11px;color:var(--gray-500);margin-top:8px;font-style:italic">Note: <code>&lt;img&gt;</code> won't inherit currentColor. To recolor, either inline the SVG (`&lt;svg&gt;...&lt;/svg&gt;` directly in markup) or use a `&lt;span&gt;` mask with background-color. The wrapper here uses the parent color via inline-svg in production.</div>
+</section>
+
+<!-- ===== Buttons with icons ===== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">In context</h2>
+    <span class="section-meta">icon + label compositions</span>
+  </div>
+  <div class="usage-row" style="background:#fff">
+    <button class="btn-prev"><img src="../assets/icons/UtilityEdit.svg">Edit</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilitySave.svg">Save</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilityCompare.svg">Compare</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilityFeedback.svg">Feedback</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilitySearch.svg">Search</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilityTrash.svg">Delete</button>
+    <button class="btn-prev"><img src="../assets/icons/UtilityReset.svg">Reset</button>
+  </div>
+</section>
+
+</body></html>
