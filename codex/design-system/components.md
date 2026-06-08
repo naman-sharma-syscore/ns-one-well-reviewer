@@ -282,6 +282,131 @@ Applied in addition to a variant class. Override height, padding, font size.
 
 ---
 
+## Selection controls
+
+### Checkbox
+
+```html
+<!-- Off -->
+<span style="width:20px;height:20px;border-radius:4px;border:1px solid var(--gray-200);background:#fff;display:inline-flex;align-items:center;justify-content:center;"></span>
+
+<!-- On -->
+<span style="width:20px;height:20px;border-radius:4px;border:1px solid var(--cyan-700);background:var(--cyan-700);display:inline-flex;align-items:center;justify-content:center;">
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+    <path d="m2 6 3 3 5-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</span>
+
+<!-- Disabled -->
+<span style="width:20px;height:20px;border-radius:4px;border:1px solid var(--gray-100);background:var(--gray-50);display:inline-flex;align-items:center;justify-content:center;"></span>
+```
+
+### Radio
+
+```html
+<!-- Off -->
+<span style="width:20px;height:20px;border-radius:9999px;border:1px solid var(--gray-200);background:#fff;display:inline-flex;align-items:center;justify-content:center;"></span>
+
+<!-- Selected -->
+<span style="width:20px;height:20px;border-radius:9999px;border:1px solid var(--cyan-700);background:#fff;display:inline-flex;align-items:center;justify-content:center;">
+  <span style="width:10px;height:10px;border-radius:9999px;background:var(--cyan-700);"></span>
+</span>
+```
+
+### Segmented control
+
+```html
+<div style="display:inline-flex;border:1px solid var(--gray-100);border-radius:9999px;padding:3px;background:#fff;">
+  <button style="height:30px;padding:0 16px;border:0;background:var(--cyan-700);color:#fff;font:500 14px var(--font-body);border-radius:9999px;cursor:pointer;">All</button>
+  <button style="height:30px;padding:0 16px;border:0;background:transparent;color:var(--gray-600);font:500 14px var(--font-body);border-radius:9999px;cursor:pointer;">Pursued</button>
+  <button style="height:30px;padding:0 16px;border:0;background:transparent;color:var(--gray-600);font:500 14px var(--font-body);border-radius:9999px;cursor:pointer;">Achieved</button>
+</div>
+```
+
+---
+
+## Form inputs (markup)
+
+```html
+<!-- Default -->
+<input style="height:40px;padding:0 12px;border:1px solid var(--gray-200);border-radius:8px;font:14px var(--font-body);color:var(--gray-800);background:#fff;outline:none;width:100%;box-sizing:border-box;" placeholder="Enter value">
+
+<!-- Focus -->
+<input style="height:40px;padding:0 11px;border:2px solid var(--cyan-300);border-radius:8px;box-shadow:0 0 0 2px rgba(57,201,234,.2);font:14px var(--font-body);color:var(--gray-800);background:#fff;outline:none;width:100%;box-sizing:border-box;" value="Focused">
+
+<!-- Disabled -->
+<input style="height:40px;padding:0 12px;border:1px solid var(--gray-100);border-radius:8px;font:14px var(--font-body);color:var(--gray-400);background:var(--gray-50);cursor:not-allowed;width:100%;box-sizing:border-box;" value="Read only" disabled>
+
+<!-- Error -->
+<input style="height:40px;padding:0 11px;border:2px solid var(--coral-700);border-radius:8px;font:14px var(--font-body);color:var(--gray-800);background:#fff;outline:none;width:100%;box-sizing:border-box;" value="bad-value">
+<div style="font-size:12px;color:var(--coral-700);margin-top:4px;">Enter a valid email address</div>
+```
+
+---
+
+## Accordions
+
+```html
+<!-- Collapsed -->
+<div style="background:var(--cyan-50);border:1px solid var(--blue-200);border-radius:8px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+  <span style="color:var(--blue-600);font-weight:500;font-size:16px;">C8 — Materials</span>
+  <span style="color:var(--gray-500);">▾</span>
+</div>
+
+<!-- Open (2px cyan-300 border) -->
+<div style="background:#fff;border:2px solid var(--cyan-300);border-radius:8px;padding:14px 16px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;color:var(--blue-600);font-weight:500;font-size:16px;">
+    <span>C9 — Mind</span>
+    <span style="color:var(--gray-500);transform:rotate(180deg);">▾</span>
+  </div>
+  <div style="font-size:14px;color:var(--gray-700);margin-top:10px;padding-top:10px;border-top:1px solid var(--gray-100);">Body content here.</div>
+</div>
+```
+
+---
+
+## Tables
+
+```html
+<table style="width:100%;background:#fff;border:1px solid var(--gray-200);border-radius:8px;border-collapse:separate;border-spacing:0;overflow:hidden;">
+  <thead>
+    <tr>
+      <th style="background:var(--cyan-50);font-size:12px;font-weight:600;text-transform:uppercase;color:var(--cyan-800);text-align:left;letter-spacing:.05em;padding:14px 16px;border-bottom:1px solid var(--gray-200);">Column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="font-size:14px;color:var(--gray-800);padding:14px 16px;border-bottom:1px solid var(--gray-200);">Row value</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+**Rules:** Header = `var(--cyan-50)` bg + `var(--cyan-800)` text, 12px uppercase `letter-spacing:.05em`. Rows alternate `#fff` / `var(--gray-50)`. Last row no border-bottom. Container `border-radius:8px`, `border-collapse:separate`, `border-spacing:0`.
+
+---
+
+## Tooltips & popovers
+
+```html
+<!-- Simple tooltip -->
+<div style="background:var(--gray-700);color:#fff;padding:6px 10px;font-size:12px;border-radius:6px;max-width:200px;line-height:1.4;">
+  Tooltip text here.
+</div>
+
+<!-- Rich popover with actions -->
+<div style="background:var(--gray-700);color:#fff;padding:14px;border-radius:8px;width:280px;">
+  <h4 style="font:600 14px var(--font-body);margin:0 0 6px;">Title</h4>
+  <p style="font-size:12px;color:var(--gray-300);margin:0 0 12px;line-height:1.5;">Description text.</p>
+  <div style="display:flex;gap:8px;">
+    <button style="height:28px;padding:0 12px;border:0;border-radius:9999px;font:600 12px var(--font-body);cursor:pointer;background:var(--cyan-300);color:var(--gray-800);">Learn more</button>
+    <button style="height:28px;padding:0 12px;border:0;border-radius:9999px;font:600 12px var(--font-body);cursor:pointer;background:var(--gray-500);color:#fff;">Dismiss</button>
+  </div>
+</div>
+```
+
+---
+
 ## Helper utility
 
 ### `.ow-optical-center`
