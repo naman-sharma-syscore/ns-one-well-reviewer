@@ -31,15 +31,19 @@ This repo is scoped entirely to the Reviewer app. The sibling apps (Standards, P
 | `codex/design-system/components.md` | All `.ow-*` component classes and specs | Building UI components |
 | `codex/design-system/brand-assets.md` | Seals, badges, icons catalog | Using brand marks or icons |
 | `codex/design-system/layout.md` | Grid, spacing, accessibility minimums | Structuring page layouts |
+| `codex/well-domain.md` | WELL concepts, certification tiers, verification paths, task lifecycle | Understanding the domain model |
+| `codex/task-state-machine.md` | Status transitions, lock mechanism, guardrails, audit trail | Building or modifying task flows |
 | `forge/` | Reusable workflows and playbooks | Executing repeatable procedures |
 
 ## Recommended reading order
 
 1. `nexus.md` — understand the rules and operating model
 2. `atlas.md` — confirm the map (this file)
-3. `codex/design-system/overview.md` — before any prototype or UI work
-4. `codex/design-system/tokens.md` + `components.md` — during build
-5. `forge/` — playbooks for recurring tasks
+3. `codex/well-domain.md` — understand the domain model (concepts, paths, lifecycle)
+4. `codex/design-system/overview.md` — before any prototype or UI work
+5. `codex/design-system/tokens.md` + `components.md` — during build
+6. `codex/task-state-machine.md` — when building or modifying task flows
+7. `forge/` — playbooks for recurring tasks
 
 ## Working areas
 
