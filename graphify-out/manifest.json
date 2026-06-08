@@ -1,0 +1,1027 @@
+{
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationBronze.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "3f4c95ae8a1ae966e7fcc8a9ac477b2c",
+    "semantic_hash": "3f4c95ae8a1ae966e7fcc8a9ac477b2c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationGold.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0517ff7aa34d8d70b2277a46f852d1e1",
+    "semantic_hash": "0517ff7aa34d8d70b2277a46f852d1e1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationPlatinum.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "41c2c3d269bfb3d22b606b1e1c311139",
+    "semantic_hash": "41c2c3d269bfb3d22b606b1e1c311139"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationSilver.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "d98a90aa0ee74c831c3bfb1f07c078f1",
+    "semantic_hash": "d98a90aa0ee74c831c3bfb1f07c078f1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeEnterpriseProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "93feaabad073b3963e1b60f8d43736b7",
+    "semantic_hash": "93feaabad073b3963e1b60f8d43736b7"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeImperativePrimary.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "afa0e1a0e6216dd33a2814afc3aebb9e",
+    "semantic_hash": "afa0e1a0e6216dd33a2814afc3aebb9e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeImperativeSecondary.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1f4d28777d50329b20efb41a7960c639",
+    "semantic_hash": "1f4d28777d50329b20efb41a7960c639"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgePerformanceTestingProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bba3d72b5c9c3bc2f82d85cf0b98c1fc",
+    "semantic_hash": "bba3d72b5c9c3bc2f82d85cf0b98c1fc"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeProductProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a9c9c50dd577d8e75365bc52973d6719",
+    "semantic_hash": "a9c9c50dd577d8e75365bc52973d6719"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingCoworking.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bc01c60ac0db46bdef5064d417ede4a7",
+    "semantic_hash": "bc01c60ac0db46bdef5064d417ede4a7"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingDesign.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b0d1911f27670b5b9877ad6251afd099",
+    "semantic_hash": "b0d1911f27670b5b9877ad6251afd099"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingEquity.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "ccd3d95a1fa6a20fd3aa928770d3c163",
+    "semantic_hash": "ccd3d95a1fa6a20fd3aa928770d3c163"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingHealthySafety.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6b96866bdcb4287b5dd90ff16b0ed0d7",
+    "semantic_hash": "6b96866bdcb4287b5dd90ff16b0ed0d7"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingOperations.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0325b81f49fc4ffaad3c8ad6824e2240",
+    "semantic_hash": "0325b81f49fc4ffaad3c8ad6824e2240"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingPerformance.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9b17546bc9ace08971eb05516086898c",
+    "semantic_hash": "9b17546bc9ace08971eb05516086898c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingRealEstate.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "f82dcbc378a45db01661ff6231d680ac",
+    "semantic_hash": "f82dcbc378a45db01661ff6231d680ac"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingResidential.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "99bc301ea2165eb73e9f671deb12cf4d",
+    "semantic_hash": "99bc301ea2165eb73e9f671deb12cf4d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingWorkforce.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6dd4f3068656e60c5942b8537b99aaf5",
+    "semantic_hash": "6dd4f3068656e60c5942b8537b99aaf5"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeSurveyProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "5e8d1605557ca00a247487d01ada2481",
+    "semantic_hash": "5e8d1605557ca00a247487d01ada2481"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/_paths.json": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1783713500b76c9d5a53431be2e4d2a4",
+    "semantic_hash": "1783713500b76c9d5a53431be2e4d2a4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/AlphaIcon.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e1a5dd93ba577c1beeb01bdced6afeb1",
+    "semantic_hash": "e1a5dd93ba577c1beeb01bdced6afeb1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/ConceptIcons.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e91aa723aa0275e25d04c63fcf36de87",
+    "semantic_hash": "e91aa723aa0275e25d04c63fcf36de87"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavAccount.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9e41b435af8addea91fcbb6d2d56a31e",
+    "semantic_hash": "9e41b435af8addea91fcbb6d2d56a31e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavBullet.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "93648ad9b86a6f9e0afeb4ce98289b49",
+    "semantic_hash": "93648ad9b86a6f9e0afeb4ce98289b49"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavLogo.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "27c83a1cc168b731bfa91cdff9c225fc",
+    "semantic_hash": "27c83a1cc168b731bfa91cdff9c225fc"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/StandardLogo.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "64b6b8025e54127723f014480ddd40b4",
+    "semantic_hash": "64b6b8025e54127723f014480ddd40b4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityAccordion.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0b6c64f9ba707f3085f961333931ede6",
+    "semantic_hash": "0b6c64f9ba707f3085f961333931ede6"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityCheck.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "13e392525e54a49c877716174e9b50a0",
+    "semantic_hash": "13e392525e54a49c877716174e9b50a0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityChevronDown.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "675a152758d54df050712acf55b3d9ba",
+    "semantic_hash": "675a152758d54df050712acf55b3d9ba"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClassification.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "162756c4f8a6d02035476f9e2b29982e",
+    "semantic_hash": "162756c4f8a6d02035476f9e2b29982e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClearRegular.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "14172c27481b674c799588009efc9498",
+    "semantic_hash": "14172c27481b674c799588009efc9498"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClose.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e0c9412038115ec148679c4c5b27b5be",
+    "semantic_hash": "e0c9412038115ec148679c4c5b27b5be"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityCompare.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c709a5c74a21f530d27f02759e9e30d5",
+    "semantic_hash": "c709a5c74a21f530d27f02759e9e30d5"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityDrag.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "fe1962590b0970f35ac02716f7f50955",
+    "semantic_hash": "fe1962590b0970f35ac02716f7f50955"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityEdit.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "96ea1ddce7e0db2ab72ccfa56c14e93a",
+    "semantic_hash": "96ea1ddce7e0db2ab72ccfa56c14e93a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityFeedback.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "d1cd393c95ea97e6969e3af44b91e1c4",
+    "semantic_hash": "d1cd393c95ea97e6969e3af44b91e1c4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityHome.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c2dd6cf2d028e3859e662ad80696f889",
+    "semantic_hash": "c2dd6cf2d028e3859e662ad80696f889"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityMessage.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "25733e0814a48352e37c026104990ca3",
+    "semantic_hash": "25733e0814a48352e37c026104990ca3"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityOptions.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c3597ea0aee8789f0ce42bd4710a5e24",
+    "semantic_hash": "c3597ea0aee8789f0ce42bd4710a5e24"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityPortfolio.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "f19913e9bdcf1f9e88b7797c596280a0",
+    "semantic_hash": "f19913e9bdcf1f9e88b7797c596280a0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityReset.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "528b17fad0bb7722d9531fafcd1cd965",
+    "semantic_hash": "528b17fad0bb7722d9531fafcd1cd965"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityRevisionsHide.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "02cfad52dc34e67489b0a2e8c60e684d",
+    "semantic_hash": "02cfad52dc34e67489b0a2e8c60e684d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityRevisionsShow.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b1e19bcbb0d0d9272256af749a3dcf12",
+    "semantic_hash": "b1e19bcbb0d0d9272256af749a3dcf12"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySave.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "2058f440f2952cc2c18a2d29b9b62c8a",
+    "semantic_hash": "2058f440f2952cc2c18a2d29b9b62c8a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityScopeLarge.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "221d909d348d8bb8e02fca137077d2bc",
+    "semantic_hash": "221d909d348d8bb8e02fca137077d2bc"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityScoring.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bdad9c33885ec4ccb3aca1fea538ece1",
+    "semantic_hash": "bdad9c33885ec4ccb3aca1fea538ece1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySearch.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "d257ed82c987fddde47f00a7ce225621",
+    "semantic_hash": "d257ed82c987fddde47f00a7ce225621"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityShow.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "10c3a99cc5dc5d9742995c37e3dbc88d",
+    "semantic_hash": "10c3a99cc5dc5d9742995c37e3dbc88d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySort.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "fa47f8a2ee008adbe6516416f141858f",
+    "semantic_hash": "fa47f8a2ee008adbe6516416f141858f"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTarget.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "916d7d35ebb1e2d982536fecf86af140",
+    "semantic_hash": "916d7d35ebb1e2d982536fecf86af140"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTargetActive.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6fcbaa7108511ef94884cbee2517f006",
+    "semantic_hash": "6fcbaa7108511ef94884cbee2517f006"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityText.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1120a6cbb8c5df93cd0402d20d813f36",
+    "semantic_hash": "1120a6cbb8c5df93cd0402d20d813f36"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTrash.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9ab007247d446013b21eb2e5c7ca1d30",
+    "semantic_hash": "9ab007247d446013b21eb2e5c7ca1d30"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTriangleInfo.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "3c33b1d52171e550ef8d2b346925ac3a",
+    "semantic_hash": "3c33b1d52171e550ef8d2b346925ac3a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/X.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "64b4b756ed8b4c4df560a37407a00908",
+    "semantic_hash": "64b4b756ed8b4c4df560a37407a00908"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/IWBILogo.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "7a50179cd67e2e7371c48042c139312a",
+    "semantic_hash": "7a50179cd67e2e7371c48042c139312a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertification.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a765e49457ef14b28106e9dbb15d67b8",
+    "semantic_hash": "a765e49457ef14b28106e9dbb15d67b8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationBronze.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "90b8192d664a8cc99e05f202e5093d95",
+    "semantic_hash": "90b8192d664a8cc99e05f202e5093d95"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationGold.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a117c85b749a782fd2f94075e6bc7f89",
+    "semantic_hash": "a117c85b749a782fd2f94075e6bc7f89"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationPlatinum.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "45b79f819382f05f7bf17659e47143d6",
+    "semantic_hash": "45b79f819382f05f7bf17659e47143d6"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationSilver.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0f28dc956adc54633d8bc538bf69cc64",
+    "semantic_hash": "0f28dc956adc54633d8bc538bf69cc64"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealEnterpriseProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "73cd74be928f10e458b9a5ab6d9022f4",
+    "semantic_hash": "73cd74be928f10e458b9a5ab6d9022f4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealIwbiMember.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4374725efe988ab32b7166721b5b9802",
+    "semantic_hash": "4374725efe988ab32b7166721b5b9802"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealPerformanceTestingProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e65266858831c12d28f7788277bc8cb3",
+    "semantic_hash": "e65266858831c12d28f7788277bc8cb3"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealProductProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "8f6a33b8e03d63420820ac4e73c0e269",
+    "semantic_hash": "8f6a33b8e03d63420820ac4e73c0e269"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealProviders.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "20884edaa47c6d59745db82ec7a8713a",
+    "semantic_hash": "20884edaa47c6d59745db82ec7a8713a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRating.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6e054ccae59fb6ab37d8b79c72b9996d",
+    "semantic_hash": "6e054ccae59fb6ab37d8b79c72b9996d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingCoworking.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a971ecc326304e1072a9c4f918c13c8e",
+    "semantic_hash": "a971ecc326304e1072a9c4f918c13c8e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingDesign.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9d9dfdd5545f4878ea9b158ae0b66474",
+    "semantic_hash": "9d9dfdd5545f4878ea9b158ae0b66474"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingEquity.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "fee62906162d4c8f6ebdfff64bad91af",
+    "semantic_hash": "fee62906162d4c8f6ebdfff64bad91af"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingHealthSafety.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "74b6ba54e769abdef4f34df58ff1c5e6",
+    "semantic_hash": "74b6ba54e769abdef4f34df58ff1c5e6"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingOperations.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a0a3b50d523e4a2b4a97fb80941b4071",
+    "semantic_hash": "a0a3b50d523e4a2b4a97fb80941b4071"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingPerformance.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bef87f41e41b565e903614ce71d60380",
+    "semantic_hash": "bef87f41e41b565e903614ce71d60380"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingRealEstate.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "41cd246ef8ce98d0cee282bb87c1d03b",
+    "semantic_hash": "41cd246ef8ce98d0cee282bb87c1d03b"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingWorkforce.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0f7fe669d52e1e1af16fe0be647bd9f8",
+    "semantic_hash": "0f7fe669d52e1e1af16fe0be647bd9f8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealSurveyProvider.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "8759bcfd1d30c2510c5f144e749e749a",
+    "semantic_hash": "8759bcfd1d30c2510c5f144e749e749a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWell.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6eb874acfbae8daaf3e73d0796060240",
+    "semantic_hash": "6eb874acfbae8daaf3e73d0796060240"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellCertification.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b4438d5b69588942a0a56912d6c9eb24",
+    "semantic_hash": "b4438d5b69588942a0a56912d6c9eb24"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellCommunity.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "dc3855de503b1c0cc15261b937714bef",
+    "semantic_hash": "dc3855de503b1c0cc15261b937714bef"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellResidence.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1a976d9c5a1c5e02434e40a344c69186",
+    "semantic_hash": "1a976d9c5a1c5e02434e40a344c69186"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWorksWithWell.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "ee5b1183602c113952ecb87dc330c1b8",
+    "semantic_hash": "ee5b1183602c113952ecb87dc330c1b8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WaterMarkWWWProducts.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "8bd74a2c411a767e861dffaf1be57d47",
+    "semantic_hash": "8bd74a2c411a767e861dffaf1be57d47"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WaterMarkWellProjects.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "888e8ae77593a691c6b73669f84892fd",
+    "semantic_hash": "888e8ae77593a691c6b73669f84892fd"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WatermarkMemberOrg.tsx": {
+    "mtime": 1780881785.0,
+    "ast_hash": "62813be9eb3a319495622c2a842211ff",
+    "semantic_hash": "62813be9eb3a319495622c2a842211ff"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/atlas.md": {
+    "mtime": 1780883326.8620894,
+    "ast_hash": "054351fd63712f425aecb3e80574f4e4",
+    "semantic_hash": "054351fd63712f425aecb3e80574f4e4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/codex/design-system/brand-assets.md": {
+    "mtime": 1780883864.3085866,
+    "ast_hash": "135f676ce93e75354af1f1a420ed27ea",
+    "semantic_hash": "135f676ce93e75354af1f1a420ed27ea"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/codex/design-system/components.md": {
+    "mtime": 1780883218.128358,
+    "ast_hash": "e2af4155107c35b3d2478ec7e1ecd25d",
+    "semantic_hash": "e2af4155107c35b3d2478ec7e1ecd25d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/codex/design-system/layout.md": {
+    "mtime": 1780883287.6447768,
+    "ast_hash": "fb2eaf55f34343e01fc8b1b45fc715fa",
+    "semantic_hash": "fb2eaf55f34343e01fc8b1b45fc715fa"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/codex/design-system/overview.md": {
+    "mtime": 1780883087.256176,
+    "ast_hash": "a4b60dd9bdfd61f0a474958ea9e2676e",
+    "semantic_hash": "a4b60dd9bdfd61f0a474958ea9e2676e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/nexus.md": {
+    "mtime": 1780883314.2339764,
+    "ast_hash": "43960f71f09b854bf5188d451986f778",
+    "semantic_hash": "43960f71f09b854bf5188d451986f778"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/readme.md": {
+    "mtime": 1780881562.0914483,
+    "ast_hash": "8b9ea0dac4bf6d02fe61fdbfdcd7fa82",
+    "semantic_hash": "8b9ea0dac4bf6d02fe61fdbfdcd7fa82"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/CLAUDE.md": {
+    "mtime": 1780881784.0,
+    "ast_hash": "bdd4baf136ce3f88568731a215f3868d",
+    "semantic_hash": "bdd4baf136ce3f88568731a215f3868d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/README.md": {
+    "mtime": 1780881784.0,
+    "ast_hash": "d808347fa0fd675ed9f0f4489abcfcb0",
+    "semantic_hash": "d808347fa0fd675ed9f0f4489abcfcb0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/SKILL.md": {
+    "mtime": 1780881784.0,
+    "ast_hash": "6a3ad2a4b30a26c50a232fee88d88bff",
+    "semantic_hash": "6a3ad2a4b30a26c50a232fee88d88bff"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/UI Kit (legacy v1).html": {
+    "mtime": 1780881784.0,
+    "ast_hash": "3bd0193a27d7a4154db609afac2a3073",
+    "semantic_hash": "3bd0193a27d7a4154db609afac2a3073"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/UI Kit.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1209067b0b6348e92ad49c39b1d4ad70",
+    "semantic_hash": "1209067b0b6348e92ad49c39b1d4ad70"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/brand-logo.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "696cfeb922b77259bf5f1e20fdd8115d",
+    "semantic_hash": "696cfeb922b77259bf5f1e20fdd8115d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/brand-media.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "83bb21375a554eca5508e56b127e9390",
+    "semantic_hash": "83bb21375a554eca5508e56b127e9390"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/buttons-cta.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "47c2ec77a532cdf6b2e5e492a3275093",
+    "semantic_hash": "47c2ec77a532cdf6b2e5e492a3275093"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/buttons-utility.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e0817207fc4a79c5f14ef552799911ff",
+    "semantic_hash": "e0817207fc4a79c5f14ef552799911ff"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/cards-accordions.html": {
+    "mtime": 1780881785.0,
+    "ast_hash": "811e484f347837a1dbb40e9d43387572",
+    "semantic_hash": "811e484f347837a1dbb40e9d43387572"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/concept-icons.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "37dee7d9eda4edb4af9cf0e88a5c8cad",
+    "semantic_hash": "37dee7d9eda4edb4af9cf0e88a5c8cad"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/foundations-color.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "524a1306d169f7ef53da29821230e559",
+    "semantic_hash": "524a1306d169f7ef53da29821230e559"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/inputs.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "0863d31382a077bfd34e35ad7671d550",
+    "semantic_hash": "0863d31382a077bfd34e35ad7671d550"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/layouts.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "e4a9231c45da3d5bfbe6262298358101",
+    "semantic_hash": "e4a9231c45da3d5bfbe6262298358101"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/selection-controls.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "f7df2d22e67dc49a78c7503b3f52dabf",
+    "semantic_hash": "f7df2d22e67dc49a78c7503b3f52dabf"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/spacing-radii.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "ab250cb9b404c94428ac8313112489d8",
+    "semantic_hash": "ab250cb9b404c94428ac8313112489d8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/strokes-shadows.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "336d51453f6357ecde53e12becfc8b6e",
+    "semantic_hash": "336d51453f6357ecde53e12becfc8b6e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/table.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "eac6300606975aeabf667d86c1349b68",
+    "semantic_hash": "eac6300606975aeabf667d86c1349b68"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/tags.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "7c4b530e10c79df73ffe92bb63ccb856",
+    "semantic_hash": "7c4b530e10c79df73ffe92bb63ccb856"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/tooltips.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "28d5e8c20a45a5c1cfcfe55eb25814a2",
+    "semantic_hash": "28d5e8c20a45a5c1cfcfe55eb25814a2"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/type-body.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "99056435bfaf48b2a422c755b167b117",
+    "semantic_hash": "99056435bfaf48b2a422c755b167b117"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/type-display.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "13addec76479bf6e1fe164bad9b1d4e3",
+    "semantic_hash": "13addec76479bf6e1fe164bad9b1d4e3"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/preview/utility-icons.html": {
+    "mtime": 1780881786.0,
+    "ast_hash": "7958aa3b8fa2c6eb00c0005df577d9e8",
+    "semantic_hash": "7958aa3b8fa2c6eb00c0005df577d9e8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationBronze.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "648703307c81c0b2aedc1a0e10005f52",
+    "semantic_hash": "648703307c81c0b2aedc1a0e10005f52"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationGold.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e0c46f7eb8c15f324879114f0d07fb31",
+    "semantic_hash": "e0c46f7eb8c15f324879114f0d07fb31"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationPlatinum.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e16a7ab9ec304c671d5646ea0b4e6e4a",
+    "semantic_hash": "e16a7ab9ec304c671d5646ea0b4e6e4a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeCertificationSilver.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "8f029b8ae1ae2a1ac6d9f814575f88c0",
+    "semantic_hash": "8f029b8ae1ae2a1ac6d9f814575f88c0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeEnterpriseProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "84df5b14c300be2e8e627977559a52fc",
+    "semantic_hash": "84df5b14c300be2e8e627977559a52fc"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeImperativePrimary.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "94b1b5225fd1e2998c4230b6ca2c0323",
+    "semantic_hash": "94b1b5225fd1e2998c4230b6ca2c0323"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeImperativeSecondary.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4db965062235a184f34d1d31b5f95639",
+    "semantic_hash": "4db965062235a184f34d1d31b5f95639"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgePerformanceTestingProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "ae2563176e0c7300d229adca225b326c",
+    "semantic_hash": "ae2563176e0c7300d229adca225b326c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeProductProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b92fef9dc99d79ee7972cd2b532b2764",
+    "semantic_hash": "b92fef9dc99d79ee7972cd2b532b2764"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingCoworking.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "14e41c2d1b87c57e8b4327cb5a10d15f",
+    "semantic_hash": "14e41c2d1b87c57e8b4327cb5a10d15f"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingDesign.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b9ad19772e8e973d43c628f8b58b6aaf",
+    "semantic_hash": "b9ad19772e8e973d43c628f8b58b6aaf"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingEquity.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "acb1e1a44349705d8466a19c48c759c4",
+    "semantic_hash": "acb1e1a44349705d8466a19c48c759c4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingHealthySafety.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9be0687b4f38a149f98da0ff9218f76c",
+    "semantic_hash": "9be0687b4f38a149f98da0ff9218f76c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingOperations.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "209e71354d0a71fe32d5616dc79ad939",
+    "semantic_hash": "209e71354d0a71fe32d5616dc79ad939"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingPerformance.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bc1ca05f4a9bfdd003070be0ccfd16ea",
+    "semantic_hash": "bc1ca05f4a9bfdd003070be0ccfd16ea"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingRealEstate.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "3ba7d4b3103c70869a72dbf410e302f2",
+    "semantic_hash": "3ba7d4b3103c70869a72dbf410e302f2"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingResidential.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "5f16e850773e762661c570370b036c26",
+    "semantic_hash": "5f16e850773e762661c570370b036c26"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeRatingWorkforce.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "be9e7171b96161210ac4d7a3faf3c713",
+    "semantic_hash": "be9e7171b96161210ac4d7a3faf3c713"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/badges/BadgeSurveyProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "00e7c8b51fdadce9683522c8c0c74201",
+    "semantic_hash": "00e7c8b51fdadce9683522c8c0c74201"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/air.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "88f1623c70734e8708f1bb976bdbb417",
+    "semantic_hash": "88f1623c70734e8708f1bb976bdbb417"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/community.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0f1420d0db41567aafaa40a85876d582",
+    "semantic_hash": "0f1420d0db41567aafaa40a85876d582"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/innovation.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0a66a936bcdca53703cd0a9ab82735c4",
+    "semantic_hash": "0a66a936bcdca53703cd0a9ab82735c4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/light.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c0b25014c051ed2722d7d35269bcb754",
+    "semantic_hash": "c0b25014c051ed2722d7d35269bcb754"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/materials.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1d4cfad21fb80f9f466daee1a8754446",
+    "semantic_hash": "1d4cfad21fb80f9f466daee1a8754446"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/mind.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "7f7a96421d0b6e20d86019ff0c40d964",
+    "semantic_hash": "7f7a96421d0b6e20d86019ff0c40d964"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/movement.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1bdf227b4aa172fda2d60db38333828e",
+    "semantic_hash": "1bdf227b4aa172fda2d60db38333828e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/nourishment.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a5a868915903b0e27fe468e6582c02f8",
+    "semantic_hash": "a5a868915903b0e27fe468e6582c02f8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/water-2.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "3ee02d2f1012290a4c4cb356b013adf4",
+    "semantic_hash": "3ee02d2f1012290a4c4cb356b013adf4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/concept-icons/water.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4597a1157d58a4a23c007b12ffdf8620",
+    "semantic_hash": "4597a1157d58a4a23c007b12ffdf8620"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/half-sphere.png": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b006a04cf4cd2299f9e27170aed07a85",
+    "semantic_hash": "b006a04cf4cd2299f9e27170aed07a85"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/ConceptIcons.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0fc187824c027333d511576707f797dd",
+    "semantic_hash": "0fc187824c027333d511576707f797dd"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavAccount.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e95ddd3e5ee225eab663821448abd59c",
+    "semantic_hash": "e95ddd3e5ee225eab663821448abd59c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavBullet.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "5ed6e95c57b87a44bfac8073ce43920a",
+    "semantic_hash": "5ed6e95c57b87a44bfac8073ce43920a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/NavLogo.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "483701b81d2d775c787133320fa06eff",
+    "semantic_hash": "483701b81d2d775c787133320fa06eff"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/StandardLogo.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6ea730e60b3ebcf61d94b067c39dc00d",
+    "semantic_hash": "6ea730e60b3ebcf61d94b067c39dc00d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityAccordion.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9f200e1ee2564d05ae144b8b1bcb4a92",
+    "semantic_hash": "9f200e1ee2564d05ae144b8b1bcb4a92"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityCheck.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4152cc9e288b6942e5a2099af52b0d43",
+    "semantic_hash": "4152cc9e288b6942e5a2099af52b0d43"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityChevronDown.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0b08fdfc4e21f1a176224418c75a5804",
+    "semantic_hash": "0b08fdfc4e21f1a176224418c75a5804"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClassification.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1df365d29d504ed3ca515e312384b64b",
+    "semantic_hash": "1df365d29d504ed3ca515e312384b64b"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClearRegular.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "044cf2cbcaacf562206586f140e49d74",
+    "semantic_hash": "044cf2cbcaacf562206586f140e49d74"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityClose.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "5e6a35ea96a3937e547d860afc52d450",
+    "semantic_hash": "5e6a35ea96a3937e547d860afc52d450"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityCompare.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e79aaa6c1c24e3a35bdc1852ff2af635",
+    "semantic_hash": "e79aaa6c1c24e3a35bdc1852ff2af635"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityDrag.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "26c14fb69dc14b1fdf545ee24cde2df3",
+    "semantic_hash": "26c14fb69dc14b1fdf545ee24cde2df3"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityEdit.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "66c309351047d863c173d1d0b8474604",
+    "semantic_hash": "66c309351047d863c173d1d0b8474604"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityFeedback.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "894d76099890bd91e780f5a8795713c1",
+    "semantic_hash": "894d76099890bd91e780f5a8795713c1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityHome.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "ba36c3c1e5dcc9de5993a553a762632a",
+    "semantic_hash": "ba36c3c1e5dcc9de5993a553a762632a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityMessage.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "76dca4c197649b66b463e09506d0552d",
+    "semantic_hash": "76dca4c197649b66b463e09506d0552d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityOptions.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b3e6c3f81bffab3a0ec2dc61a304a47c",
+    "semantic_hash": "b3e6c3f81bffab3a0ec2dc61a304a47c"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityPortfolio.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "20f61d5cd4332cc1c938fbbc6c45ee1b",
+    "semantic_hash": "20f61d5cd4332cc1c938fbbc6c45ee1b"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityReset.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1239508eb54769ded7ecc15613a655f0",
+    "semantic_hash": "1239508eb54769ded7ecc15613a655f0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityRevisionsHide.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "2d70327b6b16f183a88b60c1ff9bc59e",
+    "semantic_hash": "2d70327b6b16f183a88b60c1ff9bc59e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityRevisionsShow.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "edc0099bb73e7d00976bdb5879b5d545",
+    "semantic_hash": "edc0099bb73e7d00976bdb5879b5d545"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySave.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "44ee2ca4493d85e9b9b88701389448d0",
+    "semantic_hash": "44ee2ca4493d85e9b9b88701389448d0"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityScopeLarge.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "bad03bc25606a71bc71e65f6c2d9d145",
+    "semantic_hash": "bad03bc25606a71bc71e65f6c2d9d145"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityScoring.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "2951fd90e946aa5dc4b4b944cee1496e",
+    "semantic_hash": "2951fd90e946aa5dc4b4b944cee1496e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySearch.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "7c79acaf01284fc6940b8039f765ab6d",
+    "semantic_hash": "7c79acaf01284fc6940b8039f765ab6d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityShow.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1c05cee89c2256c5ff9db8db122fa778",
+    "semantic_hash": "1c05cee89c2256c5ff9db8db122fa778"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilitySort.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "d0bce2c8751fee4178b24d3475fd20f9",
+    "semantic_hash": "d0bce2c8751fee4178b24d3475fd20f9"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTarget.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "95a80bef50f654a0bcb73510eead96d1",
+    "semantic_hash": "95a80bef50f654a0bcb73510eead96d1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTargetActive.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "380bb8ff6e04d85e448e5fd6397a1bd4",
+    "semantic_hash": "380bb8ff6e04d85e448e5fd6397a1bd4"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityText.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "b669857621622d9df63555bc8b456b8d",
+    "semantic_hash": "b669857621622d9df63555bc8b456b8d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTrash.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "99b28e54cc7dae08a4f8211047e5687d",
+    "semantic_hash": "99b28e54cc7dae08a4f8211047e5687d"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/UtilityTriangleInfo.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "9aec33760415ced1e3475785dc37201a",
+    "semantic_hash": "9aec33760415ced1e3475785dc37201a"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/icons/X.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "16d590cd5cfba084bd9a0dd5a5676f30",
+    "semantic_hash": "16d590cd5cfba084bd9a0dd5a5676f30"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/IWBILogo.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "3eda23048411af3e9c81ec238f911b73",
+    "semantic_hash": "3eda23048411af3e9c81ec238f911b73"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationBronze.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "175118c4fec74cb65a98b6a8f0359412",
+    "semantic_hash": "175118c4fec74cb65a98b6a8f0359412"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationGold.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c4fecfc4c42c7bf646b3b3dd1f75f607",
+    "semantic_hash": "c4fecfc4c42c7bf646b3b3dd1f75f607"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationPlatinum.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "40f51b97f411b13143fdfefbdfa00067",
+    "semantic_hash": "40f51b97f411b13143fdfefbdfa00067"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealCertificationSilver.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "8c9533c99269638a868e23edd0a24979",
+    "semantic_hash": "8c9533c99269638a868e23edd0a24979"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealEnterpriseProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "a155d61b04bae96f12a0d0982a00d7e8",
+    "semantic_hash": "a155d61b04bae96f12a0d0982a00d7e8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealIwbiMember.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "29b00581381b0150fb5eefc0d71fbfb8",
+    "semantic_hash": "29b00581381b0150fb5eefc0d71fbfb8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealPerformanceTestingProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "2fcb3966d9e72d8b56e7247ccc061471",
+    "semantic_hash": "2fcb3966d9e72d8b56e7247ccc061471"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealProductProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4a999a2dfe86b34bbb69931db2b9b7ee",
+    "semantic_hash": "4a999a2dfe86b34bbb69931db2b9b7ee"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealProviders.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4f9b6e50d6c879eb06ef7eb1ddc8e8c6",
+    "semantic_hash": "4f9b6e50d6c879eb06ef7eb1ddc8e8c6"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingCoworking.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "e0dafaffa170b5dd324a7a13228d3be2",
+    "semantic_hash": "e0dafaffa170b5dd324a7a13228d3be2"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingDesign.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "76531b634c34d33eb028cc48fb563e08",
+    "semantic_hash": "76531b634c34d33eb028cc48fb563e08"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingEquity.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "6f3b0284a81c3d92789db2cdcd86b214",
+    "semantic_hash": "6f3b0284a81c3d92789db2cdcd86b214"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingHealthSafety.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "1e9e2e6d668214bb64144b50c37adf42",
+    "semantic_hash": "1e9e2e6d668214bb64144b50c37adf42"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingOperations.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "f48d9f5c49dd39027e3f482f5aa199ab",
+    "semantic_hash": "f48d9f5c49dd39027e3f482f5aa199ab"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingPerformance.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4bc156ea6a8b3d38326341188684f1c9",
+    "semantic_hash": "4bc156ea6a8b3d38326341188684f1c9"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingRealEstate.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c065e544aff5a29a664aa445f2e8def1",
+    "semantic_hash": "c065e544aff5a29a664aa445f2e8def1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealRatingWorkforce.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "c83bba4ce3f394590946ed01a6d62ef7",
+    "semantic_hash": "c83bba4ce3f394590946ed01a6d62ef7"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealSurveyProvider.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "f4bce5a106b7ea45e76d84637c78bedb",
+    "semantic_hash": "f4bce5a106b7ea45e76d84637c78bedb"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWell.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "56302034744078d399b506a0f8797af5",
+    "semantic_hash": "56302034744078d399b506a0f8797af5"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellCertification.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "52662f4d0c17e9af84a98166b93d3bd8",
+    "semantic_hash": "52662f4d0c17e9af84a98166b93d3bd8"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellCommunity.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "33184017dd9592463644dd295b66247e",
+    "semantic_hash": "33184017dd9592463644dd295b66247e"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWellResidence.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "d8903d2496e779e46c83792b6383ea7b",
+    "semantic_hash": "d8903d2496e779e46c83792b6383ea7b"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/SealWorksWithWell.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "688e898c8cf4a96c79eadeeb427e1db1",
+    "semantic_hash": "688e898c8cf4a96c79eadeeb427e1db1"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WaterMarkWWWProducts.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "11e3f24be7a74d9a9b684a49650dc8e2",
+    "semantic_hash": "11e3f24be7a74d9a9b684a49650dc8e2"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WaterMarkWellProjects.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "0918c0c89919bec43efd8637147ab282",
+    "semantic_hash": "0918c0c89919bec43efd8637147ab282"
+  },
+  "/Users/naman/Desktop/github/ns-one-well-reviewer/temp/assets/seals/WatermarkMemberOrg.svg": {
+    "mtime": 1780881785.0,
+    "ast_hash": "4debe301551c4994d50f4558d8d4b0ba",
+    "semantic_hash": "4debe301551c4994d50f4558d8d4b0ba"
+  }
+}
