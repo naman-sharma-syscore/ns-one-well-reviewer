@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneWELL Reviewer</title>
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="ds/onewell.css">
+
+  <!-- Tailwind CDN — layout utilities only; .ow-* handles all styled components -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      /* Disable Tailwind's color/type overrides — our tokens are canonical */
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            /* Semantic tokens as Tailwind utilities */
+            primary:      'var(--primary)',
+            destructive:  'var(--destructive)',
+            background:   'var(--background)',
+            surface:      'var(--surface)',
+            'surface-side':    'var(--surface-side)',
+            foreground:        'var(--foreground)',
+            'foreground-muted':'var(--foreground-muted)',
+            border:       'var(--border)',
+            'border-soft':'var(--border-soft)',
+            'border-panel':'var(--border-panel)',
+            'border-focus':'var(--border-focus)',
+            /* Spot colors used frequently in layout */
+            'gray-50':    'var(--gray-50)',
+            'gray-100':   'var(--gray-100)',
+            'gray-200':   'var(--gray-200)',
+            'gray-500':   'var(--gray-500)',
+            'gray-800':   'var(--gray-800)',
+            'cyan-50':    'var(--cyan-50)',
+            'cyan-200':   'var(--cyan-200)',
+            'cyan-800':   'var(--cyan-800)',
+            'blue-200':   'var(--blue-200)',
+          },
+          borderRadius: {
+            xs:    'var(--radius-xs)',
+            sm:    'var(--radius-sm)',
+            md:    'var(--radius-md)',
+            lg:    'var(--radius-lg)',
+            xl:    'var(--radius-xl)',
+            modal: 'var(--radius-modal)',
+            full:  'var(--radius-full)',
+          },
+          boxShadow: {
+            xs: 'var(--shadow-xs)',
+            sm: 'var(--shadow-sm)',
+            md: 'var(--shadow-md)',
+            lg: 'var(--shadow-lg)',
+            xl: 'var(--shadow-xl)',
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- ── Top bar ── -->
+  <header class="h-16 flex items-center px-6 bg-surface border-b border-border shrink-0" style="box-shadow: var(--shadow-xs);">
+    <img src="assets/icons/StandardLogo.svg" alt="WELL" class="h-6 w-auto">
+    <span class="ml-4 text-[var(--gray-400)] text-sm select-none">|</span>
+    <span class="ml-4 body-sm" style="color: var(--foreground-muted);">Reviewer</span>
+    <div class="ml-auto flex items-center gap-3">
+      <img src="assets/icons/NavAccount.svg" alt="Account" class="h-5 w-5" style="color: var(--gray-600);">
+    </div>
+  </header>
+
+  <!-- ── 3-column workspace ── -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- Left rail -->
+    <nav class="w-64 shrink-0 flex flex-col bg-[var(--surface-side)] border-r border-[var(--border-panel)]">
+      <div class="p-4 flex flex-col gap-1">
+        <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md body-sm font-medium no-underline"
+           style="color: var(--foreground); border-left: 2px solid var(--cyan-700); background: var(--cyan-100);">
+          <img src="assets/icons/UtilityHome.svg" alt="" class="h-4 w-4">
+          Home
+        </a>
+        <a href="pages/" class="flex items-center gap-3 px-3 py-2 rounded-md body-sm no-underline"
+           style="color: var(--foreground-muted); border-left: 2px solid transparent;">
+          <img src="assets/icons/UtilityPortfolio.svg" alt="" class="h-4 w-4">
+          Projects
+        </a>
+      </div>
+    </nav>
+
+    <!-- Canvas -->
+    <main class="flex-1 overflow-auto p-8">
+
+      <div class="max-w-2xl">
+        <h1>OneWELL Reviewer</h1>
+        <p class="body-lg mt-3" style="color: var(--foreground-muted);">
+          Prototype shell — design system loaded and ready. Each feature page will live in <code>pages/</code>.
+        </p>
+      </div>
+
+      <!-- DS smoke test -->
+      <section class="mt-10">
+        <p class="section-label mb-4">Design system check</p>
+
+        <div class="flex flex-wrap gap-3 items-center">
+          <!-- Buttons -->
+          <button class="ow-btn ow-btn-primary">Get certified</button>
+          <button class="ow-btn ow-btn-solid">Save changes</button>
+          <button class="ow-btn ow-btn-outline">Cancel</button>
+          <button class="ow-btn ow-btn-ghost">Learn more</button>
+          <button class="ow-btn ow-btn-icon" aria-label="Edit">
+            <img src="assets/icons/UtilityEdit.svg" alt="" class="h-4 w-4">
+          </button>
+        </div>
+
+        <div class="flex flex-wrap gap-2 items-center mt-4">
+          <!-- Status pills -->
+          <span class="ow-status" style="background: var(--gray-100); color: var(--gray-600);">To-Do</span>
+          <span class="ow-status" style="background: var(--cyan-100); color: var(--cyan-600);">Low</span>
+          <span class="ow-status" style="background: var(--plum-100); color: var(--plum-600);">Medium</span>
+          <span class="ow-status" style="background: var(--coral-100); color: var(--coral-600);">High</span>
+          <span class="ow-status" style="background: var(--emerald-100); color: var(--emerald-600);">Done</span>
+          <!-- Tags -->
+          <span class="ow-tag" style="background: var(--gray-100); color: var(--gray-700);">All</span>
+          <span class="ow-tag" style="background: var(--blue-100); color: var(--blue-700);">Pursued</span>
+          <!-- Concept tag -->
+          <span class="ow-concept-tag" style="background: var(--concept-water);">Water</span>
+          <span class="ow-concept-tag" style="background: var(--concept-mind);">Mind</span>
+          <!-- Code chip -->
+          <span class="ow-code-chip" style="background: var(--gray-100); color: var(--gray-700);">W01</span>
+          <span class="ow-code-chip" style="background: var(--cyan-100); color: var(--cyan-800);">A05</span>
+        </div>
+
+        <!-- Type scale -->
+        <div class="mt-8 flex flex-col gap-2">
+          <p class="display">Display 42</p>
+          <p class="page-title">Page title 30</p>
+          <p class="modal-title">Modal title 22</p>
+          <p class="heading-lg">Heading large 24</p>
+          <p class="heading-md">Heading medium 20</p>
+          <p class="heading-sm">Heading small 18</p>
+          <p class="body-lg">Body large 18 — project team context and narrative copy</p>
+          <p class="body">Body 16 — default paragraph text</p>
+          <p class="body-sm">Body small 14 — secondary metadata</p>
+          <p class="meta-hint">Meta hint 12</p>
+          <p class="meta-utility">Meta utility 14</p>
+          <p class="section-label">Section label</p>
+        </div>
+
+        <!-- Seals sample -->
+        <div class="flex flex-wrap gap-6 items-end mt-8">
+          <img src="assets/seals/SealWell.svg"                    alt="WELL seal"           class="h-16 w-auto">
+          <img src="assets/seals/SealCertificationGold.svg"       alt="WELL Certified Gold" class="h-16 w-auto">
+          <img src="assets/seals/SealCertificationPlatinum.svg"   alt="WELL Certified Platinum" class="h-16 w-auto">
+          <img src="assets/seals/SealRatingPerformance.svg"       alt="WELL Performance Rating" class="h-16 w-auto">
+          <img src="assets/seals/IWBILogo.svg"                    alt="IWBI"                class="h-10 w-auto">
+        </div>
+
+      </section>
+    </main>
+
+  </div><!-- /workspace -->
+
+</body>
+</html>

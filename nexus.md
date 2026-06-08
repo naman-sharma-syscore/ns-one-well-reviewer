@@ -58,6 +58,15 @@ Key facts for quick reference:
 3. Repeatable procedures go into `forge/` (playbooks, agent instructions).
 4. Knowledge is promoted to Jarvis **only** when it is reusable across projects, durable, and under 2 pages or clearly summarized.
 
+## Tooling
+
+**graphify** is installed and a knowledge graph is built for this repo.
+
+- Graph outputs: `graphify-out/graph.html` (visual), `graphify-out/graph.json` (raw), `graphify-out/GRAPH_REPORT.md` (audit)
+- **Before any codebase exploration task:** run `/graphify query "<question>"` — it is faster and more token-efficient than sequential file reads
+- Rebuild the graph after major structural changes with `/graphify . --update`
+- Rebuild from scratch (e.g. after deleting `temp/`) with `/graphify .`
+
 ## Inherited Jarvis rules
 
 These rules come from the Jarvis meta-brain and are embedded here for self-contained operation:
