@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One WELL — UI Kit</title>
+<link rel="stylesheet" href="onewell.css">
+
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--background);color:var(--gray-800)}
+  .page{max-width:1280px;margin:0 auto;padding:48px 40px 80px}
+  header.kit{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:48px}
+  header.kit .meta{font-size:13px;color:var(--gray-500);text-align:right}
+  header.kit h1{margin:8px 0 0;font:400 36px/1 var(--font-display);letter-spacing:-.01em}
+
+  .eyebrow{font:600 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--cyan-800);margin-bottom:8px}
+  section{margin-bottom:64px}
+  section > h2{margin:0 0 6px;font-family:var(--font-display);font-size:30px;font-weight:400;color:var(--gray-800);letter-spacing:-.005em}
+  section > .desc{font-size:14px;color:var(--gray-500);margin:0 0 24px;max-width:680px;line-height:1.55}
+
+  /* ---- table of contents grid ---- */
+  .toc{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+  .toc a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--gray-800);font-size:13px;font-weight:600;text-decoration:none;transition:.15s}
+  .toc a span.num{font-size:10px;color:var(--gray-500);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .toc a:hover{border-color:var(--cyan-300);background:var(--cyan-50)}
+
+  /* ---- tile / card / panel utilities ---- */
+  .panel{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px}
+  .panel-tight{padding:14px}
+  .panel-dark{background:var(--gray-800);color:#fff;border-color:var(--gray-700)}
+
+  .canon-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:600;color:var(--blue-600);text-decoration:none;
+    padding:6px 0;
+    border-bottom:1px solid transparent;
+  }
+  .canon-link:hover{border-bottom-color:var(--blue-600)}
+  .canon-link::after{content:"→";font-weight:400}
+
+  .canon-cta{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:18px 22px;
+    border:1px dashed var(--cyan-300);border-radius:12px;
+    background:linear-gradient(0deg,var(--cyan-50) 0%,#fff 100%);
+    margin-top:20px;
+  }
+  .canon-cta .canon-cta-text{display:flex;flex-direction:column;gap:2px}
+  .canon-cta .label{font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800)}
+  .canon-cta .h{font:500 16px var(--font-body);color:var(--gray-800)}
+  .canon-cta .b{font-size:13px;color:var(--gray-600);max-width:520px;line-height:1.5}
+
+  /* ---- token tables ---- */
+  .token-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .token-tbl{width:100%;border-collapse:collapse;font-size:13px}
+  .token-tbl th,.token-tbl td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border-soft)}
+  .token-tbl th{font:600 10px var(--font-body);text-transform:uppercase;letter-spacing:.06em;color:var(--gray-500);background:var(--gray-50)}
+  .token-tbl td.tok{font-family:ui-monospace,monospace;color:var(--cyan-800);font-size:12px}
+  .token-tbl td.val{color:var(--gray-700);font-family:ui-monospace,monospace;font-size:12px}
+
+  /* ---- type sample / color swatch ---- */
+  .type-sample{padding:16px 0;border-bottom:1px solid var(--border-soft)}
+  .type-sample:last-child{border-bottom:0}
+  .type-sample .preview{margin:6px 0}
+  .type-sample .meta{font-size:11px;color:var(--gray-500);font-family:ui-monospace,monospace}
+
+  .swatch-strip{display:grid;grid-template-columns:repeat(10,1fr);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+  .swatch-strip > div{height:48px;display:flex;align-items:flex-end;padding:6px 8px;font-size:9px;font-family:ui-monospace,monospace}
+  .swatch-strip + .swatch-label{font-size:11px;color:var(--gray-500);margin-top:6px;display:flex;justify-content:space-between}
+
+  /* ---- elements (tags/buttons inline preview) ---- */
+  .row-flex{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .label-mini{font-size:10px;font-weight:600;color:var(--gray-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+
+  /* ---- product context shell ---- */
+  .demo{border:1px solid var(--border);border-radius:12px;background:#fff;overflow:hidden}
+  .demo .demo-h{padding:10px 16px;border-bottom:1px solid var(--border-soft);font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500);background:var(--gray-50);display:flex;justify-content:space-between;align-items:center}
+
+  .topbar{display:flex;align-items:center;height:64px;padding:0 24px;background:#fff;border-bottom:1px solid var(--border)}
+  .topbar .logo img{height:28px;display:block}
+  .topbar nav{display:flex;gap:4px;flex:1;margin-left:32px}
+  .topbar nav a{padding:10px 14px;border-radius:6px;font:500 14px var(--font-body);color:var(--gray-600);text-decoration:none}
+  .topbar nav a.active{background:var(--cyan-50);color:var(--cyan-800);font-weight:600}
+  .topbar .right{display:flex;gap:12px;align-items:center}
+  .avatar{width:36px;height:36px;border-radius:9999px;background:linear-gradient(135deg,#39C9EA,#2E74AD);display:flex;align-items:center;justify-content:center;color:#fff;font:600 13px var(--font-body)}
+
+  .shell{display:grid;grid-template-columns:240px 1fr 280px;min-height:480px}
+  .shell .side{background:var(--cyan-50);border-right:1px solid var(--border-panel);padding:20px 16px}
+  .shell .main{padding:24px;background:#fff}
+  .shell .right{background:var(--cyan-50);border-left:1px solid var(--border-panel);padding:20px 16px}
+  .nav-section{font:600 11px/1 var(--font-body);letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);margin:0 0 12px}
+  .nav-list{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+  .nav-list a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;font:500 14px var(--font-body);color:var(--gray-700);text-decoration:none}
+  .nav-list a.active{color:var(--cyan-700);font-weight:600;background:#fff;border-left:2px solid var(--cyan-700);padding-left:8px}
+  .nav-list a .dot{width:8px;height:8px;border-radius:9999px;background:var(--gray-300)}
+  .nav-list a.active .dot{background:var(--cyan-700)}
+  .nav-list a .count{margin-left:auto;font-size:12px;color:var(--gray-500);font-weight:500}
+
+  /* ---- pattern cards ---- */
+  .pattern-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-sm)}
+  .pattern-card .h{font-family:var(--font-display);font-size:18px;color:var(--gray-800)}
+  .pattern-card .b{font-size:13px;color:var(--gray-700);line-height:1.5}
+  .pattern-card .f{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px;border-top:1px solid var(--border-soft);font-size:12px;color:var(--gray-500)}
+
+  .modal-shell{background:rgba(40,42,49,.4);padding:48px;display:flex;align-items:center;justify-content:center}
+  .modal{background:#fff;border-radius:24px;padding:32px;width:480px;box-shadow:var(--shadow-xl)}
+  .modal h3{margin:0 0 6px;font:400 22px var(--font-display);color:var(--gray-800)}
+  .modal p{margin:0 0 20px;color:var(--gray-700);font-size:14px;line-height:1.55}
+  .modal .actions{display:flex;justify-content:flex-end;gap:8px}
+
+  .cert-hero{background:var(--gradient-soft);padding:28px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;color:var(--gray-800);gap:24px}
+  .cert-hero .eyebrow{color:var(--cyan-900)}
+  .cert-hero h1{margin:0;font:400 30px var(--font-display)}
+  .cert-hero .lvl{font:400 42px var(--font-display);letter-spacing:-.01em}
+
+  /* ---- guidelines ---- */
+  .rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .rule{padding:18px;border-radius:10px;border:1px solid var(--border);background:#fff}
+  .rule .head{font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+  .rule.do .head{color:var(--emerald-700)}
+  .rule.dont .head{color:var(--coral-700)}
+  .rule ul{margin:0;padding-left:18px;font-size:13px;color:var(--gray-700);line-height:1.6}
+  .rule li{margin-bottom:4px}
+
+  footer.kit{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--gray-500);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<header class="kit">
+  <div>
+    <div class="eyebrow">IWBI · Design System v1.0</div>
+    <h1>One WELL — UI Kit</h1>
+    <p style="margin:8px 0 0;color:var(--gray-600);max-width:640px;font-size:15px;line-height:1.5">The canonical reference for designing on the WELL Standard platform. Tokens, components, brand assets, and the rules for using them.</p>
+  </div>
+  <div class="meta">
+    <div>v1.0 · Apr 2026</div>
+    <div>FT Made + Mazzard Soft M</div>
+    <div style="margin-top:8px">
+      <a class="canon-link" href="README.md" style="font-size:12px">README</a>&nbsp;
+      <a class="canon-link" href="CLAUDE.md" style="font-size:12px">CLAUDE.md</a>
+    </div>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS — atomic-design hierarchy -->
+<section>
+  <div class="eyebrow">Contents · Atomic-design hierarchy</div>
+  <h2>Where to find what</h2>
+  <p class="desc">Read top-to-bottom: principles set the values, tokens are the raw material, elements are the atoms, components compose them, patterns are real product moments, and the brand library + guidelines anchor everything.</p>
+  <div class="toc">
+    <a href="#principles"><span class="num">00</span>Principles</a>
+    <a href="#foundations"><span class="num">01</span>Foundations · Type & color</a>
+    <a href="#tokens"><span class="num">02</span>Tokens · The full reference</a>
+    <a href="#elements"><span class="num">03</span>Elements · Buttons, tags, inputs</a>
+    <a href="#components"><span class="num">04</span>Components · Cards, modals, nav</a>
+    <a href="#patterns"><span class="num">05</span>Patterns · Real product moments</a>
+    <a href="#brand"><span class="num">06</span>Brand & Media</a>
+    <a href="#icons"><span class="num">07</span>Iconography</a>
+    <a href="#guidelines"><span class="num">08</span>Guidelines · Voice, dos & don'ts</a>
+    <a href="preview/" target="_blank"><span class="num">↗</span>All preview cards</a>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 00 PRINCIPLES                                                   -->
+<!-- ============================================================== -->
+<section id="principles">
+  <div class="eyebrow">00 — Principles</div>
+  <h2>What this system is for</h2>
+  <p class="desc">One WELL helps real estate, workplace, community, and product teams pursue and verify health-focused certifications. The system carries that mission into the interface — calm, factual, generous, and never alarmist.</p>
+
+  <div class="rule-grid">
+    <div class="rule do">
+      <div class="head">Five working principles</div>
+      <ul>
+        <li><strong>Restraint over flourish.</strong> One primary CTA per view. Concept colors only on tags. FT Made only for editorial display.</li>
+        <li><strong>Brand marks are sacred.</strong> Seals never recolored, redrawn, or stylized. Use them verbatim.</li>
+        <li><strong>Tokens, not values.</strong> Every color, size, font reference is a CSS variable. No hex codes inline.</li>
+        <li><strong>One canonical home.</strong> Each component has a single preview card. Other places link to it; never re-define.</li>
+        <li><strong>Generous, never urgent.</strong> "8 points to Gold," not "Hurry — only 8 points!"</li>
+      </ul>
+    </div>
+    <div class="rule dont">
+      <div class="head">Five anti-patterns</div>
+      <ul>
+        <li>Hardcoded hex codes anywhere</li>
+        <li>Recolored or redrawn seals/badges</li>
+        <li>Multiple primary CTAs on one screen</li>
+        <li>Concept colors on chrome (buttons, panels, headers)</li>
+        <li>Decorative emoji, urgency-bait copy, "Oops!" error language</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">For AI design agents</span>
+      <span class="h">CLAUDE.md is auto-loaded into every prototype session</span>
+      <span class="b">It contains the full token list, component contracts, voice rules, and anti-patterns. Anyone designing with Claude in this project automatically follows the system.</span>
+    </div>
+    <a class="ow-btn ow-btn-outline" href="CLAUDE.md">Open CLAUDE.md</a>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 01 FOUNDATIONS                                                  -->
+<!-- ============================================================== -->
+<section id="foundations">
+  <div class="eyebrow">01 — Foundations</div>
+  <h2>Type, color, surface</h2>
+  <p class="desc">FT Made is reserved for serene, editorial moments — page titles, hero numbers, certification levels. Mazzard Soft M carries everything else. Cyan is the system's signal: focus rings, primary CTA, active state. Blue is utilitarian — buttons, links, panel strokes. Concept colors are <em>only</em> for content tagging.</p>
+
+  <div class="token-grid">
+    <div class="panel">
+      <div class="eyebrow">Display sample · FT Made</div>
+      <div class="type-sample">
+        <div class="preview" style="font:400 42px var(--font-display);color:var(--gray-800);line-height:1.05">Health is a design decision.</div>
+        <div class="meta">42 / 400 · FT Made · headline</div>
+      </div>
+      <div class="type-sample">
+        <div class="preview" style="font:400 30px var(--font-display);color:var(--gray-800)">62 / 110 points</div>
+        <div class="meta">30 / 400 · cert hero numeric</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">Body sample · Mazzard Soft M</div>
+      <div class="type-sample">
+        <div class="preview" style="font:400 16px/1.5 var(--font-body);color:var(--gray-700);max-width:380px">A multi-stakeholder workspace for navigating, scoping, achieving, and verifying WELL building certifications.</div>
+        <div class="meta">16 / 400 · body</div>
+      </div>
+      <div class="type-sample">
+        <div class="preview" style="font:600 13px var(--font-body);color:var(--gray-800)">Strategy 1.2 · Drinking water quality</div>
+        <div class="meta">13 / 600 · UI label</div>
+      </div>
+      <div class="type-sample">
+        <div class="preview meta-utility" style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)">audit window opens jun 1</div>
+        <div class="meta">11 / 600 / 0.06em · meta-utility</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:14px">
+    <div class="eyebrow">Color — the four scales that matter</div>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-top:12px">
+
+      <div>
+        <div class="swatch-strip">
+          <div style="background:var(--cyan-50);color:var(--gray-700)">50</div>
+          <div style="background:var(--cyan-100);color:var(--gray-700)">100</div>
+          <div style="background:var(--cyan-200);color:var(--gray-700)">200</div>
+          <div style="background:var(--cyan-300);color:var(--gray-700)">300</div>
+          <div style="background:var(--cyan-400);color:#fff">400</div>
+          <div style="background:var(--cyan-500);color:#fff">500</div>
+          <div style="background:var(--cyan-600);color:#fff">600</div>
+          <div style="background:var(--cyan-700);color:#fff">700</div>
+          <div style="background:var(--cyan-800);color:#fff">800</div>
+          <div style="background:var(--cyan-900);color:#fff">900</div>
+        </div>
+        <div class="swatch-label"><span><strong>Cyan</strong> · primary, focus, active · 700 = brand anchor</span><span>--cyan-50 → --cyan-900</span></div>
+      </div>
+
+      <div>
+        <div class="swatch-strip">
+          <div style="background:var(--blue-50);color:var(--gray-700)">50</div>
+          <div style="background:var(--blue-100);color:var(--gray-700)">100</div>
+          <div style="background:var(--blue-200);color:var(--gray-700)">200</div>
+          <div style="background:var(--blue-300);color:var(--gray-700)">300</div>
+          <div style="background:var(--blue-400);color:#fff">400</div>
+          <div style="background:var(--blue-500);color:#fff">500</div>
+          <div style="background:var(--blue-600);color:#fff">600</div>
+          <div style="background:var(--blue-700);color:#fff">700</div>
+          <div style="background:var(--blue-800);color:#fff">800</div>
+          <div style="background:var(--blue-900);color:#fff">900</div>
+        </div>
+        <div class="swatch-label"><span><strong>Blue</strong> · utility · buttons, links, panel borders</span><span>--blue-50 → --blue-900</span></div>
+      </div>
+
+      <div>
+        <div class="swatch-strip">
+          <div style="background:var(--gray-50);color:var(--gray-700)">50</div>
+          <div style="background:var(--gray-100);color:var(--gray-700)">100</div>
+          <div style="background:var(--gray-200);color:var(--gray-700)">200</div>
+          <div style="background:var(--gray-300);color:var(--gray-700)">300</div>
+          <div style="background:var(--gray-400);color:#fff">400</div>
+          <div style="background:var(--gray-500);color:#fff">500</div>
+          <div style="background:var(--gray-600);color:#fff">600</div>
+          <div style="background:var(--gray-700);color:#fff">700</div>
+          <div style="background:var(--gray-800);color:#fff">800</div>
+          <div style="background:var(--gray-900);color:#fff">900</div>
+        </div>
+        <div class="swatch-label"><span><strong>Gray</strong> · neutrals · text, borders, surfaces</span><span>--gray-50 → --gray-900</span></div>
+      </div>
+
+      <div>
+        <div class="swatch-strip">
+          <div style="background:var(--coral-100);color:var(--gray-700)">coral 100</div>
+          <div style="background:var(--coral-700);color:#fff">coral 700</div>
+          <div style="background:var(--plum-100);color:var(--gray-700)">plum 100</div>
+          <div style="background:var(--plum-600);color:#fff">plum 600</div>
+          <div style="background:var(--emerald-100);color:var(--gray-700)">em 100</div>
+          <div style="background:var(--emerald-700);color:#fff">em 700</div>
+          <div style="background:var(--gold-500);color:var(--gray-900)">gold 500</div>
+          <div style="background:#FDF7E1;color:var(--gray-700)">gold 100</div>
+          <div style="background:var(--cyan-100);color:var(--gray-700)">cyan 100</div>
+          <div style="background:var(--cyan-700);color:#fff">cyan 700</div>
+        </div>
+        <div class="swatch-label"><span><strong>Status</strong> · 100/600/700 pairs · gray=todo · cyan=low · plum=med · coral=high · emerald=done · gold=warning</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">Canonical preview cards</span>
+      <span class="h">Color, Type, Concept colors</span>
+      <span class="b">All scales with hex values, contrast notes, and usage roles.</span>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/colors-core.html">Color · Core</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/colors-status.html">Status</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/concept-colors.html">Concept</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/typography.html">Type</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 02 TOKENS                                                       -->
+<!-- ============================================================== -->
+<section id="tokens">
+  <div class="eyebrow">02 — Tokens</div>
+  <h2>The full reference</h2>
+  <p class="desc">Every CSS variable. Treat this table as authoritative; if a value isn't here, it doesn't exist in the system.</p>
+
+  <div class="token-grid" style="grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <div class="label-mini">Semantic surfaces</div>
+      <table class="token-tbl">
+        <tr><th>Token</th><th>Resolves to</th></tr>
+        <tr><td class="tok">--background</td><td class="val">--gray-50</td></tr>
+        <tr><td class="tok">--surface</td><td class="val">#FFFFFF</td></tr>
+        <tr><td class="tok">--surface-side</td><td class="val">--cyan-50</td></tr>
+        <tr><td class="tok">--surface-overlay</td><td class="val">--gray-700</td></tr>
+        <tr><td class="tok">--foreground</td><td class="val">--gray-800</td></tr>
+        <tr><td class="tok">--foreground-muted</td><td class="val">--gray-500</td></tr>
+        <tr><td class="tok">--border</td><td class="val">--gray-200</td></tr>
+        <tr><td class="tok">--border-soft</td><td class="val">--gray-100</td></tr>
+        <tr><td class="tok">--border-panel</td><td class="val">--blue-200</td></tr>
+        <tr><td class="tok">--border-focus</td><td class="val">--cyan-300</td></tr>
+        <tr><td class="tok">--primary</td><td class="val">--cyan-800 (#0F748A)</td></tr>
+        <tr><td class="tok">--primary-cta</td><td class="val">--blue-600</td></tr>
+        <tr><td class="tok">--destructive</td><td class="val">--coral-700</td></tr>
+        <tr><td class="tok">--link</td><td class="val">--blue-600</td></tr>
+      </table>
+
+      <div class="label-mini" style="margin-top:18px">Spacing</div>
+      <table class="token-tbl">
+        <tr><th>Token</th><th>px</th></tr>
+        <tr><td class="tok">--space-xs</td><td class="val">4</td></tr>
+        <tr><td class="tok">--space-sm</td><td class="val">8</td></tr>
+        <tr><td class="tok">--space-md</td><td class="val">16</td></tr>
+        <tr><td class="tok">--space-lg</td><td class="val">32</td></tr>
+        <tr><td class="tok">--space-xl</td><td class="val">64</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <div class="label-mini">Radii</div>
+      <table class="token-tbl">
+        <tr><th>Token</th><th>px</th></tr>
+        <tr><td class="tok">--radius-xs</td><td class="val">3</td></tr>
+        <tr><td class="tok">--radius-sm</td><td class="val">6</td></tr>
+        <tr><td class="tok">--radius-md</td><td class="val">8</td></tr>
+        <tr><td class="tok">--radius-lg</td><td class="val">12</td></tr>
+        <tr><td class="tok">--radius-xl</td><td class="val">16</td></tr>
+        <tr><td class="tok">--radius-modal</td><td class="val">24</td></tr>
+        <tr><td class="tok">--radius-full</td><td class="val">9999</td></tr>
+      </table>
+
+      <div class="label-mini" style="margin-top:18px">Shadow elevation</div>
+      <table class="token-tbl">
+        <tr><th>Token</th><th>Use</th></tr>
+        <tr><td class="tok">--shadow-xs</td><td class="val">hairline edge</td></tr>
+        <tr><td class="tok">--shadow-sm</td><td class="val">cards</td></tr>
+        <tr><td class="tok">--shadow-md</td><td class="val">popovers</td></tr>
+        <tr><td class="tok">--shadow-lg</td><td class="val">modals</td></tr>
+        <tr><td class="tok">--shadow-xl</td><td class="val">hero cards</td></tr>
+      </table>
+
+      <div class="label-mini" style="margin-top:18px">Gradients</div>
+      <table class="token-tbl">
+        <tr><th>Token</th><th>Use</th></tr>
+        <tr><td class="tok">--gradient-cta-bright</td><td class="val">decorative orbs</td></tr>
+        <tr><td class="tok">--gradient-cta-cyan</td><td class="val">primary buttons</td></tr>
+        <tr><td class="tok">--gradient-soft</td><td class="val">cert hero panel</td></tr>
+        <tr><td class="tok">--gradient-performance</td><td class="val">portfolio rating bars (only)</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 03 ELEMENTS                                                     -->
+<!-- ============================================================== -->
+<section id="elements">
+  <div class="eyebrow">03 — Elements</div>
+  <h2>Buttons, tags, inputs</h2>
+  <p class="desc">Atoms. Use the <code>.ow-*</code> classes from <code>components.css</code> directly. Optical alignment is built-in: <code>display:inline-flex; align-items:center; justify-content:center; line-height:1; padding-bottom:1px</code>.</p>
+
+  <div class="panel" style="margin-bottom:14px">
+    <div class="label-mini">Buttons · primary / solid / outline / ghost</div>
+    <div class="row-flex">
+      <button class="ow-btn ow-btn-primary">Get certified</button>
+      <button class="ow-btn ow-btn-solid">Save changes</button>
+      <button class="ow-btn ow-btn-outline">Cancel</button>
+      <button class="ow-btn ow-btn-ghost">Learn more</button>
+    </div>
+    <div class="label-mini" style="margin-top:18px">Sizes · sm / md / lg</div>
+    <div class="row-flex">
+      <button class="ow-btn ow-btn-solid ow-btn--sm">Small</button>
+      <button class="ow-btn ow-btn-solid ow-btn--md">Medium</button>
+      <button class="ow-btn ow-btn-solid ow-btn--lg">Large</button>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:14px">
+    <div class="label-mini">Status pills · 24px · uppercase</div>
+    <div class="row-flex">
+      <span class="ow-status" style="background:var(--gray-100);color:var(--gray-600)">To-Do</span>
+      <span class="ow-status" style="background:var(--cyan-100);color:var(--cyan-600)">Low</span>
+      <span class="ow-status" style="background:var(--plum-100);color:var(--plum-600)">Medium</span>
+      <span class="ow-status" style="background:var(--coral-100);color:var(--coral-600)">High</span>
+      <span class="ow-status" style="background:var(--emerald-100);color:var(--emerald-600)">Done</span>
+    </div>
+
+    <div class="label-mini" style="margin-top:18px">General-purpose tags · 32px · sentence case</div>
+    <div class="row-flex">
+      <span class="ow-tag" style="background:#fff;box-shadow:inset 0 0 0 1px var(--cyan-300)">Active</span>
+      <span class="ow-tag" style="background:var(--blue-100);color:var(--blue-700)">All</span>
+      <span class="ow-tag" style="background:var(--blue-100);color:var(--blue-700)">Pursued</span>
+      <span class="ow-tag" style="background:var(--blue-100);color:var(--blue-700)">Achieved</span>
+    </div>
+
+    <div class="label-mini" style="margin-top:18px">Concept tags · 24px · tagging only</div>
+    <div class="row-flex">
+      <span class="ow-concept-tag" style="background:#87DFF2;color:var(--gray-800)">Air</span>
+      <span class="ow-concept-tag" style="background:#39C9EA;color:var(--gray-800)">Water</span>
+      <span class="ow-concept-tag" style="background:#17AA8D">Nourishment</span>
+      <span class="ow-concept-tag" style="background:#0F748A">Community</span>
+      <span class="ow-concept-tag" style="background:#0A5161">Mind</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="label-mini">Inputs · 40px · 6px radius · cyan-300 focus ring</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+      <div>
+        <label style="font:500 12px var(--font-body);color:var(--gray-600);display:block;margin-bottom:6px">Project name</label>
+        <input class="ow-input" placeholder="Madison Avenue Tower" style="height:40px;padding:0 12px;border:1px solid var(--border);border-radius:6px;font:14px var(--font-body);background:#fff;width:100%;outline:none">
+      </div>
+      <div>
+        <label style="font:500 12px var(--font-body);color:var(--gray-600);display:block;margin-bottom:6px">WELL AP lead</label>
+        <input class="ow-input" placeholder="Search team members…" style="height:40px;padding:0 12px;border:2px solid var(--cyan-300);border-radius:6px;font:14px var(--font-body);background:#fff;width:100%;outline:none;box-shadow:0 0 0 2px rgba(57,201,234,.2)">
+      </div>
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">Full element catalog</span>
+      <span class="h">Tags & Buttons preview card</span>
+      <span class="b">Optical-alignment notes, sizing variants, light + dark surfaces, code-criterion chips, icon-button compositions.</span>
+    </div>
+    <a class="ow-btn ow-btn-outline" href="preview/tags.html">Open Tags & Buttons</a>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 04 COMPONENTS                                                   -->
+<!-- ============================================================== -->
+<section id="components">
+  <div class="eyebrow">04 — Components</div>
+  <h2>Cards, modals, navigation</h2>
+  <p class="desc">Composed from elements. Each component below shows its essential shape; the canonical preview card carries the full state matrix.</p>
+
+  <div class="demo" style="margin-bottom:14px">
+    <div class="demo-h"><span>Top bar · 64px · 1px gray-200 bottom border</span><span>topbar</span></div>
+    <div class="topbar">
+      <div class="logo"><img src="assets/icons/StandardLogo.svg" alt="WELL"></div>
+      <nav>
+        <a class="active" href="#">Projects</a>
+        <a href="#">Library</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+      <div class="right">
+        <button class="ow-btn ow-btn-ghost ow-btn--sm">+ New project</button>
+        <div class="avatar">EM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo" style="margin-bottom:14px">
+    <div class="demo-h"><span>Three-column workspace · cyan-50 rails · white center</span><span>shell</span></div>
+    <div class="shell">
+      <aside class="side">
+        <div class="nav-section">Air · 12 strategies</div>
+        <div class="nav-list">
+          <a><span class="dot"></span>A01 · Air quality<span class="count">P</span></a>
+          <a class="active"><span class="dot"></span>A02 · Smoke-free<span class="count">3</span></a>
+          <a><span class="dot"></span>A03 · Ventilation<span class="count">5</span></a>
+        </div>
+        <div class="nav-section">Water · 8 strategies</div>
+        <div class="nav-list">
+          <a><span class="dot"></span>W01 · Drinking quality<span class="count">2</span></a>
+          <a><span class="dot"></span>W02 · Contaminants<span class="count">P</span></a>
+        </div>
+      </aside>
+      <main class="main">
+        <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px">Air · A02</div>
+        <h2 style="margin:0;font:400 26px var(--font-display);color:var(--gray-800)">Smoke-free environment</h2>
+        <p style="font-size:14px;color:var(--gray-700);max-width:440px;line-height:1.55;margin:6px 0 16px">Eliminate exposure to environmental tobacco smoke and emissions from combustible products throughout the project area.</p>
+        <div class="row-flex" style="gap:6px">
+          <span class="ow-status" style="background:var(--cyan-100);color:var(--cyan-600)">Low</span>
+          <span class="ow-tag" style="background:var(--blue-100);color:var(--blue-700)">Required</span>
+          <span class="ow-tag" style="background:var(--blue-100);color:var(--blue-700)">3 of 4 met</span>
+        </div>
+      </main>
+      <aside class="right">
+        <div class="nav-section">Strategy actions</div>
+        <button class="ow-btn ow-btn-solid" style="width:100%;margin-bottom:8px">Mark as pursued</button>
+        <button class="ow-btn ow-btn-outline" style="width:100%;margin-bottom:8px">Compare with similar</button>
+        <button class="ow-btn ow-btn-ghost" style="width:100%">View documentation</button>
+      </aside>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-h"><span>Confirmation modal · 24px radius · centered</span><span>modal</span></div>
+    <div class="modal-shell">
+      <div class="modal">
+        <h3>Submit Madison Ave for review?</h3>
+        <p>Once submitted, strategies will lock for editing until the assigned WELL reviewer completes their pass — typically 5–7 business days. You can still upload supporting documentation.</p>
+        <div class="actions">
+          <button class="ow-btn ow-btn-outline">Cancel</button>
+          <button class="ow-btn ow-btn-solid">Submit for review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">Component preview cards</span>
+      <span class="h">Forms, modals, tables, navigation, panels</span>
+      <span class="b">Full state matrices: rest, hover, active, disabled, error. Plus accessibility checks and code snippets.</span>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/forms.html">Forms</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/modals.html">Modals</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/tables.html">Tables</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/navigation.html">Nav</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 05 PATTERNS                                                     -->
+<!-- ============================================================== -->
+<section id="patterns">
+  <div class="eyebrow">05 — Patterns</div>
+  <h2>Real product moments</h2>
+  <p class="desc">How the parts compose. These are the highest-fidelity examples of the system in motion.</p>
+
+  <div class="cert-hero" style="margin-bottom:24px">
+    <div>
+      <div class="eyebrow">Madison Avenue Tower</div>
+      <h1>WELL Certification — projected</h1>
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-700);margin-top:6px">62 / 110 points · audit window opens jun 1</div>
+    </div>
+    <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+      <img src="assets/seals/SealCertificationSilver.svg" style="height:96px" alt="WELL Certified Silver seal">
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-700)">8 points to Gold</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px">
+    <div class="pattern-card">
+      <div style="display:flex;justify-content:space-between"><div style="width:36px;height:36px;border-radius:9999px;background:var(--cyan-100);display:flex;align-items:center;justify-content:center"><img src="assets/icons/NavAccount.svg" width="18" height="18"></div><span class="ow-status" style="background:var(--emerald-100);color:var(--emerald-600)">Done</span></div>
+      <div class="h">Project team</div>
+      <div class="b">5 collaborators across 3 disciplines, with WELL AP credentials assigned to Air, Water, and Mind.</div>
+      <div class="f"><span>Last edit · 2h ago</span><a href="#" style="color:var(--blue-600);font-weight:600;text-decoration:none">Manage →</a></div>
+    </div>
+    <div class="pattern-card">
+      <div style="display:flex;justify-content:space-between"><div style="width:36px;height:36px;border-radius:9999px;background:var(--cyan-100);display:flex;align-items:center;justify-content:center"><img src="assets/icons/UtilitySave.svg" width="18" height="18"></div><span class="ow-status" style="background:var(--coral-100);color:var(--coral-600)">High</span></div>
+      <div class="h">Documentation</div>
+      <div class="b">Outstanding files for W1.2, A2.1, and N4.1. Drag-and-drop or connect SharePoint.</div>
+      <div class="f"><span>3 strategies pending</span><a href="#" style="color:var(--blue-600);font-weight:600;text-decoration:none">Upload →</a></div>
+    </div>
+    <div class="pattern-card">
+      <div style="display:flex;justify-content:space-between"><div style="width:36px;height:36px;border-radius:9999px;background:var(--cyan-100);display:flex;align-items:center;justify-content:center"><img src="assets/icons/UtilityScoring.svg" width="18" height="18"></div><span class="ow-status" style="background:var(--plum-100);color:var(--plum-600)">Medium</span></div>
+      <div class="h">Performance reports</div>
+      <div class="b">Quarterly air, water, and acoustics readings on a rolling 90-day window.</div>
+      <div class="f"><span>Next sync · Apr 30</span><a href="#" style="color:var(--blue-600);font-weight:600;text-decoration:none">Open →</a></div>
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">More product patterns</span>
+      <span class="h">Scoping table, concept hero, profile, alerts</span>
+      <span class="b">Each pattern card is a real screen rebuilt with system tokens — usable as a starting point for new prototypes.</span>
+    </div>
+    <a class="ow-btn ow-btn-outline" href="preview/">Open all preview cards</a>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 06 BRAND & MEDIA — link to canonical card                       -->
+<!-- ============================================================== -->
+<section id="brand">
+  <div class="eyebrow">06 — Brand & Media</div>
+  <h2>Seals, badges, marks</h2>
+  <p class="desc">The visible pay-off of certification. These are sacred — never recolor, redraw, or stylize. Use the certification seal at final award; rating seals for single-topic achievements; provider badges in directories and signatures.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px">
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationBronze.svg" style="height:96px" alt="">
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)">Bronze · 40–49 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationSilver.svg" style="height:96px" alt="">
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)">Silver · 50–59 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationGold.svg" style="height:96px" alt="">
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)">Gold · 60–79 pts</div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/seals/SealCertificationPlatinum.svg" style="height:96px" alt="">
+      <div style="font:600 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500)">Platinum · 80+ pts</div>
+    </div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">Full catalog · 45+ marks</span>
+      <span class="h">Brand & Media preview card</span>
+      <span class="b">All certification seals · 8 rating seals · 5 provider seals + badges · 4 watermarks · IWBI logo · WELL seal · gradient hero shapes.</span>
+    </div>
+    <a class="ow-btn ow-btn-outline" href="preview/brand-media.html">Open Brand & Media</a>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 07 ICONOGRAPHY                                                  -->
+<!-- ============================================================== -->
+<section id="icons">
+  <div class="eyebrow">07 — Iconography</div>
+  <h2>The glyph layer</h2>
+  <p class="desc">30+ single-color glyphs at 24px native. Use them sparingly — every icon adds cognitive load. Recolor by inlining the SVG and setting parent <code>color</code>.</p>
+
+  <div class="panel" style="display:grid;grid-template-columns:repeat(10,1fr);gap:8px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityHome.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Home</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityPortfolio.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Portfolio</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityScoring.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Scoring</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityClassification.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Classify</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilitySearch.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Search</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityEdit.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Edit</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilitySave.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Save</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityTrash.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Trash</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityCheck.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Check</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px;border:1px solid var(--border-soft);border-radius:8px"><img src="assets/icons/UtilityClose.svg" style="width:22px;height:22px"><div style="font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace">Close</div></div>
+  </div>
+
+  <div class="canon-cta">
+    <div class="canon-cta-text">
+      <span class="label">All 30+ utility glyphs</span>
+      <span class="h">Utility Icons preview card</span>
+      <span class="b">Grouped by function: navigation · disclosure & state · actions. Plus recoloring demo and in-context button strip.</span>
+    </div>
+    <div style="display:flex;gap:8px">
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/utility-icons.html">Utility Icons</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="preview/concept-icons.html">Concept Icons</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- 08 GUIDELINES                                                   -->
+<!-- ============================================================== -->
+<section id="guidelines">
+  <div class="eyebrow">08 — Guidelines</div>
+  <h2>Voice, accessibility, dos & don'ts</h2>
+  <p class="desc">The full guideline document is in <code>CLAUDE.md</code> — auto-loaded by Claude in every design session. The condensed dos/don'ts below cover the most-flagged review issues.</p>
+
+  <div class="rule-grid">
+    <div class="rule do">
+      <div class="head">✓ Do</div>
+      <ul>
+        <li>Link <code>colors_and_type.css</code> + <code>components.css</code> at the top of every HTML file</li>
+        <li>Use <code>.ow-btn-*</code> classes — they bake in optical alignment</li>
+        <li>One primary CTA per view. Identify the action the user is here to complete.</li>
+        <li>Use side-rail pattern (<code>--cyan-50</code>) only for nav/rails — never as content background</li>
+        <li>Reach for seals at <code>≥64px</code>; below that, swap to badge variant</li>
+        <li>Sentence case for headings; Title Case only for proper nouns + cert levels</li>
+        <li>Errors as <em>action</em>: "We couldn't reach the reviewer — try again in a minute"</li>
+        <li>Body contrast ≥4.5:1; touch targets ≥44×44px</li>
+      </ul>
+    </div>
+    <div class="rule dont">
+      <div class="head">✗ Don't</div>
+      <ul>
+        <li>Hardcoded hex codes anywhere — always <code>var(--token)</code></li>
+        <li>Recolor or redraw seals/badges — they are sacred</li>
+        <li>Multiple primary CTAs in one view</li>
+        <li>Concept colors on chrome (buttons, panels, headers) — tagging only</li>
+        <li>FT Made on UI controls (buttons, labels, fields) — display only</li>
+        <li>Performance gradient as page background — portfolio rating bars only</li>
+        <li>Decorative emoji or "Oops!" / "Hurry!" copy</li>
+        <li><code>outline:none</code> without a custom focus replacement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="canon-cta" style="margin-top:18px">
+    <div class="canon-cta-text">
+      <span class="label">Working with this system</span>
+      <span class="h">CLAUDE.md & README.md</span>
+      <span class="b">CLAUDE.md = strict AI rules (auto-loaded). README.md = handoff guide for humans (open this file first if you're new).</span>
+    </div>
+    <div style="display:flex;gap:8px">
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="CLAUDE.md">CLAUDE.md</a>
+      <a class="ow-btn ow-btn-outline ow-btn--sm" href="README.md">README.md</a>
+    </div>
+  </div>
+</section>
+
+<footer class="kit">
+  <div>One WELL Design System · IWBI · 2026</div>
+  <div>FT Made + Mazzard Soft M · v1.0</div>
+</footer>
+
+</div>
+</body>
+</html>

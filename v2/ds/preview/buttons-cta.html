@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CTA Buttons</title>
+<link rel="stylesheet" href="../onewell.css">
+<style>body{margin:0;padding:24px;background:var(--gray-50);width:700px;box-sizing:border-box;font-family:var(--font-body)}
+.row{display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.label{font-size:10px;font-weight:600;color:var(--gray-500);letter-spacing:.05em;text-transform:uppercase;width:60px}
+button{font-family:var(--font-body);font-weight:600;border:0;cursor:pointer;border-radius:9999px;padding:0 28px;transition:all .15s}
+.xl{height:64px;font-size:18px}
+.lg{height:48px;font-size:16px}
+.gradient-cyan{background:linear-gradient(99deg,#239CB3,#2BA8A8);color:#fff}
+.gradient-bright{background:linear-gradient(99deg,#41D5F6,#3EECD1 50%,#66FCD9);color:#fff;text-shadow:0 1px 2px rgba(15,116,138,.5)}
+.dark{background:var(--cyan-800);color:#fff}
+.dark:hover{background:var(--cyan-900)}
+.light{background:#fff;border:1px solid var(--gray-200);color:var(--cyan-800)}
+.light:hover{background:var(--gray-50)}
+.disabled{background:var(--primary-disabled);color:#fff;cursor:not-allowed}
+</style></head><body>
+<div class="row"><span class="label">XL</span>
+<button class="xl gradient-cyan">Primary Gradient</button>
+<button class="xl dark">Primary Dark</button>
+<button class="xl light">Secondary Light</button>
+</div>
+<div class="row"><span class="label">LG</span>
+<button class="lg gradient-bright">Primary Bright</button>
+<button class="lg dark">Primary Dark</button>
+<button class="lg light">Secondary Light</button>
+<button class="lg disabled" disabled>Disabled</button>
+</div>
+</body></html>

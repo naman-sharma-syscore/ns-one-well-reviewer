@@ -1,0 +1,343 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Brand & Media — Seals, Badges, Marks</title>
+<link rel="stylesheet" href="../onewell.css">
+
+<style>
+body{margin:0;padding:32px;background:#fff;width:1240px;box-sizing:border-box;font-family:var(--font-body);color:var(--gray-800)}
+h1.card-title{font-family:var(--font-heading);font-weight:500;font-size:28px;margin:0 0 4px;color:var(--gray-900);letter-spacing:-0.01em}
+.card-sub{font-size:13px;color:var(--gray-500);margin-bottom:24px;max-width:780px;line-height:1.5}
+
+.section{margin-bottom:36px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-200)}
+.section-title{font-family:var(--font-heading);font-weight:500;font-size:18px;color:var(--gray-900);margin:0}
+.section-meta{font-size:11px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em}
+
+.label{font-size:10px;font-weight:600;color:var(--gray-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.subgroup{margin-bottom:18px}
+
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));gap:14px}
+.swatch-grid.lg{grid-template-columns:repeat(auto-fill, minmax(240px, 1fr))}
+.swatch-grid.xl{grid-template-columns:repeat(auto-fill, minmax(280px, 1fr))}
+
+.swatch{
+  background:var(--gray-50);
+  border:1px solid var(--gray-200);
+  border-radius:8px;
+  padding:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;
+  min-height:160px;
+  text-align:center;
+}
+.swatch.dark{background:var(--gray-800);border-color:var(--gray-700)}
+.swatch img{display:block;max-width:100%;height:auto}
+.swatch .name{font-size:11px;color:var(--gray-700);font-weight:500;line-height:1.3}
+.swatch.dark .name{color:var(--gray-200)}
+.swatch .meta{font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace}
+.swatch.dark .meta{color:var(--gray-400)}
+
+.size-row{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px}
+.size-row .size-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+.size-row .size-item .meta{font-size:10px;color:var(--gray-500);font-family:ui-monospace,monospace}
+
+/* Gradient blob preview */
+.blob-stage{position:relative;width:100%;height:240px;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--gray-200)}
+.blob-stage.dark{background:var(--gray-900);border-color:var(--gray-800)}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.85}
+
+.gradient-block{height:80px;border-radius:8px;display:flex;align-items:flex-end;padding:10px;color:#fff;font-size:11px;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+
+</style></head><body>
+
+<h1 class="card-title">Brand & Media</h1>
+<div class="card-sub">All WELL Standard brand marks, certification seals, rating seals, provider badges, watermarks, and hero shapes — sourced verbatim from <code>assets/seals/*.tsx</code> and <code>assets/badges/*.tsx</code>. Use these exactly; never re-draw or recolor.</div>
+
+<!-- ============================================================== -->
+<!-- C-2 BRAND MARKS                                                 -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Brand marks</h2>
+    <span class="section-meta">primary identity · use in nav, footers, certificates</span>
+  </div>
+
+  <div class="swatch-grid xl">
+    <div class="swatch" style="min-height:200px">
+      <img src="../assets/seals/SealWell.svg" style="height:120px;width:auto" alt="WELL seal">
+      <div class="name">WELL Seal</div>
+      <div class="meta">SealWell · use as standalone brand mark</div>
+    </div>
+    <div class="swatch" style="min-height:200px">
+      <img src="../assets/seals/IWBILogo.svg" style="height:60px;width:auto" alt="IWBI logo">
+      <div class="name">IWBI Logotype</div>
+      <div class="meta">IWBILogo · International WELL Building Institute</div>
+    </div>
+    <div class="swatch" style="min-height:200px">
+      <img src="../assets/icons/StandardLogo.svg" style="height:36px;width:auto" alt="Standard logo">
+      <div class="name">Standard Logo (UI)</div>
+      <div class="meta">StandardLogo · in-product nav variant</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- WATERMARKS                                                      -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Watermarks</h2>
+    <span class="section-meta">low-emphasis attribution marks for documents & cards</span>
+  </div>
+
+  <div class="swatch-grid lg">
+    <div class="swatch">
+      <img src="../assets/seals/WaterMarkWellProjects.svg" style="height:80px;width:auto" alt="">
+      <div class="name">WELL Projects watermark</div>
+      <div class="meta">on certificates, project docs</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/WaterMarkWWWProducts.svg" style="height:80px;width:auto" alt="">
+      <div class="name">Works With WELL Products watermark</div>
+      <div class="meta">on product datasheets</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/WatermarkMemberOrg.svg" style="height:80px;width:auto" alt="">
+      <div class="name">IWBI Member Org watermark</div>
+      <div class="meta">on member-org collateral</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealIwbiMember.svg" style="height:120px;width:auto" alt="">
+      <div class="name">IWBI Member seal</div>
+      <div class="meta">solid attributable mark</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- C-3 CERTIFICATION SEALS                                         -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">WELL Certification seals</h2>
+    <span class="section-meta">awarded after final certification · 4 levels</span>
+  </div>
+
+  <div class="swatch-grid lg">
+    <div class="swatch" style="min-height:220px">
+      <img src="../assets/seals/SealCertificationBronze.svg" style="height:140px;width:auto" alt="">
+      <div class="name">WELL Certified Bronze</div>
+      <div class="meta">40–49 points</div>
+    </div>
+    <div class="swatch" style="min-height:220px">
+      <img src="../assets/seals/SealCertificationSilver.svg" style="height:140px;width:auto" alt="">
+      <div class="name">WELL Certified Silver</div>
+      <div class="meta">50–59 points</div>
+    </div>
+    <div class="swatch" style="min-height:220px">
+      <img src="../assets/seals/SealCertificationGold.svg" style="height:140px;width:auto" alt="">
+      <div class="name">WELL Certified Gold</div>
+      <div class="meta">60–79 points</div>
+    </div>
+    <div class="swatch" style="min-height:220px">
+      <img src="../assets/seals/SealCertificationPlatinum.svg" style="height:140px;width:auto" alt="">
+      <div class="name">WELL Certified Platinum</div>
+      <div class="meta">80+ points</div>
+    </div>
+  </div>
+
+  <div class="subgroup" style="margin-top:18px">
+    <div class="label">Sub-certification seals</div>
+    <div class="swatch-grid lg">
+      <div class="swatch">
+        <img src="../assets/seals/SealWellCertification.svg" style="height:120px;width:auto" alt="">
+        <div class="name">WELL Certification (generic)</div>
+        <div class="meta">SealWellCertification</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealWellCommunity.svg" style="height:120px;width:auto" alt="">
+        <div class="name">WELL Community</div>
+        <div class="meta">community-scale projects</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealWellResidence.svg" style="height:120px;width:auto" alt="">
+        <div class="name">WELL Residence</div>
+        <div class="meta">residential projects</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealWorksWithWell.svg" style="height:120px;width:auto" alt="">
+        <div class="name">Works With WELL</div>
+        <div class="meta">accredited products</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- C-4 RATING SEALS                                                -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Rating seals</h2>
+    <span class="section-meta">9 single-topic ratings · awarded for focused achievement</span>
+  </div>
+
+  <div class="swatch-grid">
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingEquity.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Equity Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingPerformance.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Performance Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingOperations.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Operations Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingWorkforce.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Workforce Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingCoworking.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Coworking Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingDesign.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Design Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingHealthSafety.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Health-Safety Rating</div>
+    </div>
+    <div class="swatch">
+      <img src="../assets/seals/SealRatingRealEstate.svg" style="height:96px;width:auto" alt="">
+      <div class="name">WELL Real Estate Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- C-5 PROVIDER SEALS & BADGES                                     -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Provider seals & badges</h2>
+    <span class="section-meta">accredited providers · seal (full) and badge (compact) variants</span>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Seals — formal use (signage, certificates)</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <img src="../assets/seals/SealProviders.svg" style="height:96px;width:auto" alt="">
+        <div class="name">WELL Provider (generic)</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealEnterpriseProvider.svg" style="height:96px;width:auto" alt="">
+        <div class="name">Enterprise Provider</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealProductProvider.svg" style="height:96px;width:auto" alt="">
+        <div class="name">Product Provider</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealPerformanceTestingProvider.svg" style="height:96px;width:auto" alt="">
+        <div class="name">Performance Testing Provider</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/seals/SealSurveyProvider.svg" style="height:96px;width:auto" alt="">
+        <div class="name">Survey Provider</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Badges — compact use (web, signatures, list-items)</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <img src="../assets/badges/BadgeEnterpriseProvider.svg" style="height:64px;width:auto" alt="">
+        <div class="name">Enterprise Provider</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/badges/BadgeProductProvider.svg" style="height:64px;width:auto" alt="">
+        <div class="name">Product Provider</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/badges/BadgePerformanceTestingProvider.svg" style="height:64px;width:auto" alt="">
+        <div class="name">Performance Testing</div>
+      </div>
+      <div class="swatch">
+        <img src="../assets/badges/BadgeSurveyProvider.svg" style="height:64px;width:auto" alt="">
+        <div class="name">Survey Provider</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Certification badges (compact, for project listings)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><img src="../assets/badges/BadgeCertificationBronze.svg" style="height:64px"><div class="name">Certified Bronze</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeCertificationSilver.svg" style="height:64px"><div class="name">Certified Silver</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeCertificationGold.svg" style="height:64px"><div class="name">Certified Gold</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeCertificationPlatinum.svg" style="height:64px"><div class="name">Certified Platinum</div></div>
+    </div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Rating badges</div>
+    <div class="swatch-grid">
+      <div class="swatch"><img src="../assets/badges/BadgeRatingEquity.svg" style="height:64px"><div class="name">Equity</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingPerformance.svg" style="height:64px"><div class="name">Performance</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingOperations.svg" style="height:64px"><div class="name">Operations</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingWorkforce.svg" style="height:64px"><div class="name">Workforce</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingDesign.svg" style="height:64px"><div class="name">Design</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingHealthySafety.svg" style="height:64px"><div class="name">Health & Safety</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingRealEstate.svg" style="height:64px"><div class="name">Real Estate</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeRatingResidential.svg" style="height:64px"><div class="name">Residential</div></div>
+    </div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Imperative badges (program participation)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><img src="../assets/badges/BadgeImperativePrimary.svg" style="height:64px"><div class="name">Imperative · Primary</div></div>
+      <div class="swatch"><img src="../assets/badges/BadgeImperativeSecondary.svg" style="height:64px"><div class="name">Imperative · Secondary</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- C-6 GRADIENT HERO SHAPES                                        -->
+<!-- ============================================================== -->
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Hero gradient shapes</h2>
+    <span class="section-meta">prism orbs from /alpha homepage · use as decorative backdrop</span>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Bright cyan blob (--gradient-cta-bright)</div>
+    <div class="blob-stage">
+      <div class="blob" style="background:var(--gradient-cta-bright);width:340px;height:340px;left:-40px;top:-50px"></div>
+      <div class="blob" style="background:var(--gradient-soft);width:280px;height:280px;right:-30px;bottom:-60px"></div>
+    </div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Performance gradient — multi-stop (--gradient-performance)</div>
+    <div class="gradient-block" style="background:var(--gradient-performance)">linear-gradient(180deg, #1DD7B2 → #18BDE2 → #BF78AE → #E67357)</div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">Soft prism (--gradient-soft)</div>
+    <div class="gradient-block" style="background:var(--gradient-soft);color:var(--gray-800);text-shadow:none">linear-gradient(58deg, #8AEFDB → #D4BACE → #CBE0F1)</div>
+  </div>
+
+  <div class="subgroup">
+    <div class="label">CTA cyan (overlay) — primary button background</div>
+    <div class="gradient-block" style="background:var(--gradient-cta-cyan)">var(--cyan-700) 60% over bright cyan blend</div>
+  </div>
+</section>
+
+</body></html>

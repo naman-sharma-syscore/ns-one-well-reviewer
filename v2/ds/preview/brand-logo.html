@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand — Logo & Gradients</title>
+<link rel="stylesheet" href="../onewell.css">
+<style>
+  body{margin:0;padding:32px;background:var(--background);width:920px;box-sizing:border-box;font-family:var(--font-body);color:var(--foreground)}
+  h1{font:400 24px/1.1 var(--font-display);margin:0 0 4px;letter-spacing:-.01em}
+  .lede{font-size:13px;color:var(--gray-500);margin:0 0 24px;max-width:640px}
+  .eyebrow{font-size:10px;color:var(--gray-500);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:32px 0 10px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .tile{border:1px solid var(--border);border-radius:var(--radius-md);min-height:140px;display:flex;align-items:center;justify-content:center;padding:24px}
+  .tile.dark{background:var(--gray-800);border-color:var(--gray-800)}
+  .tile.cyan{background:var(--cyan-50);border-color:var(--cyan-100)}
+  .meta{display:flex;justify-content:space-between;align-items:flex-start;margin-top:10px;gap:12px}
+  .label{font-size:13px;font-weight:500;color:var(--gray-800)}
+  .sub{font-size:11px;color:var(--gray-500);margin-top:2px}
+  .token{font:600 10px/1 ui-monospace,monospace;color:var(--gray-600);background:var(--gray-100);padding:4px 6px;border-radius:var(--radius-xs);white-space:nowrap}
+  .grad{min-height:120px;border-radius:var(--radius-lg);padding:18px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-weight:600;font-size:13px;line-height:1.3;border:1px solid rgba(0,0,0,.04)}
+  .grad-meta{font-size:11px;font-weight:500;opacity:.85;margin-top:4px}
+  .row{display:grid;gap:12px}
+  .row.cols-2{grid-template-columns:1fr 1fr}
+  .row.cols-3{grid-template-columns:1fr 1fr 1fr}
+  img.mark{display:block;max-width:100%;height:auto}
+  .rules{margin-top:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;font-size:12px;line-height:1.5}
+  .rules h3{font:500 13px/1 var(--font-body);margin:0 0 10px;color:var(--gray-800)}
+  .rules ul{margin:0;padding-left:18px;color:var(--gray-700)}
+  .rules li{margin:4px 0}
+</style></head>
+<body>
+
+<h1>Brand — logo & gradients</h1>
+<p class="lede">The canonical WELL Standard wordmark, the IWBI organizational mark, watermark variants, and the four brand gradients. All marks ship as SVG in <code>assets/seals/</code> and <code>assets/icons/</code> — never recreate or stylize.</p>
+
+<div class="eyebrow">Standard wordmark</div>
+<div class="card" style="grid-template-columns:1fr 1fr">
+  <div>
+    <div class="tile" style="background:#fff">
+      <img class="mark" src="../assets/icons/StandardLogo.svg" alt="WELL Standard wordmark" style="height:44px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">On light</div>
+        <div class="sub">Default mark, gray-800 fill. Use on white &amp; gray-50 surfaces.</div>
+      </div>
+      <span class="token">StandardLogo.svg</span>
+    </div>
+  </div>
+  <div>
+    <div class="tile dark">
+      <img class="mark" src="../assets/icons/StandardLogo.svg" alt="WELL Standard wordmark on dark" style="height:44px;filter:invert(1) brightness(2)">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">On dark</div>
+        <div class="sub">Inverted via CSS filter; never edit the SVG file itself.</div>
+      </div>
+      <span class="token">filter: invert(1)</span>
+    </div>
+  </div>
+</div>
+
+<div class="eyebrow">IWBI organizational mark</div>
+<div class="card" style="grid-template-columns:1.4fr 1fr">
+  <div>
+    <div class="tile" style="background:#fff;min-height:160px">
+      <img class="mark" src="../assets/seals/IWBILogo.svg" alt="International WELL Building Institute logo" style="height:96px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">IWBI primary lockup</div>
+        <div class="sub">Use for organizational identity, footer attribution, formal communications. Min height 32px.</div>
+      </div>
+      <span class="token">IWBILogo.svg</span>
+    </div>
+  </div>
+  <div>
+    <div class="tile cyan" style="min-height:160px">
+      <img class="mark" src="../assets/seals/SealIwbiMember.svg" alt="IWBI Member seal" style="height:96px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">Member seal</div>
+        <div class="sub">For organizations recognized as IWBI members. Self-contained mark.</div>
+      </div>
+      <span class="token">SealIwbiMember.svg</span>
+    </div>
+  </div>
+</div>
+
+<div class="eyebrow">Watermarks &amp; legal marks</div>
+<div class="card" style="grid-template-columns:1fr 1fr 1fr">
+  <div>
+    <div class="tile" style="background:#fff">
+      <img class="mark" src="../assets/seals/WaterMarkWellProjects.svg" alt="WELL Projects watermark" style="height:64px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">WELL Projects</div>
+        <div class="sub">Low-emphasis watermark for project lists, table headers, document corners.</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="tile" style="background:#fff">
+      <img class="mark" src="../assets/seals/WaterMarkWWWProducts.svg" alt="WWW Products watermark" style="height:64px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">Works With WELL</div>
+        <div class="sub">Watermark variant for partner-product directories.</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="tile" style="background:#fff">
+      <img class="mark" src="../assets/seals/WatermarkMemberOrg.svg" alt="Member organization watermark" style="height:64px">
+    </div>
+    <div class="meta">
+      <div>
+        <div class="label">Member organization</div>
+        <div class="sub">Lightweight stamp for member-org docs &amp; signatures.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="eyebrow">Brand gradients</div>
+<div class="card" style="grid-template-columns:1fr 1fr;gap:14px">
+  <div>
+    <div class="grad" style="background:var(--gradient-cta-bright)">
+      <div>Bright cyan CTA</div>
+      <div class="grad-meta">Primary action gradient — buttons, hero CTAs. One per view.</div>
+    </div>
+    <div class="meta">
+      <span class="token">--gradient-cta-bright</span>
+      <span class="sub">99deg · #41D5F6 → #3EECD1 → #66FCD9</span>
+    </div>
+  </div>
+  <div>
+    <div class="grad" style="background:var(--gradient-cta-cyan)">
+      <div>Hover / pressed CTA</div>
+      <div class="grad-meta">Bright gradient under 60% cyan-700 overlay. Hover &amp; pressed states.</div>
+    </div>
+    <div class="meta">
+      <span class="token">--gradient-cta-cyan</span>
+      <span class="sub">cyan-700 60% over bright</span>
+    </div>
+  </div>
+  <div>
+    <div class="grad" style="background:var(--gradient-soft);color:var(--gray-800)">
+      <div>Soft pastel</div>
+      <div class="grad-meta">Decorative hero washes, marketing surfaces. Never under body text.</div>
+    </div>
+    <div class="meta">
+      <span class="token">--gradient-soft</span>
+      <span class="sub">58deg · mint → mauve → ice</span>
+    </div>
+  </div>
+  <div>
+    <div class="grad" style="background:var(--gradient-performance)">
+      <div>Performance rating</div>
+      <div class="grad-meta">Reserved for performance-rating visualizations. Never decorative.</div>
+    </div>
+    <div class="meta">
+      <span class="token">--gradient-performance</span>
+      <span class="sub">180deg · emerald → cyan → plum → coral</span>
+    </div>
+  </div>
+</div>
+
+<div class="rules">
+  <h3>Usage rules</h3>
+  <ul>
+    <li><strong>Don't recreate marks.</strong> Use the SVG files verbatim from <code>assets/</code>. Never redraw, retrace, or stylize.</li>
+    <li><strong>Don't recolor seals.</strong> Brand seals carry official meaning — recoloring breaks the system. For dark surfaces, invert via CSS filter only.</li>
+    <li><strong>Min sizing.</strong> Standard wordmark ≥ 24px tall. IWBI logo ≥ 32px. Watermarks ≥ 48px.</li>
+    <li><strong>Clearspace.</strong> Reserve at least 0.5× the mark's height as padding around any logo.</li>
+    <li><strong>One CTA gradient per view.</strong> The bright cyan gradient is loud — using it twice dilutes the primary action.</li>
+    <li><strong>Performance gradient is reserved.</strong> Only on portfolio rating visualizations. Never as page background, never under body copy.</li>
+  </ul>
+</div>
+
+</body></html>
