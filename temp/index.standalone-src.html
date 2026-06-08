@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1440, initial-scale=1">
+  <title>OneWELL Reviewer</title>
+
+  <meta name="ext-resource-dependency" content="assets/icons/StandardLogo.svg" data-resource-id="standardLogo" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#FAFEFF">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FAFEFF"/>
+      <rect x="0" y="0" width="280" height="800" fill="#D6F4FB"/>
+      <rect x="30" y="40" width="220" height="36" rx="6" fill="#0F748A" opacity="0.18"/>
+      <rect x="30" y="110" width="220" height="100" rx="8" fill="#ffffff" stroke="#A3C8E6"/>
+      <rect x="30" y="230" width="220" height="36" rx="6" fill="#0F748A"/>
+      <rect x="30" y="276" width="220" height="32" rx="6" fill="#ffffff" stroke="#A3C8E6"/>
+      <rect x="30" y="318" width="220" height="32" rx="6" fill="#ffffff" stroke="#A3C8E6"/>
+      <rect x="30" y="360" width="220" height="32" rx="6" fill="#ffffff" stroke="#A3C8E6"/>
+      <rect x="320" y="40" width="360" height="60" rx="6" fill="#282A31"/>
+      <rect x="320" y="120" width="840" height="160" rx="12" fill="#ffffff" stroke="#DEDFE3"/>
+      <rect x="340" y="148" width="160" height="50" rx="6" fill="#0F748A"/>
+      <rect x="520" y="148" width="160" height="50" rx="6" fill="#DC5432"/>
+      <rect x="700" y="148" width="160" height="50" rx="6" fill="#905C84"/>
+      <rect x="880" y="148" width="160" height="50" rx="6" fill="#17AA8D"/>
+      <rect x="320" y="310" width="840" height="460" rx="12" fill="#ffffff" stroke="#DEDFE3"/>
+      <rect x="320" y="310" width="840" height="50" fill="#D6F4FB"/>
+      <g fill="#EFF1F2">
+        <rect x="340" y="380" width="800" height="56" rx="6"/>
+        <rect x="340" y="450" width="800" height="56" rx="6"/>
+        <rect x="340" y="520" width="800" height="56" rx="6"/>
+        <rect x="340" y="590" width="800" height="56" rx="6"/>
+        <rect x="340" y="660" width="800" height="56" rx="6"/>
+      </g>
+    </svg>
+  </template>
+
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="components.css">
+
+  <style>
+    html, body { margin: 0; padding: 0; background: var(--gray-50); }
+    body { font-family: var(--font-body); color: var(--gray-800); min-width: 1280px; }
+    *, *::before, *::after { box-sizing: border-box; }
+  </style>
+
+  <!-- React + Babel (pinned, integrity-checked) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Data engine (plain JS, defines window.ReviewerData) -->
+  <script src="src/reviewer-data.js"></script>
+
+  <!-- Component layers, in dependency order: shell defines AppFrame + helpers, -->
+  <!-- views export themselves to window, app harness mounts the router.        -->
+  <script type="text/babel" data-presets="react" src="src/reviewer-shell.standalone.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/reviewer-dashboard.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/isolated-task-view.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/reviewer-ops.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/reviewer-app.jsx"></script>
+</body>
+</html>

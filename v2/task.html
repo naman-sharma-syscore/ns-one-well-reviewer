@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, initial-scale=1">
+  <title>OneWELL Reviewer · Task review</title>
+
+  <link rel="stylesheet" href="ds/onewell.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            primary:      'var(--primary)',
+            destructive:  'var(--destructive)',
+            background:   'var(--background)',
+            surface:      'var(--surface)',
+            'surface-side':    'var(--surface-side)',
+            foreground:        'var(--foreground)',
+            'foreground-muted':'var(--foreground-muted)',
+            border:       'var(--border)',
+            'border-soft':'var(--border-soft)',
+            'border-panel':'var(--border-panel)',
+            'border-focus':'var(--border-focus)',
+            'gray-50':    'var(--gray-50)',
+            'gray-100':   'var(--gray-100)',
+            'gray-200':   'var(--gray-200)',
+            'gray-500':   'var(--gray-500)',
+            'gray-800':   'var(--gray-800)',
+            'cyan-50':    'var(--cyan-50)',
+            'cyan-200':   'var(--cyan-200)',
+            'cyan-800':   'var(--cyan-800)',
+            'blue-200':   'var(--blue-200)',
+          },
+          borderRadius: {
+            xs:'var(--radius-xs)', sm:'var(--radius-sm)', md:'var(--radius-md)',
+            lg:'var(--radius-lg)', xl:'var(--radius-xl)', modal:'var(--radius-modal)', full:'var(--radius-full)',
+          },
+          boxShadow: {
+            xs:'var(--shadow-xs)', sm:'var(--shadow-sm)', md:'var(--shadow-md)',
+            lg:'var(--shadow-lg)', xl:'var(--shadow-xl)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body { margin:0; padding:0; }
+    body { font-family:var(--font-body); color:var(--gray-800); background:var(--gray-50); min-width:1280px; }
+    *, *::before, *::after { box-sizing:border-box; }
+    a { text-decoration:none; }
+
+    @keyframes owFade  { from{opacity:0} to{opacity:1} }
+    @keyframes owPop   { from{transform:translate(-50%,-48%) scale(.98);opacity:0} to{transform:translate(-50%,-50%) scale(1);opacity:1} }
+    @keyframes owShake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+
+    .cb-row:hover { background:var(--gray-50) !important; }
+    .cb-row.done  { background:var(--emerald-50) !important; border-color:var(--emerald-200) !important; }
+    .doc-row:hover { background:var(--gray-50); }
+
+    .nav-btn:hover { background:rgba(255,255,255,0.55) !important; }
+    .note-tab.active { background:#fff; color:var(--gray-800); box-shadow:var(--shadow-xs); }
+  </style>
+</head>
+<body>
+
+<div style="display:flex; height:100vh; overflow:hidden; background:var(--gray-50);">
+
+  <!-- ── Sidebar ── -->
+  <aside style="width:252px; flex-shrink:0; background:var(--cyan-50); border-right:1px solid var(--border-panel); display:flex; flex-direction:column; padding:20px 14px 16px; position:sticky; top:0; height:100vh; overflow-y:auto;">
+    <div style="display:flex; align-items:center; gap:10; padding:0 10px 16px;">
+      <img src="assets/icons/StandardLogo.svg" alt="WELL" style="height:28px; display:block;">
+      <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan-800); background:var(--cyan-100); padding:3px 7px 2px; border-radius:3px; line-height:1;">Reviewer</span>
+    </div>
+    <div style="margin:4px 6px 18px; padding:12px 12px 14px; background:rgba(255,255,255,0.6); border:1px solid var(--blue-200); border-radius:8px;">
+      <div style="font-size:11px; color:var(--gray-500); font-weight:600; letter-spacing:.04em; text-transform:uppercase;">Your cohort</div>
+      <div style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;">
+        <span class="ow-concept-tag" style="background:var(--concept-air); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Air</span>
+        <span class="ow-concept-tag" style="background:var(--concept-water); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Water</span>
+        <span class="ow-concept-tag" style="background:var(--concept-thermal); color:#0A4F41; height:20px; font-size:10px; padding:0 8px 1px;">Thermal</span>
+      </div>
+    </div>
+    <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:0 12px 8px;">Workspace</div>
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <a href="index.html" class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%; line-height:1;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+        </span>
+        Review queue
+      </a>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h13l-2 4 2 4H4"/></svg>
+        </span>
+        SLA watch
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </span>
+        MRC loop
+      </button>
+    </nav>
+    <div style="flex:1;"></div>
+    <div style="border-top:1px solid var(--blue-200); padding-top:12px; margin-top:12px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-600); font-weight:500; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.07 7.07 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.07-7.07 4.24-4.24"/></svg>
+        </span>
+        Settings &amp; preferences
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Right column ── -->
+  <div style="display:flex; flex-direction:column; flex:1; min-width:0; overflow:hidden;">
+
+    <!-- Topbar -->
+    <header style="height:64px; background:#fff; border-bottom:1px solid var(--gray-200); display:flex; align-items:center; padding:0 32px; gap:16px; position:sticky; top:0; z-index:5; flex-shrink:0;">
+      <a href="index.html" style="height:32px; padding:0 12px; border:1px solid var(--gray-200); background:#fff; border-radius:6px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-family:var(--font-body); font-size:13px; color:var(--gray-700); font-weight:500; line-height:1;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to queue
+      </a>
+      <div style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--gray-500);">
+        <a href="index.html" style="color:var(--gray-500);">Review queue</a>
+        <span style="color:var(--gray-300);">/</span>
+        <span id="bc-account" style="color:var(--gray-700); font-weight:500;">—</span>
+        <span style="color:var(--gray-300);">/</span>
+        <code id="bc-task" style="font-family:ui-monospace; font-size:11px; color:var(--gray-700); background:var(--gray-100); padding:2px 6px; border-radius:3px;">—</code>
+      </div>
+      <div style="flex:1;"></div>
+      <button style="height:32px; padding:0 12px; border:1px solid var(--gray-200); background:#fff; border-radius:6px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-family:var(--font-body); font-size:13px; color:var(--gray-700); font-weight:500; line-height:1;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        View standard
+      </button>
+      <button style="height:32px; padding:0 12px; border:1px solid var(--gray-200); background:#fff; border-radius:6px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-family:var(--font-body); font-size:13px; color:var(--gray-700); font-weight:500; line-height:1;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download all evidence
+      </button>
+      <div style="display:flex; align-items:center; gap:10; padding:4px 10px 4px 4px; border:1px solid var(--gray-200); border-radius:9999px; background:#fff; cursor:pointer;">
+        <span style="width:30px; height:30px; border-radius:9999px; background:var(--cyan-800); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0;">MR</span>
+        <span style="font-size:13px; font-weight:600; color:var(--gray-800);">Maya Reyes</span>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main style="flex:1; overflow-y:auto; padding:24px 32px 40px;">
+
+      <!-- Lock banner -->
+      <div id="lock-banner" style="display:none; align-items:center; gap:10; padding:10px 16px; border-radius:8px; background:var(--plum-50); border:1px solid var(--plum-200); margin-bottom:16px;">
+        <span style="width:24px; height:24px; border-radius:9999px; background:var(--plum-100); color:var(--plum-700); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </span>
+        <div style="flex:1;">
+          <div style="font-size:13px; font-weight:600; color:var(--plum-800);">Customer workspace locked</div>
+          <div style="font-size:12px; color:var(--plum-700);"><code style="font-family:ui-monospace; font-size:11px; background:var(--plum-100); padding:1px 5px; border-radius:3px;">TaskService::lock()</code> fired — the client cannot modify this snapshot until you issue a ruling.</div>
+        </div>
+        <span style="font-size:11px; color:var(--plum-700); font-weight:600; flex-shrink:0;">YOU HOLD THE LOCK</span>
+      </div>
+
+      <!-- Two-column layout -->
+      <div style="display:flex; gap:24px; align-items:flex-start;">
+
+        <!-- ── Left: Evidence Canvas ── -->
+        <div id="left-canvas" style="flex:1; display:flex; flex-direction:column; gap:16px; min-width:0;">
+          <!-- task header, snapshot ribbon, checklist, docs — populated by JS -->
+        </div>
+
+        <!-- ── Right: Gavel Panel ── -->
+        <aside id="gavel-panel" style="width:360px; flex-shrink:0; position:sticky; top:88px; align-self:flex-start; display:flex; flex-direction:column; gap:16px; max-height:calc(100vh - 104px); overflow-y:auto;">
+          <!-- populated by JS -->
+        </aside>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- Achievement Modal -->
+<div id="modal-backdrop" style="display:none; position:fixed; inset:0; background:rgba(23,24,32,0.45); z-index:100; animation:owFade .15s ease;"></div>
+<div id="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:min(560px,92vw); background:#fff; border-radius:24px; z-index:101; box-shadow:var(--shadow-xl); overflow:hidden; animation:owPop .2s cubic-bezier(.2,.7,.2,1);">
+  <!-- populated by JS -->
+</div>
+
+<script src="js/data.js"></script>
+<script>
+(function () {
+  'use strict';
+  const RD = window.ReviewerData;
+
+  // ── Resolve task from URL ─────────────────────────────────────────────────
+  const params = new URLSearchParams(window.location.search);
+  const taskId = params.get('id') || params.get('task') || (RD.TASKS[0]?.id);
+  const TASK = RD.getTaskById(taskId) || RD.TASKS[0];
+  if (!TASK) { document.body.innerHTML = '<p style="padding:40px;font-family:sans-serif;">Task not found.</p>'; throw new Error('no task'); }
+
+  document.title = `OneWELL Reviewer · ${TASK.feature.code} — ${TASK.account.name}`;
+  document.getElementById('bc-account').textContent = TASK.account.name;
+  document.getElementById('bc-task').textContent = TASK.id;
+
+  // ── State ─────────────────────────────────────────────────────────────────
+  let lockedAt = null;
+  let status   = TASK.status;
+  let checklist = new Set();
+  let docFlags  = {};  // {docName: {relevant:'yes'|'no', note:''}}
+  let notes = [
+    { kind:'public',  author:TASK.snapshot.submittedBy, at:TASK.submittedAt, body:TASK.snapshot.narrative },
+    ...(TASK.notes||[]).map(n=>({ kind:'private', author:'Maya Reyes', at:n.at, body:n.body })),
+  ];
+  let panelMode = 'actions';
+  let noteFilter = 'all';
+  let mrcDraft = { subject:'', body:'', deadline:'+14 days', action:'Remediate and resubmit affected evidence' };
+
+  const concept = RD.CONCEPTS[TASK.feature.concept];
+  const conceptBg = concept.token;
+  const conceptFg = concept.text;
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function pathChipHtml(pathId) {
+    const icons = {
+      SHAREABLE:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+      AUDITED:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>`,
+      INDIVIDUAL:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    };
+    return `<span style="display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 1px;border-radius:4px;background:var(--blue-100);color:var(--blue-700);font-size:12px;font-weight:600;line-height:1;">
+      <span style="display:inline-flex;align-items:center;">${icons[pathId]||''}</span>${RD.PATHS[pathId]?.label||pathId}
+    </span>`;
+  }
+
+  // ── Lock ──────────────────────────────────────────────────────────────────
+  function ensureLock() {
+    if (lockedAt) return;
+    lockedAt = new Date();
+    const banner = document.getElementById('lock-banner');
+    banner.style.display = 'flex';
+    notes.push({ kind:'system', author:'TaskService', at:lockedAt,
+      body:`TaskService::lock(task=${TASK.id}, reviewer=${RD.currentUser.id}) → CLIENT_WRITE_LOCK acquired.` });
+    notes.push({ kind:'system', author:'StateMachine', at:lockedAt,
+      body:`state(${status.id}) → state(UNDER)  ·  reason="first reviewer edit"  ·  by=${RD.currentUser.id}` });
+    status = RD.STATUSES.UNDER;
+    renderGavel();
+    renderNotes();
+  }
+
+  // ── Task Header ───────────────────────────────────────────────────────────
+  function renderTaskHeader() {
+    const seed = parseInt(TASK.id.replace(/\D/g,'').slice(-3),10);
+    const sampleMath = TASK.path.id==='SHAREABLE' ? '1 ↦ all' :
+                       TASK.path.id==='AUDITED'   ? `⌈√${TASK.portfolioSize}⌉ = ${RD.sampleSize(TASK.portfolioSize)}` : '1 site, 1 ruling';
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px 22px;">
+        <div style="display:flex;align-items:center;gap:10;margin-bottom:12px;flex-wrap:wrap;">
+          <span class="ow-code-chip" style="background:${conceptBg};color:${conceptFg};height:26px;font-size:13px;padding:0 12px 1px;">${TASK.feature.code}</span>
+          <span class="ow-concept-tag" style="background:${conceptBg};color:${conceptFg};height:22px;font-size:11px;padding:0 10px 1px;">${concept.label}</span>
+          ${pathChipHtml(TASK.path.id)}
+          ${TASK.feature.precondition ? `<span style="height:24px;padding:0 10px 1px;border-radius:4px;background:var(--coral-100);color:var(--coral-700);display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.05em;line-height:1;">PRECONDITION</span>` : ''}
+          <div style="flex:1;"></div>
+          <span class="ow-status" id="hdr-status" style="background:${status.bg};color:${status.fg};">${status.label}</span>
+        </div>
+        <h1 style="margin:6px 0;font-family:var(--font-display);font-size:34px;font-weight:400;line-height:1.1;color:var(--gray-800);letter-spacing:-.01em;">${TASK.feature.code}: ${TASK.feature.title}</h1>
+        <div style="display:flex;align-items:center;gap:10;margin-bottom:18px;">
+          <span style="font-size:15px;font-weight:500;color:var(--gray-700);">${TASK.account.name}</span>
+          <span style="color:var(--gray-300);">·</span>
+          <span style="font-size:13px;color:var(--gray-500);">${TASK.account.org}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;overflow:hidden;">
+          ${[
+            {label:'Verification path', val:TASK.path.label, mono:true},
+            {label:'Sample math',       val:sampleMath,       mono:true},
+            {label:'Portfolio impact',  val:`${TASK.portfolioSize} location${TASK.portfolioSize>1?'s':''}`, mono:false},
+            {label:'SLA',               val:TASK.sla.kind==='overdue'?`${TASK.sla.hours}h overdue`:(TASK.sla.kind==='soon'?`Due in ${TASK.sla.hours}h`:`On track · ${Math.round(TASK.sla.hours/24)}d`), mono:false},
+          ].map((m,i)=>`
+            <div style="padding:12px 16px;${i<3?'border-right:1px solid var(--gray-200);':''}">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px;">${m.label}</div>
+              <div style="font-size:14px;font-weight:600;color:var(--gray-800);${m.mono?'font-family:ui-monospace,monospace;':''}">${m.val}</div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  // ── Snapshot Ribbon ───────────────────────────────────────────────────────
+  function renderSnapshotRibbon() {
+    const seed = parseInt(TASK.id.replace(/\D/g,'').slice(-3),10)||0;
+    const occupancy = 180 + (seed%9)*65;
+    const area = 28000 + (seed%7)*14000;
+    const scope = TASK.feature.precondition ? 'Core · Owner-occupied' : 'Core + Tenant fit-out';
+    const sampledLocs = (TASK.sampledLocationIds || TASK.locationIds.slice(0,4))
+      .map(id => RD.LOCATIONS.find(l=>l.id===id)).filter(Boolean);
+    const sha = 'sha-' + (TASK.id+'snapshot').split('').reduce((s,c)=>((s<<5)-s+c.charCodeAt(0))>>>0,0).toString(16).slice(0,10);
+    const locChips = sampledLocs.map(l=>`
+      <span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px 1px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;font-size:12px;color:var(--gray-700);line-height:1;">
+        <span style="width:6px;height:6px;border-radius:9999px;background:var(--cyan-700);flex-shrink:0;"></span>
+        <strong style="font-weight:600;color:var(--gray-800);">${l.name}</strong>
+        <span style="color:var(--gray-500);">· ${l.city}</span>
+      </span>
+    `).join('');
+    const extra = TASK.portfolioSize > sampledLocs.length
+      ? `<span style="display:inline-flex;align-items:center;height:28px;padding:0 10px 1px;background:var(--blue-50);border:1px dashed var(--blue-200);border-radius:6px;font-size:12px;color:var(--blue-700);font-weight:600;line-height:1;">+ ${TASK.portfolioSize - sampledLocs.length} more in portfolio</span>`
+      : '';
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;">
+        <div style="padding:14px 22px;background:var(--cyan-50);border-bottom:1px solid var(--blue-200);display:flex;align-items:center;gap:10;">
+          <span style="width:24px;height:24px;border-radius:9999px;background:var(--cyan-100);color:var(--cyan-800);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <div style="flex:1;">
+            <div style="font-size:12px;font-weight:700;color:var(--cyan-800);letter-spacing:.05em;text-transform:uppercase;">Review snapshot — immutable</div>
+            <div style="font-size:12px;color:var(--cyan-900);margin-top:2px;">Frozen at <strong>${RD.fmt(TASK.snapshot.capturedAt)} · ${RD.relative(TASK.snapshot.capturedAt)}</strong> by ${TASK.snapshot.submittedBy}</div>
+          </div>
+          <code style="font-family:ui-monospace;font-size:11px;padding:4px 8px;border-radius:4px;background:#fff;color:var(--gray-700);border:1px solid var(--blue-200);">${sha}</code>
+        </div>
+        <div style="padding:18px 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+          ${[
+            {label:'Scope of certification', val:scope},
+            {label:'Aggregate occupancy',    val:`${occupancy.toLocaleString()} ppl`},
+            {label:'Aggregate net area',     val:`${area.toLocaleString()} sq ft`},
+            {label:'Standard version',       val:'WELL v2 · Q2 2026 amendment'},
+          ].map(f=>`
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px;">${f.label}</div>
+              <div style="font-size:14px;font-weight:600;color:var(--gray-800);">${f.val}</div>
+            </div>
+          `).join('')}
+        </div>
+        <div style="padding:0 22px 18px;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px;">Locations in scope at submission</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">${locChips}${extra}</div>
+        </div>
+      </section>
+    `;
+  }
+
+  // ── Checklist ─────────────────────────────────────────────────────────────
+  function renderChecklist() {
+    const items = RD.getChecklist(TASK.feature.code);
+    const t1 = items.filter(i=>i.tier==='T1'), t2 = items.filter(i=>i.tier==='T2');
+    const t1done = t1.filter(i=>checklist.has(i.id)).length;
+    const t2done = t2.filter(i=>checklist.has(i.id)).length;
+    const pill = (label,done,total,accent) => {
+      const pct = total ? Math.round(done/total*100) : 0;
+      return `<div style="display:flex;flex-direction:column;gap:6px;padding:10px 14px 12px;border:1px solid var(--gray-200);border-radius:8px;flex:1;background:var(--gray-50);">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;">
+          <span style="font-size:11px;font-weight:700;color:var(--gray-600);letter-spacing:.05em;text-transform:uppercase;">${label}</span>
+          <span style="font-size:12px;color:var(--gray-500);"><strong style="color:var(--gray-800);">${done}</strong> / ${total}</span>
+        </div>
+        <div style="height:6px;border-radius:9999px;background:var(--gray-100);overflow:hidden;">
+          <div style="width:${pct}%;height:100%;background:${accent};transition:width .2s;"></div>
+        </div>
+      </div>`;
+    };
+    const rows = items.map(it => {
+      const done = checklist.has(it.id);
+      const isT1 = it.tier==='T1';
+      return `<button class="cb-row${done?' done':''}" data-cid="${it.id}" style="display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:${done?'var(--emerald-50)':'#fff'};border:1px solid ${done?'var(--emerald-200)':'var(--gray-200)'};border-radius:8px;cursor:pointer;text-align:left;font-family:var(--font-body);width:100%;">
+        <span style="width:20px;height:20px;border-radius:4px;flex-shrink:0;background:${done?'var(--emerald-700)':'#fff'};border:1.5px solid ${done?'var(--emerald-700)':'var(--gray-300)'};display:inline-flex;align-items:center;justify-content:center;color:#fff;margin-top:1px;transition:background .12s,border-color .12s;">
+          ${done?`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`:''}
+        </span>
+        <div style="flex:1;">
+          <div style="font-size:13px;color:${done?'var(--gray-600)':'var(--gray-800)'};line-height:1.5;text-decoration:${done?'line-through':'none'};text-decoration-color:var(--emerald-300);">${it.text}</div>
+        </div>
+        <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px 1px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.04em;line-height:1;background:${isT1?'var(--cyan-100)':'var(--blue-100)'};color:${isT1?'var(--cyan-800)':'var(--blue-700)'};flex-shrink:0;">
+          ${isT1?'Tier 1 · required':'Tier 2 · bonus'}
+        </span>
+      </button>`;
+    }).join('');
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px 22px;">
+        <div style="margin-bottom:14px;">
+          <h3 style="margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);">Verification checklist</h3>
+          <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Click each criterion as you audit. Tier 1 is required to issue a ruling.</div>
+        </div>
+        <div style="display:flex;gap:10;margin-bottom:14px;">
+          ${pill('Tier 1',t1done,t1.length,'var(--cyan-700)')}
+          ${pill('Tier 2',t2done,t2.length,'var(--blue-600)')}
+        </div>
+        <div id="cl-rows" style="display:flex;flex-direction:column;gap:6px;">${rows}</div>
+      </section>
+    `;
+  }
+
+  // ── Documents ─────────────────────────────────────────────────────────────
+  function renderDocs() {
+    const rows = TASK.snapshot.attachments.map(a => {
+      const flag = docFlags[a.name];
+      const rel = flag?.relevant||null;
+      const accent = rel==='yes'?'var(--emerald-700)':(rel==='no'?'var(--gray-400)':'var(--gray-200)');
+      return `
+        <div class="doc-item" data-doc="${a.name}" style="border:1px solid var(--gray-200);border-left:3px solid ${accent};border-radius:8px;background:#fff;transition:border-color .12s;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;">
+            <span style="width:36px;height:36px;border-radius:6px;background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </span>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:13px;font-weight:600;color:var(--gray-800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${a.name}</div>
+              <div style="font-size:11px;color:var(--gray-500);margin-top:2px;">${a.type.toUpperCase()} · ${a.size}${flag?.note?'<span style="margin-left:8px;color:var(--cyan-800);font-weight:600;">· Note added</span>':''}</div>
+            </div>
+            <div style="display:inline-flex;align-items:center;padding:2px;gap:2px;border:1px solid var(--gray-200);border-radius:6px;background:var(--gray-50);">
+              <button class="rel-btn" data-doc="${a.name}" data-val="yes" style="height:28px;padding:0 10px 1px;border:none;cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;border-radius:4px;background:${rel==='yes'?'var(--emerald-100)':'transparent'};color:${rel==='yes'?'var(--emerald-700)':'var(--gray-600)'};">Relevant</button>
+              <button class="rel-btn" data-doc="${a.name}" data-val="no"  style="height:28px;padding:0 10px 1px;border:none;cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;border-radius:4px;background:${rel==='no'?'var(--gray-100)':'transparent'};color:${rel==='no'?'var(--gray-700)':'var(--gray-600)'};">Not relevant</button>
+            </div>
+            <button class="note-toggle" data-doc="${a.name}" style="height:30px;padding:0 12px;border:1px solid var(--gray-200);background:#fff;border-radius:6px;cursor:pointer;font-size:12px;font-weight:500;color:var(--gray-700);font-family:var(--font-body);line-height:1;">${flag?.note?'Edit note':'Add note'}</button>
+          </div>
+          <div class="note-area" data-doc="${a.name}" style="display:none;padding:0 14px 14px;">
+            <textarea placeholder="Technical note specific to this document…" rows="3" style="width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--gray-200);border-radius:6px;outline:none;font-family:var(--font-body);font-size:13px;color:var(--gray-800);resize:vertical;background:var(--gray-50);">${flag?.note||''}</textarea>
+          </div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px 22px;">
+        <div style="margin-bottom:14px;">
+          <h3 style="margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);">Document inspection</h3>
+          <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Flag each document for relevance and capture inline technical notes.</div>
+        </div>
+        <div id="doc-rows" style="display:flex;flex-direction:column;gap:10px;">${rows}</div>
+      </section>
+    `;
+  }
+
+  // ── Gavel: Workload ───────────────────────────────────────────────────────
+  function renderWorkload() {
+    const tier1pts = TASK.feature.precondition ? 'Required' : '1 pt';
+    const tier2pts = TASK.feature.precondition ? '—' : `up to ${TASK.points||2} pts`;
+    const sample = TASK.path.id==='AUDITED' ? `${RD.sampleSize(TASK.portfolioSize)} of ${TASK.portfolioSize}` :
+                   TASK.path.id==='SHAREABLE' ? '1 → all' : '1 site';
+    const row = (k,v) => `<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+      <span style="font-size:12px;color:var(--gray-500);">${k}</span>
+      <span style="font-size:13px;font-weight:600;color:var(--gray-800);">${v}</span>
+    </div>`;
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px;">
+        <h3 style="margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);">Workload &amp; target</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          ${row('Locations impacted',TASK.portfolioSize)}
+          ${row('Verification path',TASK.path.label)}
+          ${row('Sample size',sample)}
+        </div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px dashed var(--gray-200);">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px;">Tiers sought</div>
+          <div style="display:flex;gap:8px;">
+            ${['Tier 1','Tier 2'].map((l,i)=>`
+              <div style="flex:1;padding:10px 12px;border-radius:8px;background:var(--gray-50);border:1px solid var(--gray-200);border-top:3px solid ${i===0?'var(--cyan-700)':'var(--blue-600)'};">
+                <div style="font-size:11px;font-weight:700;color:${i===0?'var(--cyan-700)':'var(--blue-600)'};letter-spacing:.05em;text-transform:uppercase;">${l}</div>
+                <div style="font-size:14px;font-weight:600;color:var(--gray-800);margin-top:2px;">${i===0?tier1pts:tier2pts}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  // ── Gavel: Actions / MRC ──────────────────────────────────────────────────
+  function renderActions() {
+    const items  = RD.getChecklist(TASK.feature.code);
+    const t1     = items.filter(i=>i.tier==='T1');
+    const t1done = t1.filter(i=>checklist.has(i.id)).length;
+    const t1complete = t1done === t1.length && t1.length>0;
+    const allFlagged = TASK.snapshot.attachments.every(a=>docFlags[a.name]?.relevant);
+    const canApprove = t1complete && allFlagged && status.id!=='COMPLETED' && status.id!=='FAILED';
+    const completed  = status.id==='COMPLETED' || status.id==='FAILED';
+    const pre = (ok,label) => `<div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+      <span style="width:16px;height:16px;border-radius:9999px;background:${ok?'var(--emerald-700)':'var(--gray-200)'};color:#fff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+        ${ok?`<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`:''}
+      </span>
+      <span style="font-size:12px;color:${ok?'var(--gray-800)':'var(--gray-500)'};">${label}</span>
+    </div>`;
+    return `
+      <section style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px;">
+        <h3 style="margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);">Ruling</h3>
+        ${!completed?`
+        <div style="margin-bottom:14px;padding:12px;background:${canApprove?'var(--emerald-50)':'var(--gray-50)'};border-radius:8px;border:1px solid ${canApprove?'var(--emerald-200)':'var(--gray-200)'};">
+          <div style="font-size:12px;color:${canApprove?'var(--emerald-700)':'var(--gray-600)'};font-weight:600;margin-bottom:6px;">${canApprove?'Ready to issue ruling':'Pre-flight'}</div>
+          ${pre(t1complete, `Tier 1 verified · ${t1done}/${t1.length}`)}
+          ${pre(allFlagged, 'All documents flagged for relevance')}
+        </div>
+        `:''}
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button id="btn-approve" ${completed||!canApprove?'disabled':''} style="height:48px;border-radius:9999px;border:none;background:${completed||!canApprove?'var(--gray-100)':'var(--gradient-cta-cyan)'};color:${completed||!canApprove?'var(--gray-400)':'#fff'};font-family:var(--font-body);font-size:14px;font-weight:600;cursor:${completed||!canApprove?'not-allowed':'pointer'};display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 22px 2px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Complete · Approve
+          </button>
+          <button id="btn-mrc" ${completed?'disabled':''} style="height:44px;border-radius:6px;border:1px solid var(--plum-200);background:#fff;color:${completed?'var(--gray-400)':'var(--plum-700)'};font-family:var(--font-body);font-size:14px;font-weight:600;cursor:${completed?'not-allowed':'pointer'};display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px 1px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            Needs Attention · Issue MRC
+          </button>
+          <button id="btn-fail" ${completed?'disabled':''} style="height:44px;border-radius:6px;border:1px solid var(--coral-200);background:#fff;color:${completed?'var(--gray-400)':'var(--coral-700)'};font-family:var(--font-body);font-size:14px;font-weight:600;cursor:${completed?'not-allowed':'pointer'};display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px 1px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Failed · Closed without points
+          </button>
+        </div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px dashed var(--gray-200);font-size:11px;color:var(--gray-500);line-height:1.5;">
+          Ruling becomes immutable on issue. The customer will be notified at <code style="font-family:ui-monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:10.5px;">esg@${TASK.account.org.toLowerCase().replace(/[^a-z]/g,'').slice(0,12)}.com</code>.
+        </div>
+      </section>
+    `;
+  }
+
+  function renderMRC() {
+    const cycle = TASK.mrcCycle||0;
+    const input = (style='') => `border:1px solid var(--gray-200);border-radius:6px;outline:none;font-family:var(--font-body);font-size:13px;color:var(--gray-800);background:#fff;padding:0 12px;${style}`;
+    const fld = (label,html) => `<div style="margin-bottom:12px;">
+      <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px;">${label}</label>
+      ${html}
+    </div>`;
+    return `
+      <section style="background:linear-gradient(180deg,var(--plum-50) 0%,#fff 80px);border:1px solid var(--plum-200);border-radius:12px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:10;margin-bottom:14px;">
+          <span style="width:32px;height:32px;border-radius:8px;background:var(--plum-100);color:var(--plum-700);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </span>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:700;color:var(--plum-800);">Mandatory Resubmission Comment</div>
+            <div style="font-size:11px;color:var(--plum-700);">Cycle ${cycle+1} of 3 · Returns to customer for remediation</div>
+          </div>
+          <button id="mrc-cancel" style="width:28px;height:28px;border-radius:6px;border:none;background:transparent;color:var(--gray-600);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        ${fld('Subject — visible to customer',`<input id="mrc-subject" type="text" value="${mrcDraft.subject}" placeholder="e.g., Lead reading at fixture B-12 above threshold" style="width:100%;box-sizing:border-box;height:36px;${input()}">`)}
+        ${fld('Required action',`<select id="mrc-action" style="width:100%;box-sizing:border-box;height:36px;${input()}">
+          <option>Remediate and resubmit affected evidence</option>
+          <option>Provide additional methodology documentation</option>
+          <option>Re-sample with accredited lab</option>
+          <option>Clarify scope or location ambiguity</option>
+        </select>`)}
+        ${fld('Reviewer guidance — visible to customer',`<textarea id="mrc-body" rows="5" placeholder="Cite the exact criterion not met. Be specific about what evidence would resolve it." style="width:100%;box-sizing:border-box;padding:10px 12px;${input('height:auto;resize:vertical;')}"></textarea>`)}
+        ${fld('Resubmission deadline',`<select id="mrc-deadline" style="width:100%;box-sizing:border-box;height:36px;${input()}">
+          <option>+7 days</option>
+          <option selected>+14 days</option>
+          <option>+30 days</option>
+        </select>`)}
+        <div style="display:flex;gap:8px;margin-top:4px;">
+          <button id="mrc-cancel-2" style="height:40px;padding:0 16px 1px;border-radius:6px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-700);font-weight:500;font-size:14px;cursor:pointer;font-family:var(--font-body);">Cancel</button>
+          <button id="mrc-send" style="flex:1;height:40px;padding:0 16px 1px;border-radius:6px;border:none;background:var(--plum-700);color:#fff;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--font-body);display:inline-flex;align-items:center;justify-content:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send MRC to customer
+          </button>
+        </div>
+      </section>
+    `;
+  }
+
+  // ── Notes Ledger ──────────────────────────────────────────────────────────
+  function renderNotes() {
+    const filtered = noteFilter==='all' ? notes : notes.filter(n=>n.kind===noteFilter);
+    const palette = {
+      public:  { rail:'var(--cyan-700)',  bg:'var(--cyan-50)',  fg:'var(--cyan-800)',  label:'PUBLIC' },
+      private: { rail:'var(--gray-400)',  bg:'var(--gray-50)',  fg:'var(--gray-700)',  label:'PRIVATE' },
+      system:  { rail:'var(--plum-600)',  bg:'var(--plum-50)',  fg:'var(--plum-800)',  label:'SYSTEM' },
+    };
+    const noteRows = filtered.length===0
+      ? `<div style="padding:24px;text-align:center;color:var(--gray-500);font-size:12px;border:1px dashed var(--gray-200);border-radius:6px;">No notes yet.</div>`
+      : filtered.map(n => {
+          const p = palette[n.kind]||palette.private;
+          return `<div style="display:flex;gap:8px;">
+            <span style="width:3px;align-self:stretch;background:${p.rail};border-radius:9999px;flex-shrink:0;"></span>
+            <div style="flex:1;background:${p.bg};padding:8px 10px;border-radius:6px;font-family:${n.kind==='system'?'ui-monospace,monospace':'var(--font-body)'};">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-size:10px;font-weight:700;letter-spacing:.05em;color:${p.fg};">${p.label} · ${n.author}</span>
+                <span style="font-size:10px;color:var(--gray-500);">${RD.relative(n.at)}</span>
+              </div>
+              <div style="font-size:12px;color:var(--gray-700);line-height:1.5;">${n.body}</div>
+            </div>
+          </div>`;
+        }).join('');
+    const noteEl = document.getElementById('notes-ledger');
+    if (noteEl) {
+      noteEl.querySelector('.notes-list').innerHTML = noteRows;
+    }
+  }
+
+  function renderNotesLedger() {
+    const tabs = ['all','public','private','system'].map(t => `
+      <button class="note-tab${noteFilter===t?' active':''}" data-nf="${t}" style="height:22px;padding:0 8px 1px;border:none;border-radius:4px;background:${noteFilter===t?'#fff':'transparent'};color:${noteFilter===t?'var(--gray-800)':'var(--gray-600)'};font-family:var(--font-body);font-size:11px;font-weight:600;cursor:pointer;line-height:1;box-shadow:${noteFilter===t?'var(--shadow-xs)':'none'};">${t.charAt(0).toUpperCase()+t.slice(1)}</button>
+    `).join('');
+    const palette = {
+      public:  { rail:'var(--cyan-700)',  bg:'var(--cyan-50)',  fg:'var(--cyan-800)',  label:'PUBLIC' },
+      private: { rail:'var(--gray-400)',  bg:'var(--gray-50)',  fg:'var(--gray-700)',  label:'PRIVATE' },
+      system:  { rail:'var(--plum-600)',  bg:'var(--plum-50)',  fg:'var(--plum-800)',  label:'SYSTEM' },
+    };
+    const filtered = noteFilter==='all' ? notes : notes.filter(n=>n.kind===noteFilter);
+    const noteRows = filtered.length===0
+      ? `<div style="padding:24px;text-align:center;color:var(--gray-500);font-size:12px;border:1px dashed var(--gray-200);border-radius:6px;">No notes yet.</div>`
+      : filtered.map(n => {
+          const p = palette[n.kind]||palette.private;
+          return `<div style="display:flex;gap:8px;">
+            <span style="width:3px;align-self:stretch;background:${p.rail};border-radius:9999px;flex-shrink:0;"></span>
+            <div style="flex:1;background:${p.bg};padding:8px 10px;border-radius:6px;font-family:${n.kind==='system'?'ui-monospace,monospace':'var(--font-body)'};">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-size:10px;font-weight:700;letter-spacing:.05em;color:${p.fg};">${p.label} · ${n.author}</span>
+                <span style="font-size:10px;color:var(--gray-500);">${RD.relative(n.at)}</span>
+              </div>
+              <div style="font-size:12px;color:var(--gray-700);line-height:1.5;">${n.body}</div>
+            </div>
+          </div>`;
+        }).join('');
+    return `
+      <section id="notes-ledger" style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px;">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:12px;">
+          <h3 style="margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-800);">Notes ledger</h3>
+          <div style="display:inline-flex;padding:2px;border-radius:6px;background:var(--gray-100);gap:2px;">${tabs}</div>
+        </div>
+        <div class="notes-list" style="max-height:280px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding-right:4px;">${noteRows}</div>
+        <div style="display:flex;gap:6px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--gray-200);">
+          <input id="note-input" type="text" placeholder="Add internal note…" style="flex:1;height:34px;padding:0 12px;border:1px solid var(--gray-200);border-radius:6px;outline:none;font-family:var(--font-body);font-size:13px;color:var(--gray-800);background:#fff;">
+          <button id="note-add-btn" style="height:34px;padding:0 12px 1px;border:1px solid var(--gray-200);background:#fff;border-radius:6px;font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;line-height:1;">Add</button>
+        </div>
+      </section>
+    `;
+  }
+
+  // ── Render gavel panel ────────────────────────────────────────────────────
+  function renderGavel() {
+    const el = document.getElementById('gavel-panel');
+    el.innerHTML = renderWorkload() + (panelMode==='mrc' ? renderMRC() : renderActions()) + renderNotesLedger();
+    bindGavelEvents();
+  }
+
+  // ── Render left canvas ────────────────────────────────────────────────────
+  function renderLeft() {
+    document.getElementById('left-canvas').innerHTML =
+      renderTaskHeader() + renderSnapshotRibbon() + renderChecklist() + renderDocs();
+    bindLeftEvents();
+  }
+
+  // ── Bind events ───────────────────────────────────────────────────────────
+  function bindLeftEvents() {
+    // Checklist
+    document.querySelectorAll('.cb-row').forEach(btn => {
+      btn.addEventListener('click', () => {
+        ensureLock();
+        const id = btn.dataset.cid;
+        if (checklist.has(id)) checklist.delete(id); else checklist.add(id);
+        renderLeft();
+        renderGavel();
+      });
+    });
+    // Relevancy
+    document.querySelectorAll('.rel-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        ensureLock();
+        const doc = btn.dataset.doc, val = btn.dataset.val;
+        docFlags[doc] = { ...(docFlags[doc]||{}), relevant: val };
+        renderLeft();
+        renderGavel();
+      });
+    });
+    // Note toggle
+    document.querySelectorAll('.note-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const doc = btn.dataset.doc;
+        const area = document.querySelector(`.note-area[data-doc="${doc}"]`);
+        if (area) area.style.display = area.style.display==='none' ? 'block' : 'none';
+      });
+    });
+    // Note save
+    document.querySelectorAll('.note-area textarea').forEach(ta => {
+      ta.addEventListener('change', () => {
+        const doc = ta.closest('.note-area').dataset.doc;
+        docFlags[doc] = { ...(docFlags[doc]||{}), note: ta.value };
+      });
+    });
+  }
+
+  function bindGavelEvents() {
+    // Approve
+    const btnA = document.getElementById('btn-approve');
+    if (btnA && !btnA.disabled) btnA.addEventListener('click', () => onAction('approve'));
+    // MRC open
+    const btnM = document.getElementById('btn-mrc');
+    if (btnM && !btnM.disabled) btnM.addEventListener('click', () => { panelMode='mrc'; renderGavel(); });
+    // Fail
+    const btnF = document.getElementById('btn-fail');
+    if (btnF && !btnF.disabled) btnF.addEventListener('click', () => onAction('fail'));
+    // MRC cancel
+    ['mrc-cancel','mrc-cancel-2'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('click', () => { panelMode='actions'; renderGavel(); });
+    });
+    // MRC send
+    const btnS = document.getElementById('mrc-send');
+    if (btnS) btnS.addEventListener('click', () => {
+      const sub = document.getElementById('mrc-subject')?.value||'';
+      const body = document.getElementById('mrc-body')?.value||'';
+      if (sub.trim().length<5 || body.trim().length<20) { alert('Please fill in Subject and Guidance fields.'); return; }
+      mrcDraft = { subject:sub, body, deadline:document.getElementById('mrc-deadline')?.value||'+14 days', action:document.getElementById('mrc-action')?.value||'' };
+      onAction('mrc-send');
+    });
+    // Note tabs
+    document.querySelectorAll('.note-tab').forEach(btn => {
+      btn.addEventListener('click', () => { noteFilter = btn.dataset.nf; renderGavel(); });
+    });
+    // Note add
+    const noteIn = document.getElementById('note-input');
+    const noteBtn = document.getElementById('note-add-btn');
+    const addNote = () => {
+      if (!noteIn || !noteIn.value.trim()) return;
+      ensureLock();
+      notes.push({ kind:'private', author:RD.currentUser.name, at:new Date(), body:noteIn.value.trim() });
+      noteIn.value = '';
+      renderGavel();
+    };
+    if (noteBtn) noteBtn.addEventListener('click', addNote);
+    if (noteIn)  noteIn.addEventListener('keydown', e => { if (e.key==='Enter') addNote(); });
+  }
+
+  // ── Actions ───────────────────────────────────────────────────────────────
+  function onAction(kind) {
+    if (kind==='approve') {
+      status = RD.STATUSES.COMPLETED;
+      const items = RD.getChecklist(TASK.feature.code);
+      const sha = 'sha-' + (TASK.id+'snapshot').split('').reduce((s,c)=>((s<<5)-s+c.charCodeAt(0))>>>0,0).toString(16).slice(0,10);
+      const payload = {
+        achievement_id: 'ach-' + TASK.id.slice(-6),
+        task_id: TASK.id,
+        feature: TASK.feature.code,
+        decision: 'ACHIEVED',
+        ruled_at: new Date().toISOString(),
+        reviewer: { id: RD.currentUser.id, name: RD.currentUser.name },
+        scope: { path:TASK.path.id, portfolio_size:TASK.portfolioSize, sampled:TASK.sampledLocationIds||TASK.locationIds.slice(0,1) },
+        tier_score: {
+          tier_1: { required:items.filter(i=>i.tier==='T1').length, verified:[...checklist].filter(id=>items.find(i=>i.id===id&&i.tier==='T1')).length },
+          tier_2: { available:items.filter(i=>i.tier==='T2').length, verified:[...checklist].filter(id=>items.find(i=>i.id===id&&i.tier==='T2')).length },
+        },
+        snapshot_sha: sha,
+        immutable: true,
+      };
+      notes.push({ kind:'system',  author:'AchievementService', at:new Date(), body:`AchievementService::generate(${payload.achievement_id}) → record bound to snapshot ${sha}.` });
+      notes.push({ kind:'public',  author:'Maya Reyes', at:new Date(), body:`Ruling: Achieved. Evidence satisfies the Tier 1 verification criteria for ${TASK.feature.code}.` });
+      renderLeft();
+      renderGavel();
+      showAchievementModal(payload);
+    } else if (kind==='fail') {
+      status = RD.STATUSES.FAILED;
+      notes.push({ kind:'public', author:'Maya Reyes', at:new Date(), body:`Ruling: Failed. The verification cycle has exhausted available MRC rounds without compliant evidence.` });
+      renderLeft();
+      renderGavel();
+    } else if (kind==='mrc-send') {
+      status = RD.STATUSES.ATTENTION;
+      notes.push({ kind:'public', author:'Maya Reyes', at:new Date(),
+        body:`${mrcDraft.subject}\n\n${mrcDraft.body}\n\nRequired action: ${mrcDraft.action}\nResubmission deadline: ${mrcDraft.deadline}` });
+      mrcDraft = { subject:'', body:'', deadline:'+14 days', action:'Remediate and resubmit affected evidence' };
+      panelMode = 'actions';
+      renderLeft();
+      renderGavel();
+    }
+  }
+
+  // ── Achievement modal ─────────────────────────────────────────────────────
+  function showAchievementModal(payload) {
+    const modal = document.getElementById('modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    modal.innerHTML = `
+      <div style="padding:28px 28px 16px;background:linear-gradient(135deg,var(--emerald-50) 0%,var(--cyan-50) 100%);border-bottom:1px solid var(--emerald-200);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="width:44px;height:44px;border-radius:9999px;background:var(--emerald-700);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--emerald-700);">Achievement issued</div>
+            <h2 style="margin:0;font-family:var(--font-display);font-size:26px;font-weight:400;color:var(--gray-800);">${TASK.feature.code} · ${TASK.feature.title}</h2>
+          </div>
+        </div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.55;">
+          An immutable <strong>Achievement</strong> record has been generated and bound to the snapshot. It applies to all <strong>${TASK.portfolioSize} location${TASK.portfolioSize>1?'s':''}</strong> in the verified portfolio.
+        </div>
+      </div>
+      <div style="padding:20px 28px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px;">Tier scoring payload</div>
+        <pre style="margin:0;padding:16px;background:var(--gray-900);color:#9FE9D6;border-radius:8px;font-family:ui-monospace,monospace;font-size:11.5px;line-height:1.55;overflow:auto;">${JSON.stringify(payload,null,2)}</pre>
+      </div>
+      <div style="padding:16px 28px 24px;display:flex;gap:10px;justify-content:flex-end;">
+        <button id="modal-stay" style="height:40px;padding:0 18px 1px;border-radius:6px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-800);font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;">Stay on task</button>
+        <a href="index.html" class="ow-btn ow-btn-primary" style="height:40px;padding:0 22px 1px;font-size:14px;display:inline-flex;align-items:center;line-height:1;">Back to queue</a>
+      </div>
+    `;
+    backdrop.style.display = 'block';
+    modal.style.display = 'block';
+    backdrop.onclick = () => { backdrop.style.display='none'; modal.style.display='none'; };
+    document.getElementById('modal-stay').onclick = () => { backdrop.style.display='none'; modal.style.display='none'; };
+  }
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+  renderLeft();
+  renderGavel();
+
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,858 @@
+{
+  "communities": {
+    "0": [
+      "isolated_task_view_jsx",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_isolatedtaskview",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "temp_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard"
+    ],
+    "1": [
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_reviewerops",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "temp_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings"
+    ],
+    "2": [
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs"
+    ],
+    "3": [
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs"
+    ],
+    "4": [
+      "nexus_iwbi",
+      "nexus_onewell_platform",
+      "nexus_reviewer_app",
+      "root_atlas_onewell_reviewer_project",
+      "root_atlas_portfolio_app",
+      "root_atlas_reviewer_app",
+      "root_atlas_standards_app",
+      "root_nexus_iwbi",
+      "root_nexus_jarvis_metabrain",
+      "root_nexus_knowledge_flow",
+      "root_nexus_operating_model",
+      "root_nexus_reviewer_role",
+      "root_nexus_well_certification"
+    ],
+    "5": [
+      "src_reviewer_shell_standalone",
+      "src_reviewer_shell_standalone_appframe",
+      "src_reviewer_shell_standalone_conceptpill",
+      "src_reviewer_shell_standalone_g",
+      "src_reviewer_shell_standalone_glyph",
+      "src_reviewer_shell_standalone_navitem",
+      "src_reviewer_shell_standalone_pathchip",
+      "src_reviewer_shell_standalone_shellstyles",
+      "src_reviewer_shell_standalone_sidenav",
+      "src_reviewer_shell_standalone_slachip",
+      "src_reviewer_shell_standalone_statuspill",
+      "src_reviewer_shell_standalone_topbar"
+    ],
+    "6": [
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_topbar"
+    ],
+    "7": [
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "temp_src_reviewer_shell_jsx_src_reviewer_shell_topbar"
+    ],
+    "8": [
+      "js_data",
+      "js_data_daysago",
+      "js_data_daysahead",
+      "js_data_fmt",
+      "js_data_maketask",
+      "js_data_relative",
+      "js_data_rollup",
+      "js_data_samplesize",
+      "js_data_slabucket"
+    ],
+    "9": [
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysago",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_fmt",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_maketask",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_relative",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_rollup",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_slabucket"
+    ],
+    "10": [
+      "temp_src_reviewer_data_js_src_reviewer_data",
+      "temp_src_reviewer_data_js_src_reviewer_data_daysago",
+      "temp_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "temp_src_reviewer_data_js_src_reviewer_data_fmt",
+      "temp_src_reviewer_data_js_src_reviewer_data_maketask",
+      "temp_src_reviewer_data_js_src_reviewer_data_relative",
+      "temp_src_reviewer_data_js_src_reviewer_data_rollup",
+      "temp_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "temp_src_reviewer_data_js_src_reviewer_data_slabucket"
+    ],
+    "11": [
+      "src_reviewer_app",
+      "src_reviewer_app_parseroute",
+      "src_reviewer_app_reviewerapp",
+      "src_reviewer_app_reviewerroot",
+      "src_reviewer_app_routetonav",
+      "src_reviewer_app_usetasksstore",
+      "src_reviewer_app_viewswitch"
+    ],
+    "12": [
+      "claude_md",
+      "onewell_css",
+      "readme_md",
+      "sealproviders_svg",
+      "sealwell_svg",
+      "ui_kit_html"
+    ],
+    "13": [
+      "design_system_brand_assets_concept_icons",
+      "design_system_brand_assets_utility_icons",
+      "design_system_components_ow_chip",
+      "design_system_components_ow_concept_tag",
+      "design_system_components_ow_status",
+      "design_system_components_ow_tag"
+    ],
+    "14": [
+      "concept_utility_ui_actions",
+      "icons_utilityscoring_scoring_icon",
+      "icons_utilitysort_sort_icon",
+      "utilitysearch_svg",
+      "utilitytriangleinfo_svg"
+    ],
+    "15": [
+      "design_system_layout_radii",
+      "design_system_layout_shadow_tokens",
+      "design_system_layout_spacing_scale",
+      "design_system_overview_colors_and_type_css"
+    ],
+    "16": [
+      "reviewer_dashboard_jsx",
+      "reviewer_data_js",
+      "reviewer_ops_jsx",
+      "reviewer_shell_jsx"
+    ],
+    "17": [
+      "src_page_router",
+      "src_page_router_currentfile",
+      "src_page_router_go",
+      "src_page_router_routetourl"
+    ],
+    "18": [
+      "brand_media_seals",
+      "foundations_color_scales",
+      "standardlogo_svg"
+    ],
+    "19": [
+      "claude_launch",
+      "claude_launch_configurations",
+      "claude_launch_version"
+    ],
+    "20": [
+      "claude_settings_local",
+      "claude_settings_local_permissions",
+      "claude_settings_local_permissions_allow"
+    ],
+    "21": [
+      "design_system_brand_assets_badges",
+      "design_system_brand_assets_brand_protection",
+      "design_system_brand_assets_seals"
+    ],
+    "22": [
+      "design_system_components_ow_btn",
+      "design_system_components_ow_btn_primary",
+      "root_nexus_cyan_primary_color"
+    ],
+    "23": [
+      "foundations_color_surfaces",
+      "type_display_headlines",
+      "utility_icons_gallery"
+    ],
+    "24": [
+      "badgeproductprovider_svg",
+      "sealproductprovider_svg"
+    ],
+    "25": [
+      "badgeratingperformance_svg",
+      "sealperformancetestingprovider_svg"
+    ],
+    "26": [
+      "brand_logo_gradient_cta_bright",
+      "buttons_cta_primary"
+    ],
+    "27": [
+      "concept_icons_air",
+      "foundations_color_concepts"
+    ],
+    "28": [
+      "design_system_components_navigation_shell",
+      "design_system_layout_3col_workspace"
+    ],
+    "29": [
+      "icons_utilityfeedback_feedback_icon",
+      "icons_utilitymessage_message_icon"
+    ],
+    "30": [
+      "icons_utilityhome_home_icon",
+      "icons_utilityportfolio_portfolio_icon"
+    ],
+    "31": [
+      "src_page_dashboard",
+      "src_page_dashboard_dashboardpage"
+    ],
+    "32": [
+      "src_page_ops",
+      "src_page_ops_opspage"
+    ],
+    "33": [
+      "src_page_task",
+      "src_page_task_taskpage"
+    ],
+    "34": [
+      "utilityrevisionshide_svg",
+      "utilityrevisionsshow_svg"
+    ],
+    "35": [
+      "air_svg"
+    ],
+    "36": [
+      "badgeratingcoworking_svg"
+    ],
+    "37": [
+      "badgeratingdesign_svg"
+    ],
+    "38": [
+      "badgeratingequity_svg"
+    ],
+    "39": [
+      "badgeratinghealthysafety_svg"
+    ],
+    "40": [
+      "badgeratingoperations_svg"
+    ],
+    "41": [
+      "badgeratingrealestate_svg"
+    ],
+    "42": [
+      "badgeratingresidential_svg"
+    ],
+    "43": [
+      "badgeratingworkforce_svg"
+    ],
+    "44": [
+      "badgesurveyprovider_svg"
+    ],
+    "45": [
+      "brand_logo_iwbilogo"
+    ],
+    "46": [
+      "brand_media_badges"
+    ],
+    "47": [
+      "community_svg"
+    ],
+    "48": [
+      "concepticons_svg"
+    ],
+    "49": [
+      "decisions_v2_prototype"
+    ],
+    "50": [
+      "design_system_components_cards_modals"
+    ],
+    "51": [
+      "design_system_layout_accessibility"
+    ],
+    "52": [
+      "design_system_overview_anti_patterns"
+    ],
+    "53": [
+      "design_system_overview_components_css"
+    ],
+    "54": [
+      "design_system_overview_five_core_principles"
+    ],
+    "55": [
+      "design_system_overview_ui_kit_html"
+    ],
+    "56": [
+      "design_system_overview_voice_tone"
+    ],
+    "57": [
+      "icons_navaccount_icon"
+    ],
+    "58": [
+      "icons_utilitycheck_check_icon"
+    ],
+    "59": [
+      "icons_utilitychevrondown_chevron_down_icon"
+    ],
+    "60": [
+      "icons_utilityclose_close_icon"
+    ],
+    "61": [
+      "icons_utilityoptions_options_icon"
+    ],
+    "62": [
+      "innovation_svg"
+    ],
+    "63": [
+      "iwbilogo_svg"
+    ],
+    "64": [
+      "light_svg"
+    ],
+    "65": [
+      "materials_svg"
+    ],
+    "66": [
+      "mind_svg"
+    ],
+    "67": [
+      "movement_svg"
+    ],
+    "68": [
+      "navaccount_svg"
+    ],
+    "69": [
+      "navbullet_svg"
+    ],
+    "70": [
+      "navlogo_svg"
+    ],
+    "71": [
+      "nourishment_svg"
+    ],
+    "72": [
+      "root_nexus_ft_made_font"
+    ],
+    "73": [
+      "root_nexus_mazzard_soft_font"
+    ],
+    "74": [
+      "sealcertificationplatinum_svg"
+    ],
+    "75": [
+      "sealcertificationsilver_svg"
+    ],
+    "76": [
+      "sealenterpriseprovider_svg"
+    ],
+    "77": [
+      "sealiwbimember_svg"
+    ],
+    "78": [
+      "sealratingcoworking_svg"
+    ],
+    "79": [
+      "sealratingdesign_svg"
+    ],
+    "80": [
+      "sealratingequity_svg"
+    ],
+    "81": [
+      "sealratinghealthsafety_svg"
+    ],
+    "82": [
+      "sealratingoperations_svg"
+    ],
+    "83": [
+      "sealratingperformance_svg"
+    ],
+    "84": [
+      "sealratingrealestate_svg"
+    ],
+    "85": [
+      "sealratingworkforce_svg"
+    ],
+    "86": [
+      "sealsurveyprovider_svg"
+    ],
+    "87": [
+      "sealwellcommunity_svg"
+    ],
+    "88": [
+      "sealwellresidence_svg"
+    ],
+    "89": [
+      "sealworkswithwell_svg"
+    ],
+    "90": [
+      "spacing_radii_system"
+    ],
+    "91": [
+      "utilityaccordion_svg"
+    ],
+    "92": [
+      "utilitycheck_svg"
+    ],
+    "93": [
+      "utilitychevrondown_svg"
+    ],
+    "94": [
+      "utilityclassification_svg"
+    ],
+    "95": [
+      "utilityclearregular_svg"
+    ],
+    "96": [
+      "utilityclose_svg"
+    ],
+    "97": [
+      "utilitycompare_svg"
+    ],
+    "98": [
+      "utilitydrag_svg"
+    ],
+    "99": [
+      "utilityedit_svg"
+    ],
+    "100": [
+      "utilityfeedback_svg"
+    ],
+    "101": [
+      "utilityhome_svg"
+    ],
+    "102": [
+      "utilitymessage_svg"
+    ],
+    "103": [
+      "utilityoptions_svg"
+    ],
+    "104": [
+      "utilityportfolio_svg"
+    ],
+    "105": [
+      "utilityreset_svg"
+    ],
+    "106": [
+      "utilitysave_svg"
+    ],
+    "107": [
+      "utilityscopelarge_svg"
+    ],
+    "108": [
+      "utilityscoring_svg"
+    ],
+    "109": [
+      "utilityshow_svg"
+    ],
+    "110": [
+      "utilitysort_svg"
+    ],
+    "111": [
+      "utilitytarget_svg"
+    ],
+    "112": [
+      "utilitytext_svg"
+    ],
+    "113": [
+      "utilitytrash_svg"
+    ],
+    "114": [
+      "water_svg"
+    ],
+    "115": [
+      "watermarkmemberorg_svg"
+    ],
+    "116": [
+      "watermarkwellprojects_svg"
+    ],
+    "117": [
+      "watermarkwwwproducts_svg"
+    ],
+    "118": [
+      "x_svg"
+    ]
+  },
+  "cohesion": {
+    "0": 0.03333333333333333,
+    "1": 0.047619047619047616,
+    "2": 0.09523809523809523,
+    "3": 0.09523809523809523,
+    "4": 0.16666666666666666,
+    "5": 0.16666666666666666,
+    "6": 0.16666666666666666,
+    "7": 0.16666666666666666,
+    "8": 0.3611111111111111,
+    "9": 0.3611111111111111,
+    "10": 0.3611111111111111,
+    "11": 0.42857142857142855,
+    "12": 0.3333333333333333,
+    "13": 0.3333333333333333,
+    "14": 0.4,
+    "15": 0.5,
+    "16": 0.5,
+    "17": 0.8333333333333334,
+    "18": 0.6666666666666666,
+    "19": 0.6666666666666666,
+    "20": 0.6666666666666666,
+    "21": 0.6666666666666666,
+    "22": 0.6666666666666666,
+    "23": 0.6666666666666666,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0
+  },
+  "gods": [
+    {
+      "id": "isolated_task_view_jsx",
+      "label": "Isolated Task View",
+      "degree": 60
+    },
+    {
+      "id": "root_atlas_onewell_reviewer_project",
+      "label": "OneWELL Reviewer Project",
+      "degree": 5
+    },
+    {
+      "id": "ui_kit_html",
+      "label": "One WELL \u2014 UI Kit",
+      "degree": 5
+    },
+    {
+      "id": "root_nexus_operating_model",
+      "label": "OneWELL Reviewer Operating Model",
+      "degree": 4
+    },
+    {
+      "id": "concept_utility_ui_actions",
+      "label": "Utility UI Action Icons",
+      "degree": 4
+    },
+    {
+      "id": "src_reviewer_app_reviewerapp",
+      "label": "ReviewerApp()",
+      "degree": 4
+    },
+    {
+      "id": "nexus_onewell_platform",
+      "label": "OneWELL Platform",
+      "degree": 4
+    },
+    {
+      "id": "root_nexus_iwbi",
+      "label": "IWBI \u2014 International WELL Building Institute",
+      "degree": 3
+    },
+    {
+      "id": "design_system_overview_colors_and_type_css",
+      "label": "colors_and_type.css \u2014 Design Tokens",
+      "degree": 3
+    },
+    {
+      "id": "design_system_components_ow_chip",
+      "label": ".ow-chip \u2014 Base Chip Class",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Utility Search Icon",
+      "target": "Utility UI Action Icons",
+      "source_files": [
+        "v2/assets/icons/UtilitySearch.svg",
+        "temp/assets/icons/UtilitySearch.svg"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "Utility Triangle Info Icon",
+      "target": "Utility UI Action Icons",
+      "source_files": [
+        "v2/assets/icons/UtilityTriangleInfo.svg",
+        "temp/assets/icons/UtilitySearch.svg"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "OneWELL Platform",
+      "target": "OneWELL Reviewer Project",
+      "source_files": [
+        "nexus.md",
+        "atlas.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "OneWELL Reviewer Project",
+      "target": "OneWELL Reviewer Operating Model",
+      "source_files": [
+        "atlas.md",
+        "nexus.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Reviewer User Role",
+      "target": "OneWELL Reviewer App",
+      "source_files": [
+        "nexus.md",
+        "atlas.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 601317,
+    "output": 9740
+  }
+}

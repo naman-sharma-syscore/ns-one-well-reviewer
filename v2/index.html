@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OneWELL Reviewer</title>
+  <meta name="viewport" content="width=1440, initial-scale=1">
+  <title>OneWELL Reviewer · Review queue</title>
 
-  <!-- Design system -->
   <link rel="stylesheet" href="ds/onewell.css">
 
-  <!-- Tailwind CDN — layout utilities only; .ow-* handles all styled components -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      /* Disable Tailwind's color/type overrides — our tokens are canonical */
       corePlugins: { preflight: false },
       theme: {
         extend: {
           colors: {
-            /* Semantic tokens as Tailwind utilities */
             primary:      'var(--primary)',
             destructive:  'var(--destructive)',
             background:   'var(--background)',
@@ -29,7 +25,6 @@
             'border-soft':'var(--border-soft)',
             'border-panel':'var(--border-panel)',
             'border-focus':'var(--border-focus)',
-            /* Spot colors used frequently in layout */
             'gray-50':    'var(--gray-50)',
             'gray-100':   'var(--gray-100)',
             'gray-200':   'var(--gray-200)',
@@ -41,130 +36,758 @@
             'blue-200':   'var(--blue-200)',
           },
           borderRadius: {
-            xs:    'var(--radius-xs)',
-            sm:    'var(--radius-sm)',
-            md:    'var(--radius-md)',
-            lg:    'var(--radius-lg)',
-            xl:    'var(--radius-xl)',
-            modal: 'var(--radius-modal)',
-            full:  'var(--radius-full)',
+            xs: 'var(--radius-xs)', sm: 'var(--radius-sm)', md: 'var(--radius-md)',
+            lg: 'var(--radius-lg)', xl: 'var(--radius-xl)', modal: 'var(--radius-modal)', full: 'var(--radius-full)',
           },
           boxShadow: {
-            xs: 'var(--shadow-xs)',
-            sm: 'var(--shadow-sm)',
-            md: 'var(--shadow-md)',
-            lg: 'var(--shadow-lg)',
-            xl: 'var(--shadow-xl)',
+            xs: 'var(--shadow-xs)', sm: 'var(--shadow-sm)', md: 'var(--shadow-md)',
+            lg: 'var(--shadow-lg)', xl: 'var(--shadow-xl)',
           },
         }
       }
     }
   </script>
+
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--gray-800); min-width: 1280px; background: var(--gray-50); }
+    *, *::before, *::after { box-sizing: border-box; }
+    a { text-decoration: none; }
+
+    /* Nav hover */
+    .nav-btn:hover { background: rgba(255,255,255,0.55) !important; }
+
+    /* Table row hover */
+    .queue-row:hover td { background: var(--gray-50); }
+    .queue-row.row-open td { background: var(--cyan-50) !important; }
+    .queue-row.row-selected td { background: var(--blue-50) !important; }
+    .queue-row td { transition: background .1s; }
+    .queue-row { cursor: pointer; }
+
+    /* Drawer animation */
+    @keyframes owSlide { from { transform: translateX(20px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+    @keyframes owFade  { from { opacity: 0 } to { opacity: 1 } }
+    #drawer-aside { animation: owSlide .22s cubic-bezier(.2,.7,.2,1); }
+    #drawer-backdrop { animation: owFade .15s ease; }
+
+    /* Filter chip active */
+    .filter-chip.active { background: var(--blue-100) !important; color: var(--blue-700) !important; }
+  </style>
 </head>
+<body>
 
-<body class="min-h-screen flex flex-col">
+<div style="display:flex; height:100vh; overflow:hidden; background:var(--gray-50);">
 
-  <!-- ── Top bar ── -->
-  <header class="h-16 flex items-center px-6 bg-surface border-b border-border shrink-0" style="box-shadow: var(--shadow-xs);">
-    <img src="assets/icons/StandardLogo.svg" alt="WELL" class="h-6 w-auto">
-    <span class="ml-4 text-[var(--gray-400)] text-sm select-none">|</span>
-    <span class="ml-4 body-sm" style="color: var(--foreground-muted);">Reviewer</span>
-    <div class="ml-auto flex items-center gap-3">
-      <img src="assets/icons/NavAccount.svg" alt="Account" class="h-5 w-5" style="color: var(--gray-600);">
+  <!-- ── Sidebar ── -->
+  <aside style="width:252px; flex-shrink:0; background:var(--cyan-50); border-right:1px solid var(--border-panel); display:flex; flex-direction:column; padding:20px 14px 16px; position:sticky; top:0; height:100vh; overflow-y:auto;">
+
+    <!-- Brand -->
+    <div style="display:flex; align-items:center; gap:10; padding:0 10px 16px;">
+      <img src="assets/icons/StandardLogo.svg" alt="WELL" style="height:28px; display:block;">
+      <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan-800); background:var(--cyan-100); padding:3px 7px 2px; border-radius:3px; line-height:1;">Reviewer</span>
     </div>
-  </header>
 
-  <!-- ── 3-column workspace ── -->
-  <div class="flex flex-1 overflow-hidden">
-
-    <!-- Left rail -->
-    <nav class="w-64 shrink-0 flex flex-col bg-[var(--surface-side)] border-r border-[var(--border-panel)]">
-      <div class="p-4 flex flex-col gap-1">
-        <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-md body-sm font-medium no-underline"
-           style="color: var(--foreground); border-left: 2px solid var(--cyan-700); background: var(--cyan-100);">
-          <img src="assets/icons/UtilityHome.svg" alt="" class="h-4 w-4">
-          Home
-        </a>
-        <a href="pages/" class="flex items-center gap-3 px-3 py-2 rounded-md body-sm no-underline"
-           style="color: var(--foreground-muted); border-left: 2px solid transparent;">
-          <img src="assets/icons/UtilityPortfolio.svg" alt="" class="h-4 w-4">
-          Projects
-        </a>
+    <!-- Cohort chip -->
+    <div style="margin:4px 6px 18px; padding:12px 12px 14px; background:rgba(255,255,255,0.6); border:1px solid var(--blue-200); border-radius:8px;">
+      <div style="font-size:11px; color:var(--gray-500); font-weight:600; letter-spacing:.04em; text-transform:uppercase;">Your cohort</div>
+      <div style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;">
+        <span class="ow-concept-tag" style="background:var(--concept-air); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Air</span>
+        <span class="ow-concept-tag" style="background:var(--concept-water); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Water</span>
+        <span class="ow-concept-tag" style="background:var(--concept-thermal); color:#0A4F41; height:20px; font-size:10px; padding:0 8px 1px;">Thermal</span>
       </div>
+    </div>
+
+    <!-- Workspace nav -->
+    <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:0 12px 8px;">Workspace</div>
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 10px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:var(--cyan-100); color:var(--cyan-800); font-weight:600; border-left:2px solid var(--cyan-700); text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+        </span>
+        <span style="flex:1; text-align:left;">Review queue</span>
+        <span id="badge-queue" style="min-width:22px; height:18px; padding:0 6px 1px; border-radius:9999px; font-size:11px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; line-height:1; background:var(--gray-100); color:var(--gray-700);">—</span>
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h13l-2 4 2 4H4"/></svg>
+        </span>
+        <span style="flex:1; text-align:left;">SLA watch</span>
+        <span id="badge-sla" style="min-width:22px; height:18px; padding:0 6px 1px; border-radius:9999px; font-size:11px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; line-height:1; background:var(--coral-100); color:var(--coral-700);">—</span>
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </span>
+        <span style="flex:1; text-align:left;">MRC loop</span>
+        <span id="badge-mrc" style="min-width:22px; height:18px; padding:0 6px 1px; border-radius:9999px; font-size:11px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; line-height:1; background:var(--gray-100); color:var(--gray-700);">—</span>
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><polyline points="12 7 12 12 16 14"/></svg>
+        </span>
+        <span style="flex:1; text-align:left;">My rulings</span>
+      </button>
     </nav>
 
-    <!-- Canvas -->
-    <main class="flex-1 overflow-auto p-8">
+    <!-- Browse -->
+    <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:0 12px 8px; margin-top:20px;">Browse</div>
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </span>
+        Portfolios
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M4 4v12a4 4 0 0 0 4 4"/><path d="M9 9h7M9 13h7"/></svg>
+        </span>
+        WELL v2 catalogue
+      </button>
+      <a href="ops.html" class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        Reviewer operations
+      </a>
+    </nav>
 
-      <div class="max-w-2xl">
-        <h1>OneWELL Reviewer</h1>
-        <p class="body-lg mt-3" style="color: var(--foreground-muted);">
-          Prototype shell — design system loaded and ready. Each feature page will live in <code>pages/</code>.
-        </p>
+    <div style="flex:1;"></div>
+
+    <!-- Footer -->
+    <div style="border-top:1px solid var(--blue-200); padding-top:12px; margin-top:12px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-600); font-weight:500; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.07 7.07 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.07-7.07 4.24-4.24"/></svg>
+        </span>
+        Settings &amp; preferences
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Right column ── -->
+  <div style="display:flex; flex-direction:column; flex:1; min-width:0; overflow:hidden;">
+
+    <!-- Top bar -->
+    <header style="height:64px; background:#fff; border-bottom:1px solid var(--gray-200); display:flex; align-items:center; padding:0 32px; gap:24px; position:sticky; top:0; z-index:5; flex-shrink:0;">
+      <!-- Breadcrumbs -->
+      <div style="display:flex; align-items:center; gap:10; flex-shrink:0;">
+        <span style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--gray-500);">Reviewer workspace</span>
+        <span style="color:var(--gray-300);">·</span>
+        <span style="font-size:13px; color:var(--gray-700); font-weight:500;">Q2 2026 cycle</span>
+      </div>
+      <!-- Search -->
+      <div style="position:relative; flex:1; max-width:520px; margin-left:16px;">
+        <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--gray-500); pointer-events:none; display:inline-flex;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" placeholder="Search tasks, accounts, features, locations…" style="width:100%; height:36px; padding:0 96px 1px 38px; border-radius:6px; border:1px solid var(--gray-200); background:var(--gray-50); font-family:var(--font-body); font-size:13px; color:var(--gray-800); outline:none; box-sizing:border-box;">
+        <span style="position:absolute; right:10px; top:50%; transform:translateY(-50%); display:flex; gap:3px; pointer-events:none;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; height:18px; min-width:18px; padding:0 5px 1px; background:#fff; border:1px solid var(--gray-200); border-radius:3px; font-size:10px; font-weight:600; color:var(--gray-500); line-height:1;">⌘</span>
+          <span style="display:inline-flex; align-items:center; justify-content:center; height:18px; min-width:18px; padding:0 5px 1px; background:#fff; border:1px solid var(--gray-200); border-radius:3px; font-size:10px; font-weight:600; color:var(--gray-500); line-height:1;">K</span>
+        </span>
+      </div>
+      <!-- Right actions -->
+      <div style="display:flex; align-items:center; gap:10; margin-left:auto;">
+        <button class="ow-btn ow-btn-outline ow-btn--sm" style="height:32px; padding:0 12px 1px;">Export queue</button>
+        <button style="width:36px; height:36px; border-radius:6px; border:1px solid var(--gray-200); background:#fff; display:inline-flex; align-items:center; justify-content:center; color:var(--gray-700); cursor:pointer; position:relative;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span style="position:absolute; top:-4px; right:-4px; min-width:18px; height:18px; padding:0 5px 1px; background:var(--coral-700); color:#fff; border-radius:9999px; font-size:10px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; line-height:1; box-shadow:0 0 0 2px #fff;">3</span>
+        </button>
+        <div style="display:flex; align-items:center; gap:10; padding:4px 10px 4px 4px; border:1px solid var(--gray-200); border-radius:9999px; background:#fff; cursor:pointer;">
+          <span style="width:30px; height:30px; border-radius:9999px; background:var(--cyan-800); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; letter-spacing:.03em; flex-shrink:0;">MR</span>
+          <div style="display:flex; flex-direction:column; line-height:1.15;">
+            <span style="font-size:13px; font-weight:600; color:var(--gray-800);">Maya Reyes</span>
+            <span style="font-size:11px; color:var(--gray-500);">Sr. Reviewer · A·W·T</span>
+          </div>
+          <span style="color:var(--gray-400); display:inline-flex;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main style="flex:1; overflow-y:auto; padding:24px 32px 40px;">
+
+      <!-- Page header -->
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:8px 0 24px;">
+        <div>
+          <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); margin-bottom:8px;">Friday · May 22, 2026 · May 22, 2026</div>
+          <h1 class="page-title" style="margin:0; font-size:34px; line-height:1.1;">Good afternoon, Maya.</h1>
+          <div style="margin-top:8px; color:var(--gray-600); font-size:14px; max-width:620px;">
+            You have <strong style="color:var(--gray-800);">11 active reviews</strong> across <strong style="color:var(--gray-800);">5 client portfolios</strong>. Two are within the 48-hour SLA window.
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+          <button class="ow-btn ow-btn-outline">This week</button>
+          <button class="ow-btn ow-btn-primary" style="height:40px; padding:0 22px 1px; font-size:14px;">Open today's focus</button>
+        </div>
       </div>
 
-      <!-- DS smoke test -->
-      <section class="mt-10">
-        <p class="section-label mb-4">Design system check</p>
+      <!-- Metrics row -->
+      <div id="metrics-row" style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:20px;">
+        <!-- populated by JS -->
+      </div>
 
-        <div class="flex flex-wrap gap-3 items-center">
-          <!-- Buttons -->
-          <button class="ow-btn ow-btn-primary">Get certified</button>
-          <button class="ow-btn ow-btn-solid">Save changes</button>
-          <button class="ow-btn ow-btn-outline">Cancel</button>
-          <button class="ow-btn ow-btn-ghost">Learn more</button>
-          <button class="ow-btn ow-btn-icon" aria-label="Edit">
-            <img src="assets/icons/UtilityEdit.svg" alt="" class="h-4 w-4">
+      <!-- Composition strip -->
+      <section id="composition-strip" style="background:#fff; border:1px solid var(--gray-200); border-radius:12px; padding:16px 20px 18px; margin-bottom:24px;">
+        <!-- populated by JS -->
+      </section>
+
+      <!-- Queue section -->
+      <div style="background:#fff; border-radius:12px; border:1px solid var(--gray-200); padding:0 20px;">
+        <div style="padding-top:16px;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px;">
+            <h2 style="margin:0; font-family:var(--font-display); font-size:22px; font-weight:400; color:var(--gray-800);">Your queue</h2>
+            <span style="font-size:12px; color:var(--gray-500);">Sorted by SLA — most urgent first.</span>
+          </div>
+        </div>
+
+        <!-- View tabs -->
+        <div id="view-tabs" style="display:flex; border-bottom:1px solid var(--gray-200); gap:4px; margin-bottom:12px;">
+          <!-- populated by JS -->
+        </div>
+
+        <!-- Queue toolbar -->
+        <div style="display:flex; align-items:center; gap:8px; padding:6px 0 14px; flex-wrap:wrap;">
+          <span style="color:var(--gray-500); display:inline-flex;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </span>
+          <button class="filter-chip" style="height:32px; padding:0 10px 1px; border:1px solid var(--gray-200); background:#fff; color:var(--gray-700); border-radius:6px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; cursor:pointer; line-height:1; font-family:var(--font-body);">
+            <span style="color:var(--gray-500);">Concept:</span><strong style="font-weight:600;">Any</strong>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-400);"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <button class="filter-chip" style="height:32px; padding:0 10px 1px; border:1px solid var(--gray-200); background:#fff; color:var(--gray-700); border-radius:6px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; cursor:pointer; line-height:1; font-family:var(--font-body);">
+            <span style="color:var(--gray-500);">Path:</span><strong style="font-weight:600;">Any</strong>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-400);"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <button class="filter-chip" style="height:32px; padding:0 10px 1px; border:1px solid var(--gray-200); background:#fff; color:var(--gray-700); border-radius:6px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; cursor:pointer; line-height:1; font-family:var(--font-body);">
+            <span style="color:var(--gray-500);">Portfolio:</span><strong style="font-weight:600;">Any</strong>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-400);"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <button class="filter-chip" style="height:32px; padding:0 10px 1px; border:1px solid var(--gray-200); background:#fff; color:var(--gray-700); border-radius:6px; display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500; cursor:pointer; line-height:1; font-family:var(--font-body);">
+            <span style="color:var(--gray-500);">Status:</span><strong style="font-weight:600;">Any</strong>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-400);"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div style="flex:1;"></div>
+          <button style="height:32px; padding:0 12px 1px; border:1px solid var(--gray-200); background:#fff; border-radius:6px; display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--gray-700); cursor:pointer; font-weight:500; line-height:1; font-family:var(--font-body);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h13M3 12h9M3 18h5"/><path d="M17 4v16m0 0-3-3m3 3 3-3"/></svg>
+            Sort: <strong>SLA · soonest first</strong>
+          </button>
+          <span id="task-count-label" style="font-size:12px; color:var(--gray-500);">— tasks</span>
+        </div>
+
+        <!-- Table wrapper -->
+        <div style="margin:0 -20px;">
+          <table style="width:100%; border-collapse:separate; border-spacing:0; table-layout:fixed;">
+            <colgroup>
+              <col style="width:38px;">
+              <col style="width:38%;">
+              <col style="width:120px;">
+              <col style="width:120px;">
+              <col style="width:130px;">
+              <col style="width:140px;">
+              <col style="width:140px;">
+              <col style="width:110px;">
+            </colgroup>
+            <thead>
+              <tr style="background:var(--cyan-50);">
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:center; border-bottom:1px solid var(--gray-200); white-space:nowrap;">
+                  <input type="checkbox" id="select-all" style="width:16px; height:16px; margin:0; accent-color:var(--cyan-700); cursor:pointer;">
+                </th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Feature &amp; account</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Concept</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Path</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Coverage</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Status</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-200); white-space:nowrap;">SLA</th>
+                <th style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:12px 14px; text-align:right; border-bottom:1px solid var(--gray-200); white-space:nowrap;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="queue-tbody">
+              <!-- populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div style="height:16px;"></div>
+      </div>
+
+    </main>
+  </div><!-- /right column -->
+</div><!-- /app frame -->
+
+<!-- Task Drawer -->
+<div id="drawer-backdrop" style="display:none; position:fixed; inset:0; background:rgba(40,42,49,0.35); z-index:50;"></div>
+<aside id="drawer-aside" style="display:none; position:fixed; top:0; right:0; bottom:0; width:min(720px,92vw); background:#fff; border-left:1px solid var(--gray-200); z-index:51; box-shadow:var(--shadow-xl); flex-direction:column; overflow:hidden;">
+  <!-- Header -->
+  <header id="drawer-header" style="padding:20px 24px 16px; border-bottom:1px solid var(--gray-200); background:var(--cyan-50); flex-shrink:0;">
+    <!-- populated by JS -->
+  </header>
+  <!-- Body -->
+  <div id="drawer-body" style="flex:1; overflow-y:auto;">
+    <!-- populated by JS -->
+  </div>
+  <!-- Footer / Ruling dock -->
+  <div id="drawer-footer" style="border-top:1px solid var(--gray-200); background:#fff; flex-shrink:0;">
+    <!-- populated by JS -->
+  </div>
+</aside>
+
+<script src="js/data.js"></script>
+<script>
+(function() {
+  'use strict';
+  const RD = window.ReviewerData;
+  const me = RD.currentUser.id;
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  let activeView = 'all';
+  let openTaskId = null;
+  let tasks = RD.TASKS.slice(); // local copy
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  function conceptBg(code)   { return RD.CONCEPTS[code]?.token || 'var(--gray-100)'; }
+  function conceptFg(code)   { return RD.CONCEPTS[code]?.text  || 'var(--gray-800)'; }
+  function conceptLabel(code){ return RD.CONCEPTS[code]?.label || code; }
+
+  function slaHtml(sla) {
+    if (sla.kind === 'ok') {
+      return `<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--gray-500);">
+        <span style="width:6px;height:6px;border-radius:9999px;background:var(--gray-300);"></span>
+        On track · ${Math.round(sla.hours/24)}d
+      </span>`;
+    }
+    const c = sla.kind==='overdue' ? {dot:'var(--coral-700)',text:'var(--coral-700)',label:`${sla.hours}h overdue`}
+                                     : {dot:'var(--plum-700)',text:'var(--plum-700)',label:`Due in ${sla.hours}h`};
+    return `<span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:${c.text};font-weight:600;">
+      <span style="width:6px;height:6px;border-radius:9999px;background:${c.dot};"></span>
+      ${c.label}
+    </span>`;
+  }
+
+  function pathChipHtml(pathId) {
+    const icons = {
+      SHAREABLE: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+      AUDITED:   `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/><circle cx="6.5" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="17.5" r="1" fill="currentColor" stroke="none"/></svg>`,
+      INDIVIDUAL:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    };
+    const label = RD.PATHS[pathId].label;
+    return `<span style="display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 1px;border-radius:4px;background:var(--blue-100);color:var(--blue-700);font-size:12px;font-weight:600;line-height:1;">
+      <span style="display:inline-flex;align-items:center;">${icons[pathId]||''}</span>${label}
+    </span>`;
+  }
+
+  function coverageHtml(task) {
+    if (task.path.id === 'INDIVIDUAL') {
+      const loc = RD.LOCATIONS.find(l => l.id === task.locationIds[0]);
+      return `<div style="display:flex;flex-direction:column;gap:2px;">
+        <span style="font-size:13px;color:var(--gray-800);">1 site</span>
+        <span style="font-size:11px;color:var(--gray-500);">${loc ? loc.city : '—'}</span>
+      </div>`;
+    }
+    if (task.path.id === 'AUDITED') {
+      const samp = task.sampledLocationIds ? task.sampledLocationIds.length : 0;
+      return `<div style="display:flex;flex-direction:column;gap:2px;">
+        <span style="font-size:13px;color:var(--gray-800);">${samp} of ${task.portfolioSize}</span>
+        <span style="font-size:11px;color:var(--gray-500);">⌈√${task.portfolioSize}⌉ sample</span>
+      </div>`;
+    }
+    return `<div style="display:flex;flex-direction:column;gap:2px;">
+      <span style="font-size:13px;color:var(--gray-800);">${task.portfolioSize} sites</span>
+      <span style="font-size:11px;color:var(--gray-500);">1 evidence covers all</span>
+    </div>`;
+  }
+
+  // Sort tasks SLA-first
+  function sortedTasks(list) {
+    const rank = { overdue:0, soon:1, ok:2 };
+    return [...list].sort((a,b) => {
+      const r = rank[a.sla.kind] - rank[b.sla.kind];
+      if (r!==0) return r;
+      return a.dueAt - b.dueAt;
+    });
+  }
+
+  // ── Metrics row ───────────────────────────────────────────────────────────
+  function renderMetrics() {
+    const r = RD.rollup(tasks, me);
+    document.getElementById('badge-queue').textContent = r.assigned;
+    document.getElementById('badge-sla').textContent   = r.sla;
+    document.getElementById('badge-mrc').textContent   = r.awaiting;
+
+    const cards = [
+      { label:'Assigned to you',   value:r.assigned,  sub:'across 5 portfolios',             accent:'var(--cyan-800)', bg:'#fff',              trend:{delta:'+2 vs. last wk',dir:'up',tone:'neutral'} },
+      { label:'SLA at risk',       value:r.sla,       sub:r.sla===0?'clear':'within 48h or overdue', accent:'var(--coral-700)', bg:'var(--coral-50)',    trend:{delta:'Northbay W01 due Mon',dir:'flat',tone:'warn'} },
+      { label:'In MRC loop',       value:r.awaiting,  sub:'awaiting customer remediation',   accent:'var(--plum-700)', bg:'var(--plum-50)',    trend:{delta:'1 on cycle 3 of 3',dir:'flat',tone:'warn'} },
+      { label:'Ruled this week',   value:r.doneWeek,  sub:'achieved or failed',              accent:'var(--emerald-700)', bg:'var(--emerald-50)', trend:{delta:'+1 vs. last wk',dir:'up',tone:'good'} },
+    ];
+    const toneColor = t => t==='good'?'var(--emerald-700)':(t==='warn'?'var(--plum-700)':'var(--gray-600)');
+    const dirIcon = d => d==='up'
+      ? `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`
+      : (d==='down'
+        ? `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`
+        : `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>`);
+
+    document.getElementById('metrics-row').innerHTML = cards.map(c => `
+      <article style="background:${c.bg};border:1px solid var(--gray-200);border-radius:12px;padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-600);">${c.label}</span>
+          <span style="color:var(--gray-400);display:inline-flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg></span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:42px;font-weight:400;line-height:1;color:${c.accent};letter-spacing:-.01em;">${c.value}</div>
+        <div style="font-size:13px;color:var(--gray-600);">${c.sub}</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:${toneColor(c.trend.tone)};">
+          <span style="width:13px;display:inline-flex;">${dirIcon(c.trend.dir)}</span>${c.trend.delta}
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // ── Composition strip ─────────────────────────────────────────────────────
+  function renderComposition() {
+    const mine = tasks.filter(t => t.assignedReviewerId===me && t.status.id!=='COMPLETED' && t.status.id!=='FAILED');
+    const buckets = ['SHAREABLE','AUDITED','INDIVIDUAL'].map(p => ({
+      id:p, label:RD.PATHS[p].label, blurb:RD.PATHS[p].blurb,
+      count:mine.filter(t => t.path.id===p).length,
+    }));
+    const total = buckets.reduce((s,b)=>s+b.count,0)||1;
+    const colors = {SHAREABLE:'var(--cyan-700)',AUDITED:'var(--blue-600)',INDIVIDUAL:'var(--plum-700)'};
+    const icons = {
+      SHAREABLE:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
+      AUDITED:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/><circle cx="6.5" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="17.5" r="1" fill="currentColor" stroke="none"/></svg>`,
+      INDIVIDUAL:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    };
+
+    document.getElementById('composition-strip').innerHTML = `
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <span style="font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);">Verification path mix</span>
+          <span style="margin-left:12px;font-size:13px;color:var(--gray-600);">How your active reviews break down by sampling strategy</span>
+        </div>
+        <a href="#" style="font-size:13px;color:var(--blue-600);">Path methodology →</a>
+      </div>
+      <div style="display:flex;height:10px;border-radius:9999px;overflow:hidden;background:var(--gray-100);margin-bottom:14px;">
+        ${buckets.map(b=>`<div title="${b.label}: ${b.count}" style="flex:${b.count||0.001};background:${colors[b.id]};min-width:${b.count?4:0}px;"></div>`).join('')}
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        ${buckets.map(b=>`
+          <div style="display:flex;gap:12px;">
+            <span style="width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:var(--gray-50);color:${colors[b.id]};flex-shrink:0;">${icons[b.id]}</span>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:baseline;gap:8px;">
+                <span style="font-size:15px;font-weight:600;color:var(--gray-800);">${b.label}</span>
+                <span style="font-family:var(--font-display);font-size:18px;color:${colors[b.id]};">${b.count}</span>
+                <span style="font-size:11px;color:var(--gray-500);">${Math.round(b.count/total*100)}%</span>
+              </div>
+              <div style="font-size:12px;color:var(--gray-600);line-height:1.4;">${b.blurb}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // ── View tabs ──────────────────────────────────────────────────────────────
+  function renderTabs() {
+    document.getElementById('view-tabs').innerHTML = RD.VIEWS.map(v => {
+      const count = tasks.filter(t => v.filter(t, me)).length;
+      const active = activeView === v.id;
+      return `<button data-view="${v.id}" style="background:transparent;border:none;cursor:pointer;padding:10px 14px 12px;font-family:var(--font-body);font-size:14px;font-weight:${active?600:500};color:${active?'var(--cyan-800)':'var(--gray-600)'};border-bottom:2px solid ${active?'var(--cyan-700)':'transparent'};margin-bottom:-1px;display:inline-flex;align-items:center;gap:8px;">
+        ${v.label}
+        <span style="min-width:22px;height:18px;padding:0 6px 1px;border-radius:9999px;font-size:11px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;line-height:1;background:${active?'var(--cyan-100)':'var(--gray-100)'};color:${active?'var(--cyan-800)':'var(--gray-600)'};">${count}</span>
+      </button>`;
+    }).join('');
+
+    document.getElementById('view-tabs').querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeView = btn.dataset.view;
+        renderTabs();
+        renderTable();
+      });
+    });
+  }
+
+  // ── Table rows ─────────────────────────────────────────────────────────────
+  function renderTable() {
+    const view = RD.getView(activeView);
+    const filtered = sortedTasks(tasks.filter(t => view.filter(t, me)));
+    document.getElementById('task-count-label').textContent = `${filtered.length} task${filtered.length!==1?'s':''}`;
+
+    document.getElementById('queue-tbody').innerHTML = filtered.length===0
+      ? `<tr><td colspan="8" style="padding:40px;text-align:center;color:var(--gray-500);">No tasks in this view.</td></tr>`
+      : filtered.map((t,i) => `
+        <tr class="queue-row${openTaskId===t.id?' row-open':''}" data-task-id="${t.id}" style="border-top:${i===0?'none':'1px solid var(--gray-100)'};">
+          <td style="padding:14px;text-align:center;vertical-align:middle;" onclick="event.stopPropagation()">
+            <input type="checkbox" class="row-cb" data-id="${t.id}" style="width:16px;height:16px;margin:0;accent-color:var(--cyan-700);cursor:pointer;">
+          </td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span class="ow-code-chip" style="background:${conceptBg(t.feature.concept)};color:${conceptFg(t.feature.concept)};flex-shrink:0;">${t.feature.code}</span>
+              <div style="display:flex;flex-direction:column;gap:3px;min-width:0;">
+                <span style="font-size:14px;font-weight:600;color:var(--gray-800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                  ${t.feature.title}${t.feature.precondition?'<span style="margin-left:8px;font-size:10px;font-weight:600;color:var(--coral-700);letter-spacing:.05em;">PRE</span>':''}
+                </span>
+                <span style="font-size:12px;color:var(--gray-500);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                  ${t.account.name}<span style="color:var(--gray-300);"> · </span>${t.id.replace('task-','#')}${t.mrcCycle>0?`<span style="margin-left:8px;color:var(--plum-700);font-weight:600;"> MRC cycle ${t.mrcCycle}/3</span>`:''}
+                </span>
+              </div>
+            </div>
+          </td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">
+            <span class="ow-concept-tag" style="background:${conceptBg(t.feature.concept)};color:${conceptFg(t.feature.concept)};height:20px;font-size:10px;padding:0 8px 1px;">${conceptLabel(t.feature.concept)}</span>
+          </td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">${pathChipHtml(t.path.id)}</td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">${coverageHtml(t)}</td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">
+            <span class="ow-status" style="background:${t.status.bg};color:${t.status.fg};height:20px;font-size:10px;padding:0 8px 1px;">${t.status.label}</span>
+          </td>
+          <td style="padding:14px;text-align:left;vertical-align:middle;">${slaHtml(t.sla)}</td>
+          <td style="padding:14px;text-align:right;vertical-align:middle;" onclick="event.stopPropagation()">
+            <a href="task.html?id=${t.id}" style="height:30px;padding:0 12px 1px;border:1px solid var(--cyan-200);background:var(--cyan-50);border-radius:6px;font-size:12px;font-weight:600;color:var(--cyan-800);cursor:pointer;display:inline-flex;align-items:center;gap:4px;line-height:1;text-decoration:none;">
+              Review<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </td>
+        </tr>
+      `).join('');
+
+    // Row click → open drawer
+    document.querySelectorAll('.queue-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const id = row.dataset.taskId;
+        openDrawer(id);
+      });
+    });
+  }
+
+  // ── Drawer ─────────────────────────────────────────────────────────────────
+  function openDrawer(taskId) {
+    openTaskId = taskId;
+    const task = tasks.find(t => t.id === taskId);
+    if (!task) return;
+
+    const backdrop  = document.getElementById('drawer-backdrop');
+    const aside     = document.getElementById('drawer-aside');
+    const hdrEl     = document.getElementById('drawer-header');
+    const bodyEl    = document.getElementById('drawer-body');
+    const footerEl  = document.getElementById('drawer-footer');
+
+    // Header
+    hdrEl.innerHTML = `
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="ow-code-chip" style="background:${conceptBg(task.feature.concept)};color:${conceptFg(task.feature.concept)};height:24px;font-size:12px;padding:0 10px 1px;">${task.feature.code}</span>
+          <span class="ow-concept-tag" style="background:${conceptBg(task.feature.concept)};color:${conceptFg(task.feature.concept)};height:20px;font-size:10px;padding:0 8px 1px;">${conceptLabel(task.feature.concept)}</span>
+          ${pathChipHtml(task.path.id)}
+          <span style="font-size:12px;color:var(--gray-500);">· ${task.id.replace('task-','#')}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <a href="task.html?id=${task.id}" style="height:32px;padding:0 14px 1px;border-radius:6px;background:var(--cyan-800);color:#fff;font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;line-height:1;">
+            Open isolated view
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <button id="drawer-close-btn" style="width:32px;height:32px;border:none;background:transparent;border-radius:6px;color:var(--gray-600);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
+      </div>
+      <h2 style="margin:14px 0 4px;font-family:var(--font-display);font-size:26px;font-weight:400;line-height:1.15;color:var(--gray-800);">${task.feature.title}</h2>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:4px;">
+        <span style="font-size:14px;color:var(--gray-700);font-weight:500;">${task.account.name}</span>
+        <span style="color:var(--gray-300);">·</span>
+        <span style="font-size:13px;color:var(--gray-500);">${task.account.org}</span>
+      </div>
+      <div style="display:flex;gap:18px;margin-top:16px;align-items:center;flex-wrap:wrap;">
+        <span class="ow-status" style="background:${task.status.bg};color:${task.status.fg};">${task.status.label}</span>
+        ${slaHtml(task.sla)}
+        <span style="font-size:12px;color:var(--gray-500);">Submitted ${RD.relative(task.submittedAt)} · Due ${RD.fmt(task.dueAt)}</span>
+        ${task.mrcCycle>0?`<span style="font-size:12px;color:var(--plum-700);font-weight:600;">MRC cycle ${task.mrcCycle} of 3</span>`:''}
+      </div>
+    `;
 
-        <div class="flex flex-wrap gap-2 items-center mt-4">
-          <!-- Status pills -->
-          <span class="ow-status" style="background: var(--gray-100); color: var(--gray-600);">To-Do</span>
-          <span class="ow-status" style="background: var(--cyan-100); color: var(--cyan-600);">Low</span>
-          <span class="ow-status" style="background: var(--plum-100); color: var(--plum-600);">Medium</span>
-          <span class="ow-status" style="background: var(--coral-100); color: var(--coral-600);">High</span>
-          <span class="ow-status" style="background: var(--emerald-100); color: var(--emerald-600);">Done</span>
-          <!-- Tags -->
-          <span class="ow-tag" style="background: var(--gray-100); color: var(--gray-700);">All</span>
-          <span class="ow-tag" style="background: var(--blue-100); color: var(--blue-700);">Pursued</span>
-          <!-- Concept tag -->
-          <span class="ow-concept-tag" style="background: var(--concept-water);">Water</span>
-          <span class="ow-concept-tag" style="background: var(--concept-mind);">Mind</span>
-          <!-- Code chip -->
-          <span class="ow-code-chip" style="background: var(--gray-100); color: var(--gray-700);">W01</span>
-          <span class="ow-code-chip" style="background: var(--cyan-100); color: var(--cyan-800);">A05</span>
+    // Body sections
+    const siteRows = (ids) => ids.slice(0,6).map(id => {
+      const loc = RD.LOCATIONS.find(l => l.id===id) || {name:id, city:'—'};
+      return `<div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid var(--gray-200);border-radius:6px;background:#fff;">
+        <span style="width:26px;height:26px;border-radius:4px;background:var(--cyan-50);color:var(--cyan-800);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10M9 6h.01M13 6h.01M9 10h.01M13 10h.01"/></svg>
+        </span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:500;color:var(--gray-800);">${loc.name}</div>
+          <div style="font-size:11px;color:var(--gray-500);">${loc.city}</div>
         </div>
+        <span style="font-size:11px;font-weight:600;color:var(--emerald-700);display:inline-flex;align-items:center;gap:4px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> In sample
+        </span>
+      </div>`;
+    }).join('');
 
-        <!-- Type scale -->
-        <div class="mt-8 flex flex-col gap-2">
-          <p class="display">Display 42</p>
-          <p class="page-title">Page title 30</p>
-          <p class="modal-title">Modal title 22</p>
-          <p class="heading-lg">Heading large 24</p>
-          <p class="heading-md">Heading medium 20</p>
-          <p class="heading-sm">Heading small 18</p>
-          <p class="body-lg">Body large 18 — project team context and narrative copy</p>
-          <p class="body">Body 16 — default paragraph text</p>
-          <p class="body-sm">Body small 14 — secondary metadata</p>
-          <p class="meta-hint">Meta hint 12</p>
-          <p class="meta-utility">Meta utility 14</p>
-          <p class="section-label">Section label</p>
+    let scopeHtml = '';
+    if (task.path.id==='INDIVIDUAL') {
+      scopeHtml = `<div style="padding:20px 24px;border-bottom:1px solid var(--gray-100);">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Scope</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:10px;">Per-location: this single site is the entire scope.</div>
+        ${siteRows(task.locationIds.slice(0,1))}
+      </div>`;
+    } else if (task.path.id==='SHAREABLE') {
+      scopeHtml = `<div style="padding:20px 24px;border-bottom:1px solid var(--gray-100);">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Scope</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:10px;">Shareable: one ruling will apply to all ${task.portfolioSize} locations.</div>
+        ${siteRows(task.locationIds)}
+        ${task.portfolioSize>6?`<div style="padding:8px 12px;font-size:12px;color:var(--gray-500);">+ ${task.portfolioSize-6} more locations covered by this snapshot.</div>`:''}
+      </div>`;
+    } else {
+      const sampled = task.sampledLocationIds || [];
+      scopeHtml = `<div style="padding:20px 24px;border-bottom:1px solid var(--gray-100);">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Audit sample</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:10px;">Audited: ⌈√${task.portfolioSize}⌉ = ${RD.sampleSize(task.portfolioSize)} locations sampled. Ruling extends to full portfolio.</div>
+        ${siteRows(sampled)}
+        <div style="padding:8px 12px;font-size:12px;color:var(--gray-500);background:var(--blue-50);border:1px dashed var(--blue-200);border-radius:6px;margin-top:4px;">${task.portfolioSize-sampled.length} unsampled locations · ruling extends to all</div>
+      </div>`;
+    }
+
+    const notesHtml = task.notes && task.notes.length > 0
+      ? task.notes.map(n => `<div style="padding:12px;background:var(--cyan-50);border:1px solid var(--cyan-100);border-radius:8px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <strong style="font-size:12px;color:var(--cyan-800);">Maya Reyes</strong>
+            <span style="font-size:11px;color:var(--gray-500);">${RD.relative(n.at)}</span>
+          </div>
+          <div style="font-size:13px;color:var(--gray-700);line-height:1.5;">${n.body}</div>
+        </div>`).join('')
+      : `<div style="padding:24px;text-align:center;border:1px dashed var(--gray-200);border-radius:8px;color:var(--gray-500);font-size:13px;">No notes yet — add one before issuing your ruling.</div>`;
+
+    bodyEl.innerHTML = `
+      <!-- Snapshot -->
+      <section style="padding:20px 24px;border-bottom:1px solid var(--gray-100);">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Snapshot</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:12px;">The frozen evidence package you'll rule on. Mini-Trial scope.</div>
+        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:16px;">
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray-500);">Captured</span>
+              <span style="font-size:13px;color:var(--gray-800);">${RD.fmt(task.snapshot.capturedAt)} · ${RD.relative(task.snapshot.capturedAt)}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;">
+              <span style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray-500);">Submitted by</span>
+              <span style="font-size:13px;color:var(--gray-800);">${task.snapshot.submittedBy}</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray-500);">Narrative</span>
+            <p style="margin:0;font-size:13px;line-height:1.55;color:var(--gray-700);">${task.snapshot.narrative}</p>
+          </div>
         </div>
-
-        <!-- Seals sample -->
-        <div class="flex flex-wrap gap-6 items-end mt-8">
-          <img src="assets/seals/SealWell.svg"                    alt="WELL seal"           class="h-16 w-auto">
-          <img src="assets/seals/SealCertificationGold.svg"       alt="WELL Certified Gold" class="h-16 w-auto">
-          <img src="assets/seals/SealCertificationPlatinum.svg"   alt="WELL Certified Platinum" class="h-16 w-auto">
-          <img src="assets/seals/SealRatingPerformance.svg"       alt="WELL Performance Rating" class="h-16 w-auto">
-          <img src="assets/seals/IWBILogo.svg"                    alt="IWBI"                class="h-10 w-auto">
-        </div>
-
       </section>
-    </main>
+      <!-- Evidence -->
+      <section style="padding:20px 24px;border-bottom:1px solid var(--gray-100);">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Evidence</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:12px;">${task.snapshot.attachments.length} attachments included in the snapshot</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          ${task.snapshot.attachments.map(a=>`
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;background:#fff;">
+              <span style="width:32px;height:32px;border-radius:6px;background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                ${a.type==='archive'
+                  ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>`
+                  : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`
+                }
+              </span>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;">
+                <span style="font-size:13px;font-weight:500;color:var(--gray-800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${a.name}</span>
+                <span style="font-size:11px;color:var(--gray-500);">${a.type.toUpperCase()} · ${a.size}</span>
+              </div>
+              <button style="width:32px;height:32px;border:none;background:transparent;border-radius:6px;color:var(--gray-600);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </button>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+      <!-- Scope -->
+      ${scopeHtml}
+      <!-- Notes -->
+      <section style="padding:20px 24px;">
+        <h3 style="margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cyan-800);">Reviewer notes</h3>
+        <div style="font-size:12px;color:var(--gray-500);margin-bottom:12px;">Internal-only. Not visible to the customer until you rule.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">${notesHtml}</div>
+      </section>
+    `;
 
-  </div><!-- /workspace -->
+    // Footer / Ruling dock
+    const ruled = task.status.id==='COMPLETED' || task.status.id==='FAILED';
+    if (ruled && task.ruling) {
+      footerEl.innerHTML = `
+        <div style="padding:14px 24px;background:var(--gray-50);">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="width:32px;height:32px;border-radius:9999px;background:${task.status.id==='COMPLETED'?'var(--emerald-100)':'var(--coral-100)'};color:${task.status.id==='COMPLETED'?'var(--emerald-700)':'var(--coral-700)'};display:inline-flex;align-items:center;justify-content:center;">
+              ${task.status.id==='COMPLETED'
+                ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+                : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
+              }
+            </span>
+            <div>
+              <div style="font-size:13px;font-weight:600;color:var(--gray-800);">${task.status.id==='COMPLETED'?'Achieved':'Failed'} · ruled ${RD.relative(task.ruling.issuedAt)}</div>
+              <div style="font-size:12px;color:var(--gray-600);">${task.ruling.rationale}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      footerEl.innerHTML = `
+        <div style="padding:14px 24px;display:flex;align-items:center;gap:10px;">
+          <button class="ow-btn ow-btn-outline ow-btn--sm" style="height:36px;">Draft rationale</button>
+          <button class="ow-btn ow-btn-outline" style="height:40px;" onclick="handleRule('${task.id}','ATTENTION')">Return to customer (MRC)</button>
+          <div style="flex:1;"></div>
+          <button class="ow-btn ow-btn-solid" style="height:40px;background:var(--coral-700);color:#fff;" onclick="handleRule('${task.id}','FAILED')">Mark failed</button>
+          <button class="ow-btn ow-btn-primary" style="height:40px;padding:0 22px 1px;font-size:14px;" onclick="handleRule('${task.id}','ACHIEVED')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Issue ruling · Achieved
+          </button>
+        </div>
+      `;
+    }
+
+    // Show drawer
+    backdrop.style.display = 'block';
+    aside.style.display = 'flex';
+
+    document.getElementById('drawer-close-btn').addEventListener('click', closeDrawer);
+
+    // Re-render table to show selected row
+    document.querySelectorAll('.queue-row').forEach(r => {
+      r.classList.toggle('row-open', r.dataset.taskId === taskId);
+    });
+  }
+
+  window.handleRule = function(taskId, decision) {
+    tasks = tasks.map(t => t.id===taskId ? {
+      ...t,
+      status: decision==='ACHIEVED' ? RD.STATUSES.COMPLETED : (decision==='ATTENTION' ? RD.STATUSES.ATTENTION : RD.STATUSES.FAILED),
+      ruling: decision!=='ATTENTION' ? { decision, rationale:'Ruling issued from reviewer dashboard.', issuedAt:new Date() } : t.ruling,
+    } : t);
+    closeDrawer();
+    renderMetrics();
+    renderComposition();
+    renderTabs();
+    renderTable();
+  };
+
+  function closeDrawer() {
+    document.getElementById('drawer-backdrop').style.display = 'none';
+    document.getElementById('drawer-aside').style.display = 'none';
+    openTaskId = null;
+    document.querySelectorAll('.queue-row').forEach(r => r.classList.remove('row-open'));
+  }
+
+  document.getElementById('drawer-backdrop').addEventListener('click', closeDrawer);
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  renderMetrics();
+  renderComposition();
+  renderTabs();
+  renderTable();
+
+})();
+</script>
 
 </body>
 </html>

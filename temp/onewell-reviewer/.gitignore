@@ -1,0 +1,16 @@
+# Operating-system junk files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Node is NOT used by this project, but if any tool ever creates these,
+# we don't want them in the repo.
+node_modules/

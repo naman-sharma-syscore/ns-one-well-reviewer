@@ -1,0 +1,9 @@
+# Netlify configuration for the OneWELL Reviewer prototype.
+# This is a plain static site — there is no build step.
+# Netlify just serves the files in this folder exactly as they are.
+
+[build]
+  # No build command needed (leave empty).
+  command = ""
+  # Publish the root of the repository (where index.html lives).
+  publish = "."

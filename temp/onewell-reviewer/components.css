@@ -1,0 +1,187 @@
+/* ===========================================================================
+   ONE WELL — Component primitives
+   Shared layout rules for tags, chips, buttons. Source of optical alignment.
+
+   Optical alignment principle (from Mazzard Soft + FT Made cap-height ratios):
+   - Mazzard Soft cap-height ≈ 0.71 of em; descender ≈ 0.21 → in pill chips with
+     uppercase text the visible glyph mass sits ~3% below center. We compensate
+     with a hairline padding-bottom <= 1px so optical mid = geometric mid.
+   - Always use line-height: 1 on chips/buttons so vertical math is predictable.
+   - Always: display:inline-flex + align-items:center + justify-content:center
+     so left/right padding is symmetric and text optically centers.
+   =========================================================================== */
+
+/* ---- Tag/Chip primitives ---- */
+.ow-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv11"; /* if available; otherwise ignored */
+  letter-spacing: 0.01em;
+  /* Hairline optical lift so glyph baseline sits visually centered */
+  padding-bottom: 1px;
+  box-sizing: border-box;
+}
+
+/* Status pill — uppercase, 12/24 */
+.ow-status {
+  height: 24px;
+  padding: 0 10px 1px;            /* 1px optical lift on bottom */
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* General-purpose tag (sentence-case, 14/32) */
+.ow-tag {
+  height: 32px;
+  padding: 0 14px 1px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Concept tag (uppercase 12/24, square corners) */
+.ow-concept-tag {
+  height: 24px;
+  padding: 0 12px 1px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* ---- Button primitives ---- */
+
+/* All buttons share these defaults */
+.ow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+.ow-btn:active { transform: translateY(0.5px); }
+.ow-btn:focus-visible { outline: 3px solid var(--cyan-300); outline-offset: 2px; }
+
+/* Primary CTA — pill, 48px */
+.ow-btn-primary {
+  height: 48px;
+  padding: 0 28px 2px;            /* 2px lift balances FT Made + Mazzard mix */
+  border-radius: 9999px;
+  background: var(--gradient-cta-cyan);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.ow-btn-primary:hover { filter: brightness(1.05); }
+
+/* Solid blue button — utility primary, 40px */
+.ow-btn-solid {
+  height: 40px;
+  padding: 0 20px 1px;
+  border-radius: 6px;
+  background: var(--blue-600);
+  color: #fff;
+  font-size: 14px;
+}
+.ow-btn-solid:hover { background: var(--blue-700); }
+
+/* Ghost button — text on surface */
+.ow-btn-ghost {
+  height: 40px;
+  padding: 0 16px 1px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--gray-800);
+  font-size: 14px;
+}
+.ow-btn-ghost:hover { background: var(--gray-100); }
+
+/* Outline button */
+.ow-btn-outline {
+  height: 40px;
+  padding: 0 20px 1px;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--gray-800);
+  font-size: 14px;
+  box-shadow: inset 0 0 0 1px var(--gray-200);
+}
+.ow-btn-outline:hover { background: var(--gray-50); box-shadow: inset 0 0 0 1px var(--gray-300); }
+
+/* Sizing variants */
+.ow-btn--sm { height: 28px; padding: 0 12px 1px; font-size: 12px; border-radius: 4px; }
+.ow-btn--md { height: 36px; padding: 0 16px 1px; font-size: 14px; }
+.ow-btn--lg { height: 48px; padding: 0 28px 2px; font-size: 16px; }
+
+/* Icon-only utility button (square) */
+.ow-btn-icon {
+  width: 32px; height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--gray-700);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.ow-btn-icon:hover { background: var(--gray-100); color: var(--gray-900); }
+.ow-btn-icon svg { display: block; }
+
+/* ---- Code-criterion (concept-coded chip used in scoping table) ---- */
+.ow-code-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 8px 1px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  font-feature-settings: "tnum"; /* tabular for code/letter mix */
+  box-sizing: border-box;
+}
+
+/* ---- Universal helper for any pill/tag in any context ---- */
+.ow-optical-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding-bottom: 1px;
+}

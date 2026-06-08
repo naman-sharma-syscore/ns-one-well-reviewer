@@ -1,0 +1,292 @@
+# Build: OneWELL Reviewer App (v2) — Vanilla HTML/CSS/JS
+
+You are building a high-fidelity, fully interactive prototype of the **OneWELL Reviewer App** — the
+reviewer-side workspace for the WELL Building certification platform (IWBI). This is a companion to a
+customer-facing app: where customers complete tasks, reviewers examine submitted evidence and issue
+permanent, legally-auditable rulings.
+
+**Core philosophy — "Every review is a Mini-Trial."** A reviewer examines specific evidence, frozen at a
+specific moment in time, covering a specific set of locations, and issues a permanent ruling based ONLY on
+what was submitted. No spreadsheets, no exports, no legacy DAM complexity. Everything happens online.
+
+## HARD CONSTRAINT: No framework
+- Plain **HTML, CSS, and vanilla JavaScript only**. No React, Vue, Svelte, no build step, no bundler, no npm.
+- It must run by opening `index.html` directly in a browser (file://) with zero tooling.
+- Use **ES modules** (`<script type="module">`) to split code into readable files. Keep each file focused.
+- For DOM rendering, write small, explicit render functions that build elements (via `document.createElement`
+  or tagged-template -> innerHTML helpers). Do NOT pull in a templating library. A tiny ~15-line `h()` or
+  `html``` helper of your own is fine and encouraged for readability.
+- State management: a single plain-object store module with a `subscribe(fn)` / `setState(patch)` pattern and
+  manual re-render of the active view. No state libraries.
+- Routing: **hash-based** (`window.location.hash` + `hashchange` listener). No router library.
+
+## File structure
+```
+/index.html
+/styles/tokens.css        # design-system color + type + spacing tokens (see below)
+/styles/components.css     # .ow-* component primitives (see below)
+/styles/app.css            # app-specific layout (shell, queue, drawer, ops grids)
+/js/data.js                # the seed data engine + helpers (single source of truth)
+/js/store.js               # global state store: tasks, route, subscribe/setState
+/js/router.js              # hash router: #/queue, #/task/:id, #/ops
+/js/shell.js               # AppFrame: sidebar + topbar, mounts active view
+/js/components.js          # shared render helpers: statusPill, conceptPill, pathChip, slaChip, icons
+/js/view-dashboard.js      # Screen 1: review queue
+/js/view-task.js           # Screen 2: isolated task view ("Mini-Trial")
+/js/view-ops.js            # Screen 3: operations & analytics
+/js/main.js                # boot: wire router -> store -> shell -> views
+/assets/...                # WELL logo SVG (inline if simpler)
+```
+
+---
+
+## DESIGN SYSTEM (One WELL — binding; do not invent values)
+
+### Fonts
+- Display: **FT Made** (serif-ish editorial). Reserved for page titles, hero numbers, cert levels. Never on
+  buttons/labels. Fallback: Georgia, "Times New Roman", serif.
+- Body: **Mazzard Soft M** (weights 400/500/600/700). Everything else. Fallback: ui-sans-serif, system-ui.
+- Mono: ui-monospace, monospace — for code chips, token names, system log notes.
+- If you can't self-host these fonts, declare the @font-face with the names and let the fallbacks render; keep
+  the variable names intact.
+
+### Color tokens (define as CSS custom properties on :root)
+```css
+:root{
+  /* Gray (neutral UI) */
+  --gray-50:#F9F9FA; --gray-100:#EFF1F2; --gray-200:#DEDFE3; --gray-300:#CBCDD2;
+  --gray-400:#9FA2AB; --gray-500:#71747D; --gray-600:#52545D; --gray-700:#3E4049;
+  --gray-800:#282A31; --gray-900:#171820;
+  /* Blue (utility primary / links) */
+  --blue-50:#FBFDFE; --blue-100:#EFF5FB; --blue-200:#CBE0F1; --blue-300:#A3C8E6;
+  --blue-500:#3481C1; --blue-600:#2E74AD; --blue-700:#286495; --blue-800:#22547D; --blue-900:#183B58;
+  /* Cyan (brand "yes" — focus, primary CTA, active nav) */
+  --cyan-50:#FAFEFF; --cyan-100:#D6F4FB; --cyan-200:#95E2F4; --cyan-300:#39C9EA;
+  --cyan-500:#16ADCF; --cyan-600:#149EBD; --cyan-700:#128BA6; --cyan-800:#0F748A; --cyan-900:#0A5161;
+  /* Emerald (success / achieved) */
+  --emerald-50:#FBFEFE; --emerald-100:#E0FBF5; --emerald-200:#BCF6EA; --emerald-300:#8AEFDB;
+  --emerald-600:#1BC5A3; --emerald-700:#17AA8D; --emerald-800:#138B73; --emerald-900:#0E6352;
+  /* Plum (medium priority / MRC loop / system notes) */
+  --plum-50:#FDFCFD; --plum-100:#F7F2F6; --plum-200:#F0E1ED; --plum-500:#BF78AE;
+  --plum-600:#AA6A9B; --plum-700:#905C84; --plum-800:#7F5075; --plum-900:#633E5A;
+  /* Coral (destructive ONLY — failures, breaches, errors) */
+  --coral-50:#FEFCFB; --coral-100:#FCF4F2; --coral-200:#F8DFD8; --coral-500:#ED896F;
+  --coral-600:#E67357; --coral-700:#DC5432; --coral-800:#BC4324; --coral-900:#81311D;
+  /* Concept colors (content TAGGING ONLY — never on chrome/buttons) */
+  --concept-air:#87DFF2; --concept-water:#39C9EA; --concept-thermal:#3EDDBF;
+  --concept-nourishment:#17AA8D; --concept-light:#8AEFDB; --concept-movement:#149EBD;
+  --concept-sound:#0C705C; --concept-materials:#0A4F41; --concept-mind:#0A5161; --concept-community:#0F748A;
+  /* Gradients */
+  --gradient-cta-cyan:linear-gradient(0deg,rgba(15,116,138,.6) 0%,rgba(15,116,138,.6) 100%),linear-gradient(99deg,#41D5F6 3.39%,#3EECD1 57.86%,#66FCD9 112.32%);
+  /* Semantic */
+  --surface:#fff; --surface-side:var(--cyan-50); --background:var(--gray-50);
+  --foreground:var(--gray-800); --border:var(--gray-200); --border-panel:var(--blue-200);
+  /* Radii */
+  --radius-sm:6px; --radius-md:8px; --radius-lg:12px; --radius-modal:24px; --radius-full:9999px;
+  /* Spacing */
+  --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:32px; --space-xl:64px;
+  /* Shadows */
+  --shadow-xs:0 1px 2px 0 rgba(16,24,40,.05);
+  --shadow-sm:0 1px 3px 0 rgba(16,24,40,.08),0 1px 2px -1px rgba(16,24,40,.06);
+  --shadow-xl:0 20px 25px -5px rgba(16,24,40,.10),0 8px 10px -6px rgba(16,24,40,.08);
+  /* Type scale */
+  --type-display:42px; --type-page-title:30px; --type-h1:24px; --type-h2:20px;
+  --type-body:16px; --type-body-sm:14px; --type-meta:12px;
+  --font-display:"FT Made",Georgia,serif; --font-body:"Mazzard Soft M",ui-sans-serif,system-ui,sans-serif;
+}
+```
+
+### Color rules (strict)
+- Cyan = brand primary. Use the gradient CTA **exactly once per view** (the single most important action).
+- Blue = utility buttons & links. Don't mix cyan AND blue as primaries in the same view.
+- Coral = destructive only (fail, SLA breach, errors). Never decorative.
+- Emerald = success/done. Plum = medium signal / MRC loop / system notes.
+- Concept colors ONLY tag what concept a feature belongs to (chips/dots). Never on buttons, nav, or panels.
+
+### Component primitives (`.ow-*` classes in components.css)
+- `.ow-btn` base (inline-flex, center, gap 8px, line-height 1, 6px radius for rects).
+  - `.ow-btn-primary` (48px pill, `--gradient-cta-cyan`, white, 16px/600) — one per view.
+  - `.ow-btn-solid` (40px, `--blue-600`, white) — Save/Submit/Continue.
+  - `.ow-btn-outline` (40px, white, inset 1px `--gray-200` border) — Cancel/Back.
+  - `.ow-btn-ghost`, `.ow-btn-icon` (32px square).
+  - Size variants `--sm` (28px) / `--md` (36px) / `--lg` (48px).
+- `.ow-status` — 24px uppercase pill, 12px/600, for state.
+- `.ow-concept-tag` — 24px square-corner (4px) uppercase chip, color-coded by concept.
+- `.ow-code-chip` — 22px, 11px/600, tabular-nums, for feature codes (W01, A02), concept-colored bg.
+- Inputs: white bg, 1px `--gray-200`, 6px radius, 40px height; focus = 2px `--cyan-300` ring + `--cyan-50` halo.
+- Labels: 12px `--gray-600`/500, sentence case, above the field.
+
+### Voice
+Calm, factual, generous, never alarmist. Sentence case headings. "8 points to Gold" not "You're failing".
+Errors are `<what happened> + <next step>`, never bare "Error".
+
+### Layout shell
+- Left sidebar ~252px: `--cyan-50` bg, 1px `--blue-200` right border. Active nav item = 2px `--cyan-700`
+  left border + `--cyan-100` bg + cyan-800 text.
+- Top bar 64px, white, 1px `--gray-200` bottom border: global search input, notifications bell w/ count,
+  profile chip (avatar initials + name + role).
+- Main content: full width, 24-32px padding, `--gray-50` page bg.
+- Minimum app width ~1280px (desktop tool).
+
+---
+
+## DATA ENGINE (`js/data.js`) — single source of truth
+
+Anchor "now" deterministically: `const NOW = new Date('2026-06-01T14:30:00Z')` so SLA math is stable across
+reloads. Provide helpers: `fmt(date)`, `relative(date)` ("3d ago" / "in 5h"), `slaBucket(due)` ->
+`{kind:'ok'|'soon'|'overdue', label, hours}` (soon = within 48h, overdue = past due), and
+`sampleSize(n) = Math.ceil(Math.sqrt(n))`.
+
+### Model sequence
+`Target/Strategy -> Task -> ReviewSnapshot -> Notes/Rulings -> Achievements`
+
+### Concepts (10) and Features (real WELL v2 codes)
+Concepts with their tag color + readable text color: Air, Water, Nourishment, Light, Movement, Thermal Comfort,
+Sound, Materials, Mind, Community.
+Features (at minimum): **A01** Air quality (pre), **A02** Smoke-free environment (pre), A05 Enhanced ventilation,
+A07 Operable windows, **W01** Water quality indicators (pre), **W02** Drinking water quality (pre),
+**W03** Basic water management (pre), W04 Enhanced water quality, **T01** Thermal performance (pre),
+T03 Thermal zoning, T05 Humidity control, L03 Circadian lighting, **N01** Fruits & vegetables (pre),
+V02 Ergonomic workstations, S02 Maximum noise levels, X06 VOC restrictions, M07 Restorative spaces,
+C04 Accessibility & universal design. ("pre" = precondition flag.)
+
+### Reviewers (>=3; current session = first)
+- rev-001 **Maya Reyes** — Senior WELL Reviewer · Air & Water (isMe: true), cohorts [Air, Water, Thermal].
+- rev-002 Jordan Tan — Materials & Mind. rev-003 Adaeze Balogun — Lead · Performance.
+
+### Accounts/Portfolios with location counts
+Helix Realty (50 locations), Northbay Asset Mgmt (16), Ridgeway Hospitality (12), Meridian Logistics (1 site),
+Keystone Health Network (8), Aria Workplaces (22). Give each named reference locations with real cities
+(Chicago, Singapore, Tokyo, Austin, Boston, Berlin, etc.).
+
+### Three verification paths
+- **Shareable** — ONE artifact covers an entire portfolio (e.g., Helix Smoke-Free Policy A02 covering all 50
+  locations; one ruling applies to all).
+- **Audited** — `ceil(sqrt(N))` sampling. e.g., Northbay W01 over 16 locations -> 4 sampled tasks; ruling extends
+  to all 16. Ridgeway 12 -> 4 sampled.
+- **Per-location (Individual)** — each site uploads its own evidence (e.g., Keystone W02 per-clinic;
+  Meridian A01 single warehouse).
+
+### Tasks — seed 25+ across ALL statuses and ALL paths
+Status vocabulary with pill colors:
+- `READY` "Ready for review" — cyan-100/cyan-800
+- `UNDER` "Under review" — blue-100/blue-700
+- `ATTENTION` "Needs attention" (returned to client / in MRC loop) — plum-100/plum-700
+- `COMPLETED` "Completed" — emerald-100/emerald-700
+- `FAILED` "Failed" — coral-100/coral-700
+
+Each Task carries: id (`task-XXXX`), accountId, feature, concept, path, status, `locationIds[]`,
+`sampledLocationIds` (audited only), portfolioSize, assignedReviewerId, submittedAt, dueAt, computed `sla`,
+`snapshot`, `ruling`, `notes[]`, `mrcCycle` (0-3), points.
+
+A **ReviewSnapshot** = the frozen evidence package: `{capturedAt, submittedBy, attachments[], narrative}`.
+Attachments use realistic filenames: `HVAC_Assessment_Chicago_Q1_2026.pdf`,
+`Water_Testing_Results_Singapore.pdf`, `Helix_Smoke_Free_Policy_v3.2.pdf`, with type (pdf/archive/sheet/data)
+and human size ("482 KB", "14.2 MB").
+
+### WELL v2 Verification Checklists per feature
+Map each feature code -> array of criteria `{id, tier:'T1'|'T2', text}`. T1 = required, T2 = bonus. Provide real
+thresholds, e.g. W02: "Point-of-use filtration installed at all drinking water outlets", "Filter maintenance log
+within manufacturer interval", "Quarterly samples in last 12 months" (T1); "Annual third-party verification"
+(T2). W01 includes "Lead <= 0.005 mg/L", "Total coliform absent". A02 includes "Written smoke-free policy",
+"Covers e-cigarettes", "Signage at all entries". Provide a GENERIC_CHECKLIST fallback for features without a
+curated list.
+
+### Saved-view filters & rollup
+Views: `all` (All assigned), `urgent` (SLA at risk & not closed), `progress` (Under review), `mrc` (Needs
+attention), `history` (Completed or Failed). Each a pure predicate `(task, meId) => bool`.
+`rollup(tasks, meId)` -> `{assigned, sla, awaiting, doneWeek}`.
+
+---
+
+## SCREEN 1 — Unified Reviewer Dashboard (`#/queue`)
+1. **Page header** — date kicker, "Good afternoon, Maya." (FT Made), one-line summary, a "This week" toggle and
+   a single primary CTA.
+2. **Metrics band** — 4 KPI cards: *Assigned to you*, *SLA at risk* (coral), *In MRC loop* (plum),
+   *Ruled this week* (emerald). FT Made numerals, trend line each.
+3. **Composition strip** — stacked bar + 3 legend items showing the verification-path mix of active work
+   (Shareable / Audited / Per-location) with the ceil(sqrt(N)) blurb.
+4. **Saved-view tabs** — All assigned / Urgent · SLA / In progress / MRC loop / My rulings history, each with a
+   live count badge.
+5. **Linear-style queue table** — dense, readable. Columns: checkbox (bulk select), Feature & account
+   (concept code-chip + title + "PRE" marker + account + #id + "MRC cycle n/3"), Concept pill, Path pill,
+   Coverage (`4 of 16 · ceil(sqrt(16)) sample` / `50 sites · 1 evidence covers all` / `1 site`), Status pill,
+   SLA chip (overdue/soon/on-track w/ colored dot), Action (Review -> `#/task/:id`).
+   - Sort SLA-first (overdue -> soon -> ok, then by dueAt).
+   - Bulk-select shows a cyan action bar (Reassign / Bulk approve).
+   - Row hover + selected-row states.
+
+## SCREEN 2 — Isolated Task View / "Mini-Trial" (`#/task/:id`)
+Un-nested, hyper-focused. **Two-column layout.**
+
+**Left (Primary Evidence Canvas):**
+- **Task header card** — concept code-chip, concept pill, path pill, PRECONDITION marker, status pill;
+  big FT Made title `W02: Drinking water quality`; account + org; a 4-cell metric strip (Verification path /
+  Sample math `ceil(sqrt(16)) = 4` / Portfolio impact / SLA).
+- **ReviewSnapshot ribbon** — immutable banner (cyan-50 head with a lock glyph + "frozen at ... by ..." + a fake
+  content hash `sha-...`). Body grid: Scope (Core/Owner-occupied), aggregate occupancy, aggregate net area,
+  standard version. Then "Locations in scope at submission" as chips (+N more).
+- **Interactive verification checklist** — Tier 1 / Tier 2 progress bars; each criterion is a clickable row
+  that toggles verified (green check, strike-through). T1 must be fully checked to allow approval.
+- **Document inspection tree** — each attachment row with a **Relevancy toggle** (Relevant / Not relevant) and
+  an expandable inline textarea for a per-document technical note.
+
+**Right (sticky 360px control panel — "The Gavel"):**
+- **Workload & target** — locations impacted, verification path, sample size; Tiers sought (Tier 1 vs Tier 2
+  cards with point values).
+- **Ruling actions** — pre-flight checklist (T1 verified + all docs flagged) gates the primary CTA. Three
+  outcomes: **Complete · Approve** (gradient CTA, disabled until pre-flight passes), **Needs Attention ·
+  Issue MRC** (plum outline), **Failed · Closed without points** (coral outline).
+  - Selecting **Needs Attention** swaps the panel in place to an **MRC composer**: Subject, Required action
+    (select), Reviewer guidance (textarea), Resubmission deadline (+7/+14/+30 days), with "Cycle n of 3" and
+    Send/Cancel. Send is disabled until subject & body have minimum length.
+- **Notes ledger** — unified timeline with filter tabs All / Public / Private / System. Color rails: cyan =
+  Public (customer-visible), gray = Private (internal), plum = System (machine). Inline "add private note" input.
+
+## SCREEN 3 — Reviewer Operations & Analytics (`#/ops`)
+- **SLA tracking** — green (Safe) / amber (Approaching) / red (Breached) summary bands + an aging histogram
+  bucketed by hours-to-due (<=0h, 0-24h, 1-2d, 2-4d, 4-7d, >1wk). "Most urgent" list links to tasks.
+- **Compliance rollups (Drata-style)** — 4 tiles: Velocity SLA (rulings/wk), Mean time-to-rule (days),
+  Decision accuracy (%), MRC rate (%), each with a PASSING/WATCHING flag + benchmark. Plus an outcome
+  distribution stacked bar (Achieved / Returned·MRC / Failed).
+- **AI Pre-Review Agent (2027 preview)** — pick an active task; show an animated SVG **confidence ring** (0-100),
+  an agent verdict, stats (docs parsed / clauses cited / gaps flagged), a **missing-clauses list** with severity
+  (e.g., *"Missing ASHRAE 188 section 4.2"*, HIGH/LOW), and **compliant lines surfaced** (quoted from the evidence
+  filenames). Findings derived deterministically from the feature's checklist. Add an "advisory only — never
+  alters the snapshot, cannot rule" disclaimer.
+- **Guardrails monitor** — three rule cards with live counters and a "Try" demo button that visibly fails:
+  - `TASK_SPLIT_SAFEGUARD` — block splitting any task whose Strategy is auditable.
+  - `MIN_LOC_THRESHOLD` — block location-split when a task has < 2 locations.
+  - `SNAPSHOT_IMMUTABLE` — once a ruling is finalized, the ReviewSnapshot is sealed; an edit attempt shakes and
+    refuses.
+
+---
+
+## STATE MACHINE & AUTOMATION (implement in store + view-task.js)
+- **Locking** — the first edit on a task (checking a criterion or flagging a doc) fires a simulated
+  `TaskService::lock()`: show a plum "Customer workspace locked" banner and transition status READY -> UNDER.
+- **Auto-generated system notes** — every status transition injects a stylized SYSTEM note into the ledger:
+  `state(READY) -> state(UNDER) · reason="first reviewer edit" · by=rev-001`. MRC send adds a public note;
+  approve/fail add public notes.
+- **Achievement generation** — clicking **Complete · Approve** transitions to COMPLETED, injects an
+  `AchievementService::generate(...)` system note, and opens a **success modal** showing the immutable
+  Achievement record as pretty-printed JSON (achievement_id, task_id, feature, decision, ruled_at, reviewer,
+  scope {path, portfolio_size, sampled}, tier_score {tier_1, tier_2 verified counts}, snapshot_sha, immutable:true).
+- **Shared store** — tasks live in ONE store. A ruling issued in the task view must immediately update the
+  dashboard metrics and the ops analytics. Re-derive SLA buckets whenever tasks change.
+
+## ROUTING & APP ASSEMBLY (`router.js` + `shell.js` + `main.js`)
+- Hash routes: `#/queue` (default), `#/task/:taskId`, `#/ops`. Parse on load + on `hashchange`.
+- The AppFrame (sidebar + topbar) renders once; only the main content swaps. Reset scroll on route change and
+  add a subtle fade-in. Sidebar nav highlights the right item per route (task view keeps the queue item lit).
+- Sidebar items: Review queue (badge=assigned), SLA watch (badge=sla, coral), MRC loop (badge=awaiting),
+  My rulings, then a Browse group (Portfolios, WELL v2 catalogue, Reviewer team) — stub these to route to ops or
+  show an empty state.
+
+## DELIVERABLE QUALITY BAR
+- Fully interactive end-to-end with no backend and no build. Clicking through queue -> task -> rule -> ops all works.
+- Accessible: visible focus rings (2px cyan-300), 44px min hit targets, status conveyed by color + label.
+- Clean, commented, readable vanilla JS — this version's whole point is ease of understanding. Favor explicit
+  render functions and a tiny shared `html``` helper over cleverness. No dead code, no placeholder lorem.
+- Match the design system exactly: tokens only, FT Made for display only, one gradient CTA per view, concept
+  colors for tagging only.

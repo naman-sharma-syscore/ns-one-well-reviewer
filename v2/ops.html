@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, initial-scale=1">
+  <title>OneWELL Reviewer · Reviewer operations</title>
+
+  <link rel="stylesheet" href="ds/onewell.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            primary:      'var(--primary)',
+            destructive:  'var(--destructive)',
+            background:   'var(--background)',
+            surface:      'var(--surface)',
+            'surface-side':    'var(--surface-side)',
+            foreground:        'var(--foreground)',
+            'foreground-muted':'var(--foreground-muted)',
+            border:       'var(--border)',
+            'border-soft':'var(--border-soft)',
+            'border-panel':'var(--border-panel)',
+            'border-focus':'var(--border-focus)',
+            'gray-50':    'var(--gray-50)',
+            'gray-100':   'var(--gray-100)',
+            'gray-200':   'var(--gray-200)',
+            'gray-500':   'var(--gray-500)',
+            'gray-800':   'var(--gray-800)',
+            'cyan-50':    'var(--cyan-50)',
+            'cyan-200':   'var(--cyan-200)',
+            'cyan-800':   'var(--cyan-800)',
+            'blue-200':   'var(--blue-200)',
+          },
+          borderRadius: {
+            xs:'var(--radius-xs)', sm:'var(--radius-sm)', md:'var(--radius-md)',
+            lg:'var(--radius-lg)', xl:'var(--radius-xl)', modal:'var(--radius-modal)', full:'var(--radius-full)',
+          },
+          boxShadow: {
+            xs:'var(--shadow-xs)', sm:'var(--shadow-sm)', md:'var(--shadow-md)',
+            lg:'var(--shadow-lg)', xl:'var(--shadow-xl)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body { margin:0; padding:0; }
+    body { font-family:var(--font-body); color:var(--gray-800); background:var(--gray-50); min-width:1280px; }
+    *, *::before, *::after { box-sizing:border-box; }
+    a { text-decoration:none; }
+    .nav-btn:hover { background:rgba(255,255,255,0.55) !important; }
+    @keyframes owShake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+  </style>
+</head>
+<body>
+
+<div style="display:flex; height:100vh; overflow:hidden; background:var(--gray-50);">
+
+  <!-- ── Sidebar ── -->
+  <aside style="width:252px; flex-shrink:0; background:var(--cyan-50); border-right:1px solid var(--border-panel); display:flex; flex-direction:column; padding:20px 14px 16px; position:sticky; top:0; height:100vh; overflow-y:auto;">
+    <div style="display:flex; align-items:center; gap:10; padding:0 10px 16px;">
+      <img src="assets/icons/StandardLogo.svg" alt="WELL" style="height:28px; display:block;">
+      <span style="font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan-800); background:var(--cyan-100); padding:3px 7px 2px; border-radius:3px; line-height:1;">Reviewer</span>
+    </div>
+    <div style="margin:4px 6px 18px; padding:12px 12px 14px; background:rgba(255,255,255,0.6); border:1px solid var(--blue-200); border-radius:8px;">
+      <div style="font-size:11px; color:var(--gray-500); font-weight:600; letter-spacing:.04em; text-transform:uppercase;">Your cohort</div>
+      <div style="display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;">
+        <span class="ow-concept-tag" style="background:var(--concept-air); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Air</span>
+        <span class="ow-concept-tag" style="background:var(--concept-water); color:#0A4F61; height:20px; font-size:10px; padding:0 8px 1px;">Water</span>
+        <span class="ow-concept-tag" style="background:var(--concept-thermal); color:#0A4F41; height:20px; font-size:10px; padding:0 8px 1px;">Thermal</span>
+      </div>
+    </div>
+    <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:0 12px 8px;">Workspace</div>
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <a href="index.html" class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%; line-height:1;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+        </span>
+        Review queue
+      </a>
+    </nav>
+    <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); padding:0 12px 8px; margin-top:20px;">Browse</div>
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-700); font-weight:500; border-left:2px solid transparent; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </span>
+        Portfolios
+      </button>
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:var(--cyan-100); color:var(--cyan-800); font-weight:600; border-left:2px solid var(--cyan-700); text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        Reviewer operations
+      </button>
+    </nav>
+    <div style="flex:1;"></div>
+    <div style="border-top:1px solid var(--blue-200); padding-top:12px; margin-top:12px;">
+      <button class="nav-btn" style="height:36px; display:flex; align-items:center; gap:10; padding:0 12px; border:none; cursor:pointer; border-radius:6px; font-family:var(--font-body); font-size:13px; background:transparent; color:var(--gray-600); font-weight:500; text-align:left; width:100%;">
+        <span style="width:18px; display:inline-flex; align-items:center; flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.07 7.07 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.07-7.07 4.24-4.24"/></svg>
+        </span>
+        Settings &amp; preferences
+      </button>
+    </div>
+  </aside>
+
+  <!-- Right column -->
+  <div style="display:flex; flex-direction:column; flex:1; min-width:0; overflow:hidden;">
+
+    <!-- Topbar -->
+    <header style="height:64px; background:#fff; border-bottom:1px solid var(--gray-200); display:flex; align-items:center; padding:0 32px; gap:24px; position:sticky; top:0; z-index:5; flex-shrink:0;">
+      <div style="display:flex; align-items:center; gap:10; flex-shrink:0;">
+        <span style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--gray-500);">Reviewer workspace</span>
+        <span style="color:var(--gray-300);">·</span>
+        <span style="font-size:13px; color:var(--gray-700); font-weight:500;">Operations &amp; analytics</span>
+      </div>
+      <div style="flex:1;"></div>
+      <div style="display:flex; align-items:center; gap:10; margin-left:auto;">
+        <div style="display:flex; align-items:center; gap:10; padding:4px 10px 4px 4px; border:1px solid var(--gray-200); border-radius:9999px; background:#fff; cursor:pointer;">
+          <span style="width:30px; height:30px; border-radius:9999px; background:var(--cyan-800); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0;">MR</span>
+          <div style="display:flex; flex-direction:column; line-height:1.15;">
+            <span style="font-size:13px; font-weight:600; color:var(--gray-800);">Maya Reyes</span>
+            <span style="font-size:11px; color:var(--gray-500);">Sr. Reviewer · A·W·T</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main style="flex:1; overflow-y:auto; padding:24px 32px 40px;">
+
+      <!-- Page header -->
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:8px 0 24px;">
+        <div>
+          <div style="font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--cyan-800); margin-bottom:8px;">Operations &amp; analytics</div>
+          <h1 class="page-title" style="margin:0; font-size:34px; line-height:1.1;">Reviewer operations</h1>
+          <div style="margin-top:8px; color:var(--gray-600); font-size:14px; max-width:720px;">
+            SLA tracking, automated compliance indicators, AI pre-review, and the native processing rules that keep the audit trail provably clean.
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+          <button class="ow-btn ow-btn-outline">Last 4 weeks</button>
+          <button class="ow-btn ow-btn-solid">Schedule report</button>
+        </div>
+      </div>
+
+      <!-- Top row: SLA + Compliance -->
+      <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:16px; margin-bottom:16px;">
+
+        <!-- SLA Tracker -->
+        <section id="sla-card" style="background:#fff; border:1px solid var(--gray-200); border-radius:12px; padding:20px 22px;">
+          <!-- rendered by JS -->
+        </section>
+
+        <!-- Compliance Rollups -->
+        <section id="compliance-card" style="background:#fff; border:1px solid var(--gray-200); border-radius:12px; padding:20px 22px;">
+          <!-- rendered by JS -->
+        </section>
+      </div>
+
+      <!-- AI Agent -->
+      <section id="ai-card" style="background:#fff; border:1px solid var(--gray-200); border-radius:12px; padding:20px 22px; margin-bottom:16px;">
+        <!-- rendered by JS -->
+      </section>
+
+      <!-- Guardrails -->
+      <section id="guardrails-card" style="background:#fff; border:1px solid var(--gray-200); border-radius:12px; padding:20px 22px;">
+        <!-- rendered by JS -->
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script>
+(function () {
+  'use strict';
+  const RD = window.ReviewerData;
+  const tasks = RD.TASKS;
+  const NOW = RD.NOW;
+
+  // ── Analytics ──────────────────────────────────────────────────────────────
+  const closed = tasks.filter(t => t.status.id==='COMPLETED'||t.status.id==='FAILED');
+  const active = tasks.filter(t => t.status.id!=='COMPLETED'&&t.status.id!=='FAILED');
+  const weeksWindow = 4;
+  const closedPerWeek = (closed.length/weeksWindow).toFixed(1);
+  const ruleDays = closed.filter(t=>t.ruling&&t.ruling.issuedAt&&t.submittedAt)
+    .map(t=>(t.ruling.issuedAt.getTime()-t.submittedAt.getTime())/864e5);
+  const meanDays = ruleDays.length ? (ruleDays.reduce((s,d)=>s+d,0)/ruleDays.length).toFixed(1) : '—';
+  const approved = closed.filter(t=>t.ruling?.decision==='ACHIEVED').length;
+  const failed   = closed.filter(t=>t.ruling?.decision==='FAILED').length;
+  const inMRC    = tasks.filter(t=>t.status.id==='ATTENTION').length;
+  const outcomes = [
+    { label:'Achieved', count:approved, pct:approved/Math.max(1,approved+failed+inMRC), color:'var(--emerald-700)' },
+    { label:'Returned · MRC', count:inMRC, pct:inMRC/Math.max(1,approved+failed+inMRC), color:'var(--plum-700)' },
+    { label:'Failed', count:failed, pct:failed/Math.max(1,approved+failed+inMRC), color:'var(--coral-700)' },
+  ];
+  const accuracy = closed.length ? (1-failed/closed.length) : 1;
+  const buckets = { safe:[], amber:[], red:[] };
+  active.forEach(t => {
+    if (t.sla.kind==='overdue') buckets.red.push(t);
+    else if (t.sla.kind==='soon') buckets.amber.push(t);
+    else buckets.safe.push(t);
+  });
+
+  // ── SLA Tracker ────────────────────────────────────────────────────────────
+  const bins = [
+    { label:'≤ 0h',   range:[-Infinity,0],   band:'red'   },
+    { label:'0–24h',  range:[0,24],           band:'amber' },
+    { label:'1–2d',   range:[24,48],          band:'amber' },
+    { label:'2–4d',   range:[48,96],          band:'safe'  },
+    { label:'4–7d',   range:[96,168],         band:'safe'  },
+    { label:'> 1 wk', range:[168,Infinity],   band:'safe'  },
+  ];
+  const allActive = [...buckets.safe,...buckets.amber,...buckets.red];
+  const counts = bins.map(b => {
+    const c = allActive.filter(t => {
+      const h = (t.dueAt.getTime()-NOW.getTime())/36e5;
+      return h>=b.range[0] && h<b.range[1];
+    }).length;
+    return { ...b, count:c };
+  });
+  const maxC = Math.max(1,...counts.map(c=>c.count));
+  const bandColor = { safe:'var(--emerald-600)', amber:'var(--plum-500)', red:'var(--coral-700)' };
+  const bandBg    = { safe:'var(--emerald-100)', amber:'var(--plum-100)', red:'var(--coral-100)' };
+
+  function slaCardBand(label,count,dot,bg,stroke,sub) {
+    return `<div style="flex:1;padding:14px 16px;background:${bg};border:1px solid ${stroke};border-radius:8px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="width:8px;height:8px;border-radius:9999px;background:${dot};"></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-700);">${label}</span>
+      </div>
+      <div style="font-family:var(--font-display);font-size:32px;font-weight:400;line-height:1;color:${dot};">${count}</div>
+      <div style="font-size:11px;color:var(--gray-600);margin-top:6px;">${sub}</div>
+    </div>`;
+  }
+
+  function renderSLA() {
+    const urgentRows = [...buckets.red,...buckets.amber].slice(0,4).map(t => {
+      const pal = t.sla.kind==='overdue'
+        ? { rail:'var(--coral-700)', bg:'var(--coral-100)', fg:'var(--coral-700)' }
+        : { rail:'var(--plum-600)',  bg:'var(--plum-100)',  fg:'var(--plum-700)'  };
+      const lbl = t.sla.kind==='overdue' ? `${t.sla.hours}h overdue` : `${t.sla.hours}h to due`;
+      const c = RD.CONCEPTS[t.feature.concept];
+      return `<a href="task.html?id=${t.id}" style="display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:6px;background:#fff;border:1px solid var(--gray-200);border-left:3px solid ${pal.rail};text-decoration:none;color:inherit;">
+        <span class="ow-code-chip" style="background:${c.token};color:${c.text};flex-shrink:0;">${t.feature.code}</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:500;color:var(--gray-800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${t.feature.title}</div>
+          <div style="font-size:11px;color:var(--gray-500);">${t.account.name} · ${t.id.replace('task-','#')}</div>
+        </div>
+        <span style="height:22px;padding:0 8px 1px;border-radius:4px;background:${pal.bg};color:${pal.fg};display:inline-flex;align-items:center;font-size:11px;font-weight:700;line-height:1;flex-shrink:0;">${lbl}</span>
+      </a>`;
+    }).join('');
+
+    document.getElementById('sla-card').innerHTML = `
+      <header style="margin-bottom:16px;">
+        <h2 style="margin:0;font-size:16px;font-weight:700;color:var(--gray-800);">SLA aging</h2>
+        <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Active tasks bucketed by hours until contractual due. Bars show count per band.</div>
+      </header>
+      <div style="display:flex;gap:12px;margin-bottom:20px;">
+        ${slaCardBand('Safe',   buckets.safe.length,  'var(--emerald-700)','var(--emerald-50)','var(--emerald-200)','> 48 hrs to go')}
+        ${slaCardBand('Amber',  buckets.amber.length, 'var(--plum-700)',   'var(--plum-50)',   'var(--plum-200)',   'within 48 hrs')}
+        ${slaCardBand('Breached',buckets.red.length,  'var(--coral-700)',  'var(--coral-50)',  'var(--coral-200)',  'past due date')}
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:8px;height:160px;padding:0 8px;">
+        ${counts.map(c=>`
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div style="font-size:11px;font-weight:600;color:var(--gray-700);opacity:${c.count===0?0.4:1};">${c.count}</div>
+            <div style="width:100%;height:${(c.count/maxC)*110+4}px;background:${bandBg[c.band]};border:1px solid ${bandColor[c.band]};border-radius:6px;position:relative;transition:height .25s;">
+              <div style="position:absolute;left:0;right:0;bottom:0;height:4px;background:${bandColor[c.band]};border-radius:0 0 5px 5px;"></div>
+            </div>
+            <div style="font-size:11px;color:var(--gray-600);text-align:center;white-space:nowrap;font-family:ui-monospace,monospace;">${c.label}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${buckets.red.length+buckets.amber.length>0?`
+        <div style="margin-top:22px;padding-top:18px;border-top:1px dashed var(--gray-200);">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-500);margin-bottom:10px;">Most urgent</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">${urgentRows}</div>
+        </div>
+      `:''}
+    `;
+  }
+
+  // ── Compliance ─────────────────────────────────────────────────────────────
+  function compTile(label,value,unit,benchmark,ok,warn,detail) {
+    const tone = warn?'var(--plum-700)':(ok?'var(--emerald-700)':'var(--coral-700)');
+    const toneBg = warn?'var(--plum-50)':(ok?'var(--emerald-50)':'var(--coral-50)');
+    return `<div style="padding:14px 16px;border-radius:8px;background:#fff;border:1px solid var(--gray-200);border-top:3px solid ${tone};">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-600);">${label}</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:${tone};background:${toneBg};padding:2px 6px;border-radius:3px;">
+          <span style="width:5px;height:5px;border-radius:9999px;background:${tone};"></span>
+          ${warn?'WATCHING':'PASSING'}
+        </span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:4px;">
+        <span style="font-family:var(--font-display);font-size:30px;font-weight:400;color:var(--gray-800);line-height:1;">${value}</span>
+        <span style="font-size:12px;color:var(--gray-500);">${unit}</span>
+      </div>
+      <div style="margin-top:6px;font-size:11px;color:var(--gray-500);">${benchmark}</div>
+      <div style="margin-top:6px;font-size:11px;color:var(--gray-500);font-style:italic;">${detail}</div>
+    </div>`;
+  }
+
+  function renderCompliance() {
+    const mrcRate = Math.round(inMRC/Math.max(1,tasks.length)*100);
+    document.getElementById('compliance-card').innerHTML = `
+      <header style="margin-bottom:16px;">
+        <h2 style="margin:0;font-size:16px;font-weight:700;color:var(--gray-800);">Reviewer compliance</h2>
+        <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Drata-style automated indicators. Updated continuously from the task ledger.</div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+        ${compTile('Velocity SLA',closedPerWeek,'rulings / wk','Target: 3.0+',parseFloat(closedPerWeek)>=3,false,'Trailing 4-week average.')}
+        ${compTile('Mean time-to-rule',meanDays,'days','Target: ≤ 5 d',meanDays==='—'||parseFloat(meanDays)<=5,false,'Submission → ruling, closed tasks.')}
+        ${compTile('Decision accuracy',Math.round(accuracy*100),'%','Target: ≥ 90%',accuracy>=0.9,false,'1 − (failure / closed).')}
+        ${compTile('MRC rate',mrcRate,'%','Target: ≤ 20%',mrcRate<=20,mrcRate>20&&mrcRate<=30,'Returned-to-customer share.')}
+      </div>
+      <div style="margin-top:22px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-500);">Outcome distribution</span>
+          <span style="font-size:11px;color:var(--gray-500);">last 4 weeks</span>
+        </div>
+        <div style="display:flex;height:10px;border-radius:9999px;overflow:hidden;background:var(--gray-100);">
+          ${outcomes.map(o=>`<div style="flex:${o.count||0.01};min-width:${o.count?4:0}px;background:${o.color};" title="${o.label}: ${o.count}"></div>`).join('')}
+        </div>
+        <div style="display:flex;gap:18px;margin-top:12px;">
+          ${outcomes.map(o=>`
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="width:8px;height:8px;border-radius:9999px;background:${o.color};"></span>
+              <span style="font-size:12px;color:var(--gray-700);">${o.label}</span>
+              <span style="font-size:13px;font-weight:600;color:var(--gray-800);">${o.count}</span>
+              <span style="font-size:11px;color:var(--gray-500);">(${Math.round(o.pct*100)}%)</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  // ── AI Agent ───────────────────────────────────────────────────────────────
+  const candidates = tasks.filter(t=>t.status.id==='READY'||t.status.id==='UNDER').slice(0,6);
+  let selectedTaskId = candidates[0]?.id || tasks[0].id;
+
+  function synthesizeFindings(task) {
+    if (!task) return { confidence:0, verdict:'', clausesCited:0, gaps:[], compliantLines:[] };
+    const list = RD.getChecklist(task.feature.code);
+    const seed = parseInt(task.id.replace(/\D/g,'').slice(-3),10)||0;
+    const confidenceBase = 60 + (seed%35);
+    const confidence = task.status.id==='ATTENTION' ? Math.max(35,confidenceBase-30) : confidenceBase;
+    const gaps = list.filter((_,i)=>(seed+i)%3===0).slice(0,3).map((it,i)=>({
+      title: it.tier==='T1' ? `Missing Tier 1 evidence: ${it.text.split('.')[0]}.` : `Tier 2 clarification needed: ${it.text.split('.')[0]}.`,
+      detail: detailFor(task.feature.code, i),
+      severity: it.tier==='T1' ? 'HIGH' : 'LOW',
+    }));
+    const compliantLines = task.snapshot.attachments.slice(0,2).map((d,i)=>({ source:d.name, quote:quoteFor(task.feature.code,i) }));
+    const verdict = gaps.length===0
+      ? `Evidence package looks complete on first pass — recommend a focused human review of methodology.`
+      : `Submission appears mostly compliant but ${gaps.length} clause${gaps.length>1?'s':''} would benefit from human verification before ruling.`;
+    return { confidence, verdict, gaps, compliantLines, clausesCited:list.length };
+  }
+  function detailFor(code,i) {
+    const t = {
+      W02:['ASHRAE 188 § 4.2 not cited in the management plan.','Filter replacement intervals not bound to manufacturer specifications.','Sampling cadence does not specify outlet rotation.'],
+      W01:['Chain-of-custody dates fall outside the 30-day window.','Lab accreditation refers to a sister facility.','Turbidity raw data not enclosed.'],
+      A02:['Policy does not explicitly cover e-cigarettes / vaporizers.','Signage installation photos missing for floors 7 and 12.','Enforcement clause cites obsolete state regulation.'],
+      A01:['Continuous monitor calibration certificate predates the measurement window.','TVOC sampling did not include conference Zone E.','PM2.5 measurement methodology not stated.'],
+      T01:['BAS trend export omits weekend hours.','Stamped mechanical drawings missing PE seal.','Operative temperature calculation worksheet not provided.'],
+      L03:['Photometric report covers only 4 of 6 sampled floors.','Spectral power distribution missing for fixture type 2A.','Workstation grid spacing not specified.'],
+    };
+    return (t[code]||['Cited methodology does not match the standard\'s prescribed test method.','Documentation predates the current reporting window.','Sampling plan does not cover declared scope.'])[i%3];
+  }
+  function quoteFor(code,i) {
+    const t = {
+      W02:['POU filters installed at all 38 drinking water outlets; replacement on 90-day cycle.','Quarterly water quality testing performed by an ISO 17025-accredited lab.'],
+      W01:['Lead readings ≤ 0.005 mg/L at 47 of 48 sampled outlets.','Sampling completed within 30 days of submission.'],
+      A02:['Smoke-free policy ratified 2026-04-08 covering all 50 properties.','Signage installed at all building entries; installer attestation enclosed.'],
+      A01:['PM2.5 average over 14-day window: 9.3 µg/m³ (threshold ≤ 15 µg/m³).','Continuous monitoring across 12 zones with hourly data export.'],
+      T01:['Operative temperature within ASHRAE 55 acceptable range.','30-day BAS trend confirms setpoint compliance for HVAC zone groups A–F.'],
+      L03:['Median melanopic EDI at workstations between 9–11am: 198 EML.','Luminaire schedule attached with full SPD for each fixture type.'],
+    };
+    return (t[code]||['Evidence directly cites the WELL v2 feature requirement.','Methodology aligns with the standard\'s prescribed test method.'])[i%2];
+  }
+
+  function renderAI() {
+    const task = RD.getTaskById(selectedTaskId)||tasks[0];
+    const findings = synthesizeFindings(task);
+    const concept = RD.CONCEPTS[task.feature.concept];
+    const r=60, c=2*Math.PI*r, dash=(findings.confidence/100)*c;
+    const tone = findings.confidence>=75?'var(--emerald-700)':(findings.confidence>=50?'var(--plum-700)':'var(--coral-700)');
+
+    const chipPicker = candidates.map(t => {
+      const cc = RD.CONCEPTS[t.feature.concept];
+      const sel = t.id===selectedTaskId;
+      return `<button class="ai-chip" data-tid="${t.id}" style="height:26px;padding:0 10px 1px;border-radius:4px;border:none;background:${sel?'#fff':'transparent'};color:${sel?'var(--gray-800)':'var(--gray-600)'};font-family:var(--font-body);font-size:11px;font-weight:600;cursor:pointer;box-shadow:${sel?'var(--shadow-xs)':'none'};display:inline-flex;align-items:center;gap:6px;line-height:1;">
+        <span class="ow-code-chip" style="height:16px;font-size:9px;padding:0 5px;background:${cc.token};color:${cc.text};">${t.feature.code}</span>
+        ${t.account.name}
+      </button>`;
+    }).join('');
+
+    const gapRows = findings.gaps.map(g=>`
+      <li style="display:flex;align-items:flex-start;gap:10;padding:10px 12px;background:var(--coral-50);border:1px solid var(--coral-200);border-radius:6px;list-style:none;">
+        <span style="color:var(--coral-700);margin-top:2px;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </span>
+        <div style="flex:1;font-size:13px;color:var(--gray-800);line-height:1.5;">
+          <strong>${g.title}</strong> <span style="color:var(--gray-600);">— ${g.detail}</span>
+        </div>
+        <span style="font-size:10px;font-weight:700;color:var(--coral-700);flex-shrink:0;">${g.severity}</span>
+      </li>
+    `).join('');
+
+    const complyRows = findings.compliantLines.map(cl=>`
+      <div style="display:flex;align-items:flex-start;gap:10;padding:10px 12px;background:var(--emerald-50);border:1px solid var(--emerald-200);border-radius:6px;">
+        <span style="color:var(--emerald-700);margin-top:2px;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div style="flex:1;">
+          <div style="font-size:11px;color:var(--emerald-700);font-weight:600;margin-bottom:4px;">${cl.source}</div>
+          <div style="font-family:ui-monospace,monospace;font-size:12px;color:var(--gray-800);line-height:1.5;">&ldquo;${cl.quote}&rdquo;</div>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('ai-card').innerHTML = `
+      <header style="margin-bottom:16px;">
+        <h2 style="margin:0;font-size:16px;font-weight:700;color:var(--gray-800);display:flex;align-items:center;gap:10;">
+          <span style="width:22px;height:22px;border-radius:9999px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--cyan-700),var(--blue-600));color:#fff;font-size:11px;font-weight:700;">AI</span>
+          Pre-review agent
+          <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:9999px;background:var(--plum-100);color:var(--plum-700);letter-spacing:.05em;">2027 PREVIEW</span>
+        </h2>
+        <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Parses uploaded evidence and surfaces likely gaps before a human reviewer opens the task.</div>
+      </header>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;padding:8px;background:var(--gray-50);border-radius:6px;border:1px solid var(--gray-200);">
+        <span style="font-size:11px;font-weight:700;color:var(--gray-600);letter-spacing:.04em;padding:5px 6px 4px;flex-shrink:0;">AUDIT:</span>
+        ${chipPicker}
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;margin-bottom:20px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="${r}" fill="none" stroke="var(--gray-100)" stroke-width="14"/>
+            <circle cx="75" cy="75" r="${r}" fill="none" stroke="${tone}" stroke-width="14"
+              stroke-dasharray="${dash} ${c-dash}" stroke-dashoffset="${c/4}"
+              transform="rotate(-90 75 75)" stroke-linecap="round"/>
+            <text x="75" y="78" text-anchor="middle" font-family="var(--font-display)" font-size="34" fill="var(--gray-800)">${findings.confidence}</text>
+            <text x="75" y="98" text-anchor="middle" font-family="var(--font-body)" font-size="10" font-weight="700" letter-spacing="0.1em" fill="var(--gray-500)">CONFIDENCE</text>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-600);">Agent verdict</div>
+          <p style="margin:0;font-size:13px;color:var(--gray-700);line-height:1.55;">${findings.verdict}</p>
+          <div style="display:flex;gap:14px;margin-top:4px;">
+            ${[['Documents parsed',task.snapshot.attachments.length],['Clauses cited',findings.clausesCited],['Gaps flagged',findings.gaps.length]].map(([l,v])=>`
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-family:var(--font-display);font-size:22px;color:var(--gray-800);line-height:1;">${v}</span>
+                <span style="font-size:11px;color:var(--gray-500);">${l}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-600);margin-bottom:10px;">Potentially missing or unverifiable clauses</div>
+      <ul style="margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:6px;">${gapRows}</ul>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-600);margin-bottom:10px;">Compliant lines surfaced</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:18px;">${complyRows}</div>
+      <div style="padding:10px 14px;background:var(--gray-50);border-radius:6px;font-size:11px;color:var(--gray-500);line-height:1.55;">
+        Agent decisions are advisory only. They never alter the snapshot and cannot issue a ruling. Reviewers must independently confirm every finding.
+      </div>
+    `;
+    document.querySelectorAll('.ai-chip').forEach(btn => {
+      btn.addEventListener('click', () => { selectedTaskId=btn.dataset.tid; renderAI(); });
+    });
+  }
+
+  // ── Guardrails ─────────────────────────────────────────────────────────────
+  function renderGuardrails() {
+    const auditableCount = tasks.filter(t=>t.feature.precondition===false&&t.path.id==='AUDITED').length;
+    const tooFewCount    = tasks.filter(t=>(t.locationIds||[]).length<2).length;
+    const closedCount    = tasks.filter(t=>t.status.id==='COMPLETED'||t.status.id==='FAILED').length;
+
+    function ruleCard(rule, title, desc, counter, counterLabel, demoHtml) {
+      return `<div style="padding:16px 16px 18px;border-radius:8px;background:#fff;border:1px solid var(--gray-200);display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="width:22px;height:22px;border-radius:4px;background:var(--cyan-50);color:var(--cyan-800);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span style="font-size:14px;font-weight:600;color:var(--gray-800);">${title}</span>
+          <span style="margin-left:auto;font-size:9px;font-weight:700;color:var(--emerald-700);background:var(--emerald-50);padding:3px 6px;border-radius:3px;white-space:nowrap;">ENFORCED</span>
+        </div>
+        <code style="font-family:ui-monospace,monospace;font-size:10.5px;color:var(--cyan-800);background:var(--cyan-50);padding:3px 6px;border-radius:3px;align-self:flex-start;">${rule}</code>
+        <p style="margin:0;font-size:12px;color:var(--gray-600);line-height:1.55;">${desc}</p>
+        <div style="padding:10px 12px;background:var(--gray-50);border-radius:6px;display:flex;align-items:baseline;gap:8px;">
+          <span style="font-family:var(--font-display);font-size:22px;color:var(--gray-800);">${counter}</span>
+          <span style="font-size:11px;color:var(--gray-600);">${counterLabel}</span>
+        </div>
+        <div>${demoHtml}</div>
+      </div>`;
+    }
+
+    document.getElementById('guardrails-card').innerHTML = `
+      <header style="margin-bottom:16px;">
+        <h2 style="margin:0;font-size:16px;font-weight:700;color:var(--gray-800);">Native processing guardrails</h2>
+        <div style="font-size:13px;color:var(--gray-500);margin-top:4px;">Enforced inside TaskService state handlers. Block actions that would corrupt the audit trail.</div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        ${ruleCard('TASK_SPLIT_SAFEGUARD','Task splitting','Prevent splitting any task whose Strategy is marked auditable. Splitting could fork the audit sample, invalidating ⌈√N⌉ math.',auditableCount,'tasks would be blocked from split if requested',
+          `<div style="display:flex;align-items:center;gap:8px;"><button id="demo-split" style="height:30px;padding:0 12px 1px;border-radius:6px;border:1px solid var(--gray-200);background:var(--gray-50);color:var(--gray-400);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:not-allowed;line-height:1;">Try: Split task</button><span id="demo-split-msg" style="font-size:11px;color:var(--coral-700);font-weight:600;display:none;">Blocked by TASK_SPLIT_SAFEGUARD</span></div>`
+        )}
+        ${ruleCard('MIN_LOC_THRESHOLD','Location threshold','Hard block on location-split when the task contains fewer than 2 locations. A single-site task can never become a portfolio.',tooFewCount,'single-location tasks · split disabled',
+          `<div style="display:flex;align-items:center;gap:8px;"><button id="demo-loc" style="height:30px;padding:0 12px 1px;border-radius:6px;border:1px solid var(--gray-200);background:var(--gray-50);color:var(--gray-400);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:not-allowed;line-height:1;">Try: Split locations</button><span id="demo-loc-msg" style="font-size:11px;color:var(--coral-700);font-weight:600;display:none;">n &lt; 2 → action unavailable</span></div>`
+        )}
+        ${ruleCard('SNAPSHOT_IMMUTABLE','Historical immutability','Once a ruling is finalized, the corresponding ReviewSnapshot is sealed. Edits raise an exception in the audit ledger.',closedCount,'snapshots sealed this cycle',
+          `<div style="display:flex;align-items:center;gap:8px;"><button id="demo-imm" style="height:30px;padding:0 12px 1px;border-radius:6px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-700);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;line-height:1;">Try: Edit closed snapshot</button><span id="demo-imm-msg" style="font-size:11px;color:var(--coral-700);font-weight:600;display:none;">ReviewSnapshot is sealed</span></div>`
+        )}
+      </div>
+    `;
+
+    // Demo interactions
+    const splitBtn = document.getElementById('demo-split');
+    if (splitBtn) splitBtn.addEventListener('click', () => {
+      document.getElementById('demo-split-msg').style.display='inline';
+    });
+    const locBtn = document.getElementById('demo-loc');
+    if (locBtn) locBtn.addEventListener('click', () => {
+      document.getElementById('demo-loc-msg').style.display='inline';
+    });
+    const immBtn = document.getElementById('demo-imm');
+    if (immBtn) immBtn.addEventListener('click', () => {
+      const msg = document.getElementById('demo-imm-msg');
+      msg.style.display='inline';
+      immBtn.style.animation='owShake .35s';
+      setTimeout(()=>{ immBtn.style.animation=''; },400);
+    });
+  }
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  renderSLA();
+  renderCompliance();
+  renderAI();
+  renderGuardrails();
+
+})();
+</script>
+
+</body>
+</html>

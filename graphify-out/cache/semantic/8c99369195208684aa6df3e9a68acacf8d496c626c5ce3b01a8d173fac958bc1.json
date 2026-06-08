@@ -1,0 +1,1 @@
+{"nodes": [{"id": "buttons_cta_primary", "label": "Primary CTA Button", "file_type": "code", "source_file": "v2/ds/preview/buttons-cta.html"}], "edges": [{"source": "brand_logo_gradient_cta_bright", "target": "buttons_cta_primary", "relation": "implements", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "v2/ds/preview/buttons-cta.html"}], "hyperedges": []}

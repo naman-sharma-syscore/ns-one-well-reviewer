@@ -1,0 +1,4079 @@
+{
+  "nodes": [
+    {
+      "id": "claude_launch",
+      "label": "launch.json",
+      "file_type": "code",
+      "source_file": ".claude/launch.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "claude_launch_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": ".claude/launch.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "claude_launch_configurations",
+      "label": "configurations",
+      "file_type": "code",
+      "source_file": ".claude/launch.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "claude_settings_local",
+      "label": "settings.local.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "claude_settings_local_permissions",
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "claude_settings_local_permissions_allow",
+      "label": "allow",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "label": "isolated-task-view.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "label": "getTaskIdFromUrl()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "label": "backToQueue()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "label": "TierBadge()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "label": "Card()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "label": "Label()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "label": "LockBanner()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "label": "TaskTopBar()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "label": "TaskHeader()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L156",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "label": "Metric()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L214",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "label": "SnapshotRibbon()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L235",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "label": "SnapshotField()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L319",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "label": "VerificationChecklist()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L334",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "label": "ProgressPill()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L360",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "label": "ChecklistRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L381",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "label": "DocumentInspectionTree()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L425",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "label": "DocumentRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L439",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "label": "RelevancyToggle()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L495",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "label": "GavelPanel()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L522",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard",
+      "label": "WorkloadCard()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L549",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "label": "Row()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L570",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "label": "TierTarget()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L578",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "label": "ActionsCard()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L592",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "label": "Preflight()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L662",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "label": "MRCComposer()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L681",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "label": "mrcInput",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L768",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "label": "FieldGroup()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L773",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "label": "NotesLedger()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L783",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "label": "NoteRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L842",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "label": "AchievementModal()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L870",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_isolatedtaskview",
+      "label": "IsolatedTaskView()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L938",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_dashboard",
+      "label": "page-dashboard.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-dashboard.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_dashboard_dashboardpage",
+      "label": "DashboardPage()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-dashboard.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_ops",
+      "label": "page-ops.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-ops.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_ops_opspage",
+      "label": "OpsPage()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-ops.jsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_router",
+      "label": "page-router.js",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_router_routetourl",
+      "label": "routeToUrl()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_router_currentfile",
+      "label": "currentFile()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_router_go",
+      "label": "go()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_task",
+      "label": "page-task.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-task.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_page_task_taskpage",
+      "label": "TaskPage()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/page-task.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "label": "reviewer-dashboard.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "label": "DashboardHeader()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "label": "MetricsRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "label": "CompositionStrip()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L117",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs",
+      "label": "ViewTabs()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L179",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "label": "QueueToolbar()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L216",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "label": "QueueTable()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L271",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "label": "Checkbox()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L403",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "label": "CoverageDisplay()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L417",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "label": "th()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L444",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "label": "td()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L449",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "label": "TaskDrawer()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L456",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "label": "DrawerHeader()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L487",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "label": "SnapshotPanel()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L548",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "label": "EvidencePanel()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L567",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "label": "SamplingPanel()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L597",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "label": "SiteRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L639",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "label": "NotesPanel()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L666",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "label": "Section()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L696",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "label": "Field()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L708",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "label": "RulingDock()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L720",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "label": "Dashboard()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L791",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "label": "reviewer-data.js",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "label": "sampleSize()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L182",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysago",
+      "label": "daysAgo()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L207",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "label": "daysAhead()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L208",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_fmt",
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L209",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_relative",
+      "label": "relative()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L213",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "label": "slaBucket()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L224",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_maketask",
+      "label": "makeTask()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_rollup",
+      "label": "rollup()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L502",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "label": "reviewer-ops.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "label": "computeOpsMetrics()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "label": "SLATracker()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L61",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "label": "SLABand()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L137",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "label": "SLAUrgentRow()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L152",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "label": "ComplianceRollups()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L188",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "label": "ComplianceTile()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L255",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "label": "AIAgent()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L286",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "label": "ConfidenceMeter()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L413",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "label": "Stat()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L432",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "label": "Hed()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L440",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings",
+      "label": "synthesizeFindings()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L445",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "label": "detailFor()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L472",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "label": "quoteFor()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L483",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "label": "GuardrailsMonitor()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L498",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "label": "RuleCard()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L542",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "label": "DemoSplitButton()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L575",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "label": "DemoLocationSplit()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L600",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "label": "DemoImmutable()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L622",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "label": "OpsCard()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L650",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "label": "OpsPageHeader()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L671",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_reviewerops",
+      "label": "ReviewerOps()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L695",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "label": "reviewer-shell.jsx",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "label": "Glyph()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "label": "G",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_topbar",
+      "label": "TopBar()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "label": "SideNav()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "label": "NavItem()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L148",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "label": "ConceptPill()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L181",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "label": "StatusPill()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L198",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "label": "SLAChip()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L215",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "label": "PathChip()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "label": "AppFrame()",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L261",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "label": "shellStyles",
+      "file_type": "code",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L276",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "label": "isolated-task-view.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "label": "getTaskIdFromUrl()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "label": "backToQueue()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "label": "TierBadge()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "label": "Card()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "label": "Label()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "label": "LockBanner()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "label": "TaskTopBar()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "label": "TaskHeader()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L156",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "label": "Metric()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L214",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "label": "SnapshotRibbon()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L235",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "label": "SnapshotField()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L319",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "label": "VerificationChecklist()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L334",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "label": "ProgressPill()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L360",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "label": "ChecklistRow()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L381",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "label": "DocumentInspectionTree()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L425",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "label": "DocumentRow()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L439",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "label": "RelevancyToggle()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L495",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "label": "GavelPanel()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L522",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard",
+      "label": "WorkloadCard()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L549",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "label": "Row()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L570",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "label": "TierTarget()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L578",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "label": "ActionsCard()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L592",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "label": "Preflight()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L662",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "label": "MRCComposer()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L681",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "label": "mrcInput",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L768",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "label": "FieldGroup()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L773",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "label": "NotesLedger()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L783",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "label": "NoteRow()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L842",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "label": "AchievementModal()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L870",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_isolated_task_view_jsx_src_isolated_task_view_isolatedtaskview",
+      "label": "IsolatedTaskView()",
+      "file_type": "code",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L938",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app",
+      "label": "reviewer-app.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_parseroute",
+      "label": "parseRoute()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_routetonav",
+      "label": "routeToNav()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_usetasksstore",
+      "label": "useTasksStore()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_reviewerapp",
+      "label": "ReviewerApp()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_viewswitch",
+      "label": "ViewSwitch()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_app_reviewerroot",
+      "label": "reviewerRoot",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L105",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "label": "reviewer-dashboard.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "label": "DashboardHeader()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "label": "MetricsRow()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "label": "CompositionStrip()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L117",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs",
+      "label": "ViewTabs()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L179",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "label": "QueueToolbar()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L216",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "label": "QueueTable()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L271",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "label": "Checkbox()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L403",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "label": "CoverageDisplay()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L417",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "label": "th()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L444",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "label": "td()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L449",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "label": "TaskDrawer()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L456",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "label": "DrawerHeader()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L487",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "label": "SnapshotPanel()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L548",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "label": "EvidencePanel()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L567",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "label": "SamplingPanel()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L597",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "label": "SiteRow()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L639",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "label": "NotesPanel()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L666",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "label": "Section()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L696",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "label": "Field()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L708",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "label": "RulingDock()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L720",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "label": "Dashboard()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L791",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data",
+      "label": "reviewer-data.js",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "label": "sampleSize()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L182",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_daysago",
+      "label": "daysAgo()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L207",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "label": "daysAhead()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L208",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_fmt",
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L209",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_relative",
+      "label": "relative()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L213",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "label": "slaBucket()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L224",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_maketask",
+      "label": "makeTask()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_data_js_src_reviewer_data_rollup",
+      "label": "rollup()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L502",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "label": "reviewer-ops.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "label": "computeOpsMetrics()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "label": "SLATracker()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L61",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "label": "SLABand()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L137",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "label": "SLAUrgentRow()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L152",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "label": "ComplianceRollups()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L188",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "label": "ComplianceTile()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L255",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "label": "AIAgent()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L286",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "label": "ConfidenceMeter()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L413",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "label": "Stat()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L432",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "label": "Hed()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L440",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings",
+      "label": "synthesizeFindings()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L445",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "label": "detailFor()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L472",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "label": "quoteFor()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L483",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "label": "GuardrailsMonitor()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L498",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "label": "RuleCard()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L542",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "label": "DemoSplitButton()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L575",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "label": "DemoLocationSplit()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L600",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "label": "DemoImmutable()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L622",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "label": "OpsCard()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L650",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "label": "OpsPageHeader()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L671",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_ops_jsx_src_reviewer_ops_reviewerops",
+      "label": "ReviewerOps()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L695",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "label": "reviewer-shell.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "label": "Glyph()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "label": "G",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_topbar",
+      "label": "TopBar()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "label": "SideNav()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "label": "NavItem()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L148",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "label": "ConceptPill()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L181",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "label": "StatusPill()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L198",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "label": "SLAChip()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L215",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "label": "PathChip()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "label": "AppFrame()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L261",
+      "_origin": "ast"
+    },
+    {
+      "id": "temp_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "label": "shellStyles",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L276",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone",
+      "label": "reviewer-shell.standalone.jsx",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_glyph",
+      "label": "Glyph()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_g",
+      "label": "G",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_topbar",
+      "label": "TopBar()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_sidenav",
+      "label": "SideNav()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_navitem",
+      "label": "NavItem()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L148",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_conceptpill",
+      "label": "ConceptPill()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L181",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_statuspill",
+      "label": "StatusPill()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L198",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_slachip",
+      "label": "SLAChip()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L215",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_pathchip",
+      "label": "PathChip()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_appframe",
+      "label": "AppFrame()",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L261",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_reviewer_shell_standalone_shellstyles",
+      "label": "shellStyles",
+      "file_type": "code",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L276",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data",
+      "label": "data.js",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_samplesize",
+      "label": "sampleSize()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L182",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_daysago",
+      "label": "daysAgo()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L207",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_daysahead",
+      "label": "daysAhead()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L208",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_fmt",
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L209",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_relative",
+      "label": "relative()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L213",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_slabucket",
+      "label": "slaBucket()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L224",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_maketask",
+      "label": "makeTask()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L238",
+      "_origin": "ast"
+    },
+    {
+      "id": "js_data_rollup",
+      "label": "rollup()",
+      "file_type": "code",
+      "source_file": "v2/js/data.js",
+      "source_location": "L502",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "claude_launch",
+      "target": "claude_launch_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/launch.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_launch",
+      "target": "claude_launch_configurations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/launch.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_local",
+      "target": "claude_settings_local_permissions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_local_permissions",
+      "target": "claude_settings_local_permissions_allow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_local_permissions_allow",
+      "target": "ref_bash_git_c_users_naman_desktop_github_ns_one_well_reviewer_log_oneline_6",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L425",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L439",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L495",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L549",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L578",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L592",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L662",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L681",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L768",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L773",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L783",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L842",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L870",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_onewell_reviewer_src_isolated_task_view_jsx_src_isolated_task_view_isolatedtaskview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/isolated-task-view.jsx",
+      "source_location": "L938",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_dashboard",
+      "target": "src_page_dashboard_dashboardpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-dashboard.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_ops",
+      "target": "src_page_ops_opspage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-ops.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_router",
+      "target": "src_page_router_routetourl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_router",
+      "target": "src_page_router_currentfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_router",
+      "target": "src_page_router_go",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_router_go",
+      "target": "src_page_router_routetourl",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_router_go",
+      "target": "src_page_router_currentfile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-router.js",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_page_task",
+      "target": "src_page_task_taskpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/page-task.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L403",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L417",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L444",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L449",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L487",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L548",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L567",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L597",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L639",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L666",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L708",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L720",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L791",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "target": "temp_onewell_reviewer_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-dashboard.jsx",
+      "source_location": "L303",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysago",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_fmt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_relative",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_maketask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_rollup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L502",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_relative",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_fmt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_maketask",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_maketask",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_rollup",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_rollup",
+      "target": "temp_onewell_reviewer_src_reviewer_data_js_src_reviewer_data_daysago",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-data.js",
+      "source_location": "L508",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L286",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L432",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L440",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L445",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L472",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L483",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L575",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L600",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L671",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_onewell_reviewer_src_reviewer_ops_jsx_src_reviewer_ops_reviewerops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-ops.jsx",
+      "source_location": "L695",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_topbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_onewell_reviewer_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/onewell-reviewer/src/reviewer-shell.jsx",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_gettaskidfromurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_backtoqueue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tierbadge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_card",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_label",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_lockbanner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tasktopbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_taskheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_metric",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotribbon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_snapshotfield",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_verificationchecklist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_progresspill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_checklistrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentinspectiontree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L425",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_documentrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L439",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_relevancytoggle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L495",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_gavelpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_workloadcard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L549",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_tiertarget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L578",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_actionscard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L592",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_preflight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L662",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrccomposer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L681",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_mrcinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L768",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_fieldgroup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L773",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_notesledger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L783",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_noterow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L842",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_achievementmodal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L870",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_isolated_task_view_jsx_src_isolated_task_view",
+      "target": "temp_src_isolated_task_view_jsx_src_isolated_task_view_isolatedtaskview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/isolated-task-view.jsx",
+      "source_location": "L938",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_parseroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_routetonav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_usetasksstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_reviewerapp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_viewswitch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app",
+      "target": "src_reviewer_app_reviewerroot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app_reviewerapp",
+      "target": "src_reviewer_app_parseroute",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app_reviewerapp",
+      "target": "src_reviewer_app_usetasksstore",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_app_reviewerapp",
+      "target": "src_reviewer_app_routetonav",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-app.jsx",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboardheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_metricsrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_compositionstrip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_viewtabs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetoolbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_checkbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L403",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_coveragedisplay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L417",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L444",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_td",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L449",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_taskdrawer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_drawerheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L487",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_snapshotpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L548",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_evidencepanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L567",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_samplingpanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L597",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_siterow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L639",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_notespanel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L666",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_section",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L708",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_rulingdock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L720",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L791",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_queuetable",
+      "target": "temp_src_reviewer_dashboard_jsx_src_reviewer_dashboard_th",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-dashboard.jsx",
+      "source_location": "L303",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_samplesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_daysago",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_fmt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_relative",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_maketask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_rollup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L502",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data_relative",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_fmt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data_maketask",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data_maketask",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_slabucket",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data_rollup",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_data_js_src_reviewer_data_rollup",
+      "target": "temp_src_reviewer_data_js_src_reviewer_data_daysago",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-data.js",
+      "source_location": "L508",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_computeopsmetrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slatracker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaband",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_slaurgentrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancerollups",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_compliancetile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_aiagent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L286",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_confidencemeter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_stat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L432",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_hed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L440",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_synthesizefindings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L445",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_detailfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L472",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_quotefor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L483",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_guardrailsmonitor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_rulecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demosplitbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L575",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demolocationsplit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L600",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_demoimmutable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_opscard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_opspageheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L671",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_ops_jsx_src_reviewer_ops",
+      "target": "temp_src_reviewer_ops_jsx_src_reviewer_ops_reviewerops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-ops.jsx",
+      "source_location": "L695",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_glyph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_g",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_topbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_sidenav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_navitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_conceptpill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_statuspill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_slachip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_pathchip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_appframe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "temp_src_reviewer_shell_jsx_src_reviewer_shell",
+      "target": "temp_src_reviewer_shell_jsx_src_reviewer_shell_shellstyles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.jsx",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_glyph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_g",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_topbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_sidenav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_navitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_conceptpill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_statuspill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_slachip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_pathchip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_appframe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "src_reviewer_shell_standalone",
+      "target": "src_reviewer_shell_standalone_shellstyles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "temp/src/reviewer-shell.standalone.jsx",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_samplesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_daysago",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_daysahead",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_fmt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_relative",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_slabucket",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_maketask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data",
+      "target": "js_data_rollup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L502",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data_relative",
+      "target": "js_data_fmt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data_maketask",
+      "target": "js_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data_maketask",
+      "target": "js_data_slabucket",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data_rollup",
+      "target": "js_data_daysahead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "js_data_rollup",
+      "target": "js_data_daysago",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "v2/js/data.js",
+      "source_location": "L508",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
